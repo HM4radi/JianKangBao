@@ -102,7 +102,6 @@
     [planData resetting];
     finished=NO;
     
-
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -129,8 +128,8 @@
                 [_mapView returnPlaceName:[planData.routeCoord objectAtIndex:i]];
             }
         }
+        _mapView.selecting=NO;
     }
-    _mapView.selecting=NO;
 }
 
 - (IBAction)removeBtn:(id)sender {
@@ -226,10 +225,6 @@
     selectedType=[sportType objectAtIndex:row];
 }
 
-//- (void)touchBack{
-//    self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//}
 
 - (IBAction)touchCancel:(id)sender {
     self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
@@ -248,18 +243,6 @@
     }
 
 }
-
-//- (void)touchOK{
-//    if ([self isFinishedSelecting]) {
-//        NSNumberFormatter *ft=[[NSNumberFormatter alloc]init];
-//        planData.calories=[ft numberFromString:self.caloriesLabel.text];
-//        ft=nil;
-//        planData.endTime=[self calEndTime];
-//        self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-//        [self dismissViewControllerAnimated:YES completion:nil];
-//        [self saveDataToAVOS];
-//    }
-//}
 
 - (NSString*)returnStrength:(NSString*)type{
     NSString *strength=nil;

@@ -202,7 +202,6 @@
         _mapView.centerCoordinate = CLLocationCoordinate2DMake((xMax+xMin)/2,(yMax+yMin)/2);
         
         _mapView.region = QCoordinateRegionMake(CLLocationCoordinate2DMake((xMax+xMin)/2,(yMax+yMin)/2),QCoordinateSpanMake((xMax-xMin), (yMax-yMin)));
-
     }
 }
 
@@ -347,41 +346,12 @@
     
     [_mapView setRegion:QCoordinateRegionMake(coord,QCoordinateSpanMake(0.002, 0.002)) animated:YES];
 
-    if (self.recording) {
-        [self pushRecord:coord];
-    }
+//    if (self.recording) {
+//        [self pushRecord:coord];
+//    }
 }
 
--(void)pushRecord:(CLLocationCoordinate2D)coord{
-    
-    CGPoint p2=CGPointMake(coord.longitude, coord.latitude);
-    NSDate *t2=[NSDate date];
-    
-        if ([sportRecord.realCoordinate count]>0) {
-            NSDate *t1=[sportRecord.realTime lastObject];
-            CGPoint p1=CGPointFromString([sportRecord.realCoordinate lastObject]);
-            double s=sqrt((p2.x-p1.x)*(p2.x-p1.x)+(p2.y-p1.y)*(p2.y-p1.y));
-            
-            NSTimeInterval interval=[t2 timeIntervalSinceDate:t1];
-            
-            float speed=30.8*s*3.6*3600/interval;
-            [sportRecord.realSpeed addObject:[NSNumber numberWithFloat:speed]];
-            sportRecord.nowSpeed=speed;
-            sportRecord.nowDistance+=s*3600*30.8;
-            
-        }else{
-            float speed=0;
-            sportRecord.nowSpeed=0;
-            sportRecord.nowDistance+=0;
-            [sportRecord.realSpeed addObject:[NSNumber numberWithFloat:speed]];
-        }
-    
-    NSString *coordinate=NSStringFromCGPoint(CGPointMake(coord.longitude,coord.latitude));
-    [sportRecord.realCoordinate addObject:coordinate];
-    [sportRecord.realTime addObject:t2];
-    [sportRecord.realCalories addObject:[NSNumber numberWithFloat:30.0]];
-    sportRecord.nowCalories=30.0;
-}
+
 
 /*
  // Only override drawRect: if you perform custom drawing.

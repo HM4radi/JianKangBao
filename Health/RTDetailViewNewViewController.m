@@ -28,8 +28,6 @@
 
 }
 
-
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -39,17 +37,27 @@
     return self;
 }
 
+- (void)viewWillLayoutSubviews{
+
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"返回"
+                                                                   style:UIBarButtonItemStylePlain target:self action:@selector(touchSelect)];
+    leftButton.tintColor=[UIColor whiteColor];
+    self.navigationItem.leftBarButtonItem = leftButton;
+    
+}
+
+- (void)touchSelect{
+    [[self navigationController] popViewControllerAnimated:YES];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     
-    
     //初始化数据
     friendNameList=[NSArray arrayWithObjects:@"gyb",@"shirui",nil];
-    
-    
-    
+  
     NSArray *b1=[NSArray arrayWithObjects:@"1",@"5",@"2",@"6",@"8",@"7",@"9",@"5",@"1",@"10",@"8",@"4", nil];
     
     NSArray *b2=[NSArray arrayWithObjects:@"1",@"5",@"2",@"6",@"8",@"7",@"9", nil];
@@ -143,9 +151,6 @@
       
 
     }
-   
-
-
 
 }
 
@@ -334,12 +339,6 @@
 	[self.friendBriefChat addSubview:lineChart];
     
 }
-
-
-
-
-
-
 
 
 //make a phone call

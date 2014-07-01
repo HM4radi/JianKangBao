@@ -9,12 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "RTCollectionViewCell.h"
 #import "RTMsgDetailViewController.h"
+#import <AVOSCloud/AVOSCloud.h>
+
 @interface RTMsgViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 {
     NSMutableArray *msgArray;
-    RTMsgDetailViewController *detialView;
+    NSMutableArray *channel;
+    RTMsgDetailViewController *detailVC;
+    
+    BOOL loadDirect;
 }
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
 
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
+@property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
 @end

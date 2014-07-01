@@ -1,0 +1,42 @@
+
+/* Class = "IBUIBarButtonItem"; title = "返回"; ObjectID = "0aj-av-V0o"; */
+"0aj-av-V0o.title" = "返回";
+
+/* Class = "IBUILabel"; text = "km/h"; ObjectID = "1XV-hw-eO8"; */
+"1XV-hw-eO8.text" = "km/h";
+
+/* Class = "IBUILabel"; text = "热量"; ObjectID = "5lV-73-Gf1"; */
+"5lV-73-Gf1.text" = "热量";
+
+/* Class = "IBUILabel"; text = "0.0"; ObjectID = "8If-Xs-9Ng"; */
+"8If-Xs-9Ng.text" = "0.0";
+
+/* Class = "IBUILabel"; text = "时间"; ObjectID = "DMF-St-Pjs"; */
+"DMF-St-Pjs.text" = "时间";
+
+/* Class = "IBUILabel"; text = "执行计划"; ObjectID = "HCp-77-EgF"; */
+"HCp-77-EgF.text" = "执行计划";
+
+/* Class = "IBUILabel"; text = "kCal"; ObjectID = "K1h-Uy-SbK"; */
+"K1h-Uy-SbK.text" = "kCal";
+
+/* Class = "IBUIButton"; normalTitle = "开始"; ObjectID = "Qkf-Mv-Co7"; */
+"Qkf-Mv-Co7.normalTitle" = "开始";
+
+/* Class = "IBUILabel"; text = "速度"; ObjectID = "UCf-dB-cXe"; */
+"UCf-dB-cXe.text" = "速度";
+
+/* Class = "IBUILabel"; text = "距离"; ObjectID = "Vz1-S8-CDp"; */
+"Vz1-S8-CDp.text" = "距离";
+
+/* Class = "IBUILabel"; text = "00:00:00"; ObjectID = "kM4-Il-dtV"; */
+"kM4-Il-dtV.text" = "00:00:00";
+
+/* Class = "IBUILabel"; text = "0.0"; ObjectID = "liK-Yp-4A0"; */
+"liK-Yp-4A0.text" = "0.0";
+
+/* Class = "IBUILabel"; text = "0"; ObjectID = "rxZ-gU-VVb"; */
+"rxZ-gU-VVb.text" = "0";
+
+/* Class = "IBUILabel"; text = "m"; ObjectID = "zCd-yb-LDe"; */
+"zCd-yb-LDe.text" = "m";

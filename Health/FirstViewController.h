@@ -44,9 +44,12 @@
     NSDateFormatter *dateFormatter4;
     
     RTDoingViewController *doingVC;
+    
+    int selectingRow;
 }
 
 - (void)refreshTableView;
+- (void)refreshTableView1;
 
 @property (retain, nonatomic) IBOutlet UINavigationBar *navigationbar;
 

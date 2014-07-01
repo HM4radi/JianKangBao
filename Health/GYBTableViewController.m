@@ -36,6 +36,7 @@
     return self;
 }
 
+
 -(void)initStatusData
 {
    static NSString *a = @"0.1";
@@ -61,24 +62,15 @@
 //    NSLog(@"%d",indexPath.row);
 
 }
-//
+
 
 //添加点击事件
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     RTDetailViewNewViewController *detailViewController=[[RTDetailViewNewViewController alloc]initWithNibName:@"RTDetailViewNewViewController" bundle:nil];
-    detailViewController.navigationItem.title=@"详细信息";
-//
-//
-   UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back"
-                                                                   style:UIBarButtonItemStylePlain
-                               
-                                                              target:nil action:nil];
-    
-    detailViewController.navigationItem.backBarButtonItem = backButton;
+
     [detailViewController setCurrentSelectedIndex:indexPath.row];
     [self.navigationController pushViewController:detailViewController animated:YES];
-//    NSLog(@"%d",indexPath.row);
     
 }
 
@@ -138,19 +130,12 @@
 {
     [super viewDidLoad];
 
-   
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     [self initNameDataDiction];
     [self initStatusData];
     
     
     [self.navigationController.navigationBar setFrame:CGRectMake(0, 0, 320, 64)];
-//    //[self.navigationbar setBackgroundColor:[UIColor darkGrayColor]];
+
     self.navigationController.navigationBar.translucent=YES;
     
     // UIApperance
@@ -162,6 +147,15 @@
 //    [self.shape4StarView setShape:[UIBezierPath stars:5 shapeInFrame:self.shape4StarView.frame].CGPath];
 //    self.shape4StarView.progressTintColor = [UIColor colorWithRed:255/255.f green:199/255.f blue:87/255.f alpha:1.f];
     
+    UILabel *titleLabel=[[UILabel alloc]initWithFrame:CGRectMake(95, 10, 130, 26)];
+    [titleLabel setTextColor:[UIColor whiteColor]];
+    titleLabel.font=[UIFont fontWithName:@"HelveticaNeue-UltraLight" size:22.00];
+    titleLabel.text=@"家人健康";
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    [self.navigationController.navigationBar addSubview:titleLabel];
+    self.navigationController.navigationItem.titleView=titleLabel;
+    titleLabel=nil;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -198,7 +192,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+
     static BOOL nibsRegistered = NO;
     
     static NSString *Cellidentifier=@"cell1";

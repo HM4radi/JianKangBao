@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RTMsgDetailTableViewCell.h"
+#import "MJRefresh.h"
 @interface RTMsgDetailViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>{
     NSMutableArray *msgArray;
 }

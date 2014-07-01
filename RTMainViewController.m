@@ -90,11 +90,8 @@ static RTMainViewController* singleInstanceOfRTMainViewController=nil;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    
-  
-    
    
+    
     
     CGFloat orginHeight = self.view.frame.size.height- 60;
     if (!iPhone5) {
@@ -162,7 +159,7 @@ static RTMainViewController* singleInstanceOfRTMainViewController=nil;
 {
     NSArray* tabBarItems = nil;
     
-    RTMsgViewController *msg=[[RTMsgViewController alloc]init];
+    RTMsgNavViewController *msg=[[RTMsgNavViewController alloc]init];
     
     SecondViewController *second = [[SecondViewController alloc]init];
     
@@ -177,8 +174,6 @@ static RTMainViewController* singleInstanceOfRTMainViewController=nil;
     [self addChildViewController:forth];
     [self addChildViewController:thd];
     [self addChildViewController:msg];
-    
-    
     
     tabBarItems = [NSArray arrayWithObjects:
                    [NSDictionary dictionaryWithObjectsAndKeys:@"tabicon_home", @"image",@"tabicon_home", @"image_locked", msg, @"viewController",@"主页",@"title", nil],

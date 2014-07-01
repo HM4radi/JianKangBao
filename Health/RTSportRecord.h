@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "QMapKit.h"
 @interface RTSportRecord : NSObject
 {
     NSMutableArray *realCoordinate;
@@ -24,6 +24,9 @@
 @property (nonatomic) float nowSpeed;
 @property (nonatomic) float nowCalories;
 @property (nonatomic) float nowDistance;
+@property (nonatomic) CLLocationCoordinate2D lastPoint;
+@property (nonatomic) CLLocationCoordinate2D thisPoint;
+
 + (RTSportRecord*)shareInstance;
 - (void)resetData;
 @end

@@ -32,8 +32,6 @@
     [self.navigationbar setFrame:CGRectMake(0, 0, 320, 64)];
     self.navigationbar.translucent=YES;
 
-
-
 }
 
 - (void)viewDidLoad
@@ -61,7 +59,6 @@
     
     //plandata
     planData=[RTPlanData shareInstance];
-    
     
     dateFormatter1=[[NSDateFormatter alloc]init];
     [dateFormatter1 setDateFormat:@"HH:mm"];
@@ -103,7 +100,7 @@
                 NSNumber *calories=[[objects objectAtIndex:i] objectForKey:@"sportCaloriesPlan"];
                 NSString *objectId=[[objects objectAtIndex:i] objectForKey:@"objectId"];
                 NSNumber *progress=[[objects objectAtIndex:i] objectForKey:@"planCompleteProgress"];
-                [recordArray addObject:[NSDictionary dictionaryWithObjectsAndKeys:placeName, @"location",startTime, @"startTime", endTime, @"endTime",sportType,@"type",strength,@"strength",calories,@"calories",objectId,@"objectId",progress,@"progress",nil]];
+                [recordArray addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:placeName, @"location",startTime, @"startTime", endTime, @"endTime",sportType,@"type",strength,@"strength",calories,@"calories",objectId,@"objectId",progress,@"progress",nil]];
             }
             
             [self.tableView setFrame:CGRectMake(0, 216, 320, 100*cellNum)];//按照cell个数定义高度
@@ -277,16 +274,24 @@
 
 - (void)refreshTableView{
     [recordArray addObject:[NSDictionary dictionaryWithObjectsAndKeys:[planData.sportGeoPointDescription objectAtIndex:0], @"location",[dateFormatter1 stringFromDate: planData.startTime ], @"startTime", [dateFormatter1 stringFromDate: planData.endTime], @"endTime",planData.sportType,@"type",planData.strength,@"strength",planData.calories,@"calories",planData.objectId,@"objectId",planData.progress,@"progress",nil]];
-    cellNum++;
+    cellNum=[recordArray count];
     [self.tableView setFrame:CGRectMake(0, 216, 320, 100*cellNum)];
     [self.tableView reloadData];
     scrollView.contentSize=CGSizeMake(self.view.frame.size.width, 226+100*cellNum);
+}
+
+- (void)refreshTableView1{
+    cellNum=[recordArray count];
+    NSMutableDictionary *dic=[recordArray objectAtIndex:selectingRow];
+    [dic setObject:planData.progress forKey:@"progress"];
+    [self.tableView reloadData];
 }
 
 //*********************detailsView********************//
 
 - (void)loadDetailView:(NSInteger)row{
     
+    selectingRow=row;
     NSDictionary *dic=[recordArray objectAtIndex:row];
     NSString *objectId=[dic objectForKey:@"objectId"];
     
@@ -304,7 +309,7 @@
             planData.strength=[[objects objectAtIndex:0] objectForKey:@"strength"];
             planData.calories=[[objects objectAtIndex:0] objectForKey:@"sportCaloriesPlan"];
             planData.progress=[[objects objectAtIndex:0] objectForKey:@"planCompleteProgress"];
-            
+            planData.objectId=objectId;
             if (![planData.progress isEqualToNumber:[NSNumber numberWithFloat:0]]) {
                 if(!detailVC){
                     detailVC=[[RTDetailViewController alloc]init];
@@ -316,6 +321,7 @@
             else{
                 if(!doingVC){
                     doingVC=[[RTDoingViewController alloc]init];
+                    doingVC.dataDelegate=self;
                 }
                 doingVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
                 [self presentViewController:doingVC animated:YES completion:nil];
@@ -326,18 +332,6 @@
 }
 
 
-//- (void)touchBack{
-//    
-//    [UIView beginAnimations:@"view flip" context:nil];
-//    [UIView setAnimationDuration:0.5];
-//    [UIView transitionWithView:self.view.superview
-//                      duration:0.2
-//                       options:UIViewAnimationOptionTransitionFlipFromLeft
-//                    animations:^{ [self.view removeFromSuperview];  }
-//                    completion:NULL];
-//    [UIView commitAnimations];
-//}
-
 - (IBAction)touchBack:(id)sender {
     [UIView beginAnimations:@"view flip" context:nil];
     [UIView setAnimationDuration:0.5];
@@ -347,7 +341,6 @@
                     animations:^{ [self.view removeFromSuperview];  }
                     completion:NULL];
     [UIView commitAnimations];
-
 }
 
 - (void)didReceiveMemoryWarning

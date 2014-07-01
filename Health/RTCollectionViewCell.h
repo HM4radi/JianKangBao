@@ -14,4 +14,5 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *cellLabel;
 
+
 @end

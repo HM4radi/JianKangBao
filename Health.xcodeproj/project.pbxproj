@@ -205,10 +205,22 @@
 		AD12F6CA192634B400921894 /* toolbar_retweet_highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = AD12F634192634B400921894 /* toolbar_retweet_highlighted.png */; };
 		AD12F6CB192634B400921894 /* userinfo_relationship_editprofilebutton_background.png in Resources */ = {isa = PBXBuildFile; fileRef = AD12F635192634B400921894 /* userinfo_relationship_editprofilebutton_background.png */; };
 		AD12F88F1926516D00921894 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD12F88E1926516D00921894 /* Images.xcassets */; };
+		AD1E4843195D6A360033784B /* DS-DIGI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD1E4842195D6A360033784B /* DS-DIGI.ttf */; };
 		AD2293C51934CD5100796CA2 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD2293C41934CD5100796CA2 /* background.jpg */; };
+		AD3493DA196270DD001A46FC /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AD3493CA196270DD001A46FC /* MJRefresh.bundle */; };
+		AD3493DB196270DD001A46FC /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3493CD196270DD001A46FC /* MJRefreshBaseView.m */; };
+		AD3493DC196270DD001A46FC /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3493CF196270DD001A46FC /* MJRefreshConst.m */; };
+		AD3493DD196270DD001A46FC /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3493D1196270DD001A46FC /* MJRefreshFooterView.m */; };
+		AD3493DE196270DD001A46FC /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3493D3196270DD001A46FC /* MJRefreshHeaderView.m */; };
+		AD3493DF196270DD001A46FC /* UIScrollView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3493D5196270DD001A46FC /* UIScrollView+Extension.m */; };
+		AD3493E0196270DD001A46FC /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3493D7196270DD001A46FC /* UIScrollView+MJRefresh.m */; };
+		AD3493E1196270DD001A46FC /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3493D9196270DD001A46FC /* UIView+Extension.m */; };
+		AD3493E41962832A001A46FC /* RTMsgNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3493E31962832A001A46FC /* RTMsgNavViewController.m */; };
 		AD3C8D3E1947F44D00357DA0 /* RTSportPlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3C8D3C1947F44D00357DA0 /* RTSportPlanViewController.m */; };
 		AD3C8D3F1947F44D00357DA0 /* RTSportPlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD3C8D3D1947F44D00357DA0 /* RTSportPlanViewController.xib */; };
 		AD3FCA3A193451DA00ECEA4B /* pills.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD3FCA39193451DA00ECEA4B /* pills.jpg */; };
+		AD3FDC4E1961B06500EECFA0 /* tick1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD3FDC4C1961B06500EECFA0 /* tick1.jpg */; };
+		AD3FDC4F1961B06500EECFA0 /* tick.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD3FDC4D1961B06500EECFA0 /* tick.jpg */; };
 		AD46FB0B1934286300F19BC4 /* RTPillsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD46FB091934286300F19BC4 /* RTPillsViewController.m */; };
 		AD46FB0C1934286300F19BC4 /* RTPillsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD46FB0A1934286300F19BC4 /* RTPillsViewController.xib */; };
 		AD46FB10193431CE00F19BC4 /* RTPillsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD46FB0E193431CE00F19BC4 /* RTPillsTableViewCell.m */; };
@@ -272,6 +284,10 @@
 		AD6049B919245C2500A59798 /* ThirdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD6049B719245C2500A59798 /* ThirdViewController.xib */; };
 		AD6049BD19245CD200A59798 /* ForthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6049BB19245CD200A59798 /* ForthViewController.m */; };
 		AD6049BE19245CD200A59798 /* ForthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD6049BC19245CD200A59798 /* ForthViewController.xib */; };
+		AD69107E195D61D000ACB68B /* RTDoingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD69107C195D61D000ACB68B /* RTDoingViewController.m */; };
+		AD69107F195D61D000ACB68B /* RTDoingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD69107D195D61D000ACB68B /* RTDoingViewController.xib */; };
+		AD69691E195D1D0C00104FDF /* SOLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AD69691B195D1D0C00104FDF /* SOLocationManager.m */; };
+		AD69691F195D1D0C00104FDF /* SOMotionDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = AD69691D195D1D0C00104FDF /* SOMotionDetector.m */; };
 		AD70D1951946A88D00F6D118 /* RTStepCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = AD70D1941946A88D00F6D118 /* RTStepCounter.m */; };
 		AD70D1981946DE0800F6D118 /* tabbar_5.png in Resources */ = {isa = PBXBuildFile; fileRef = AD70D1961946DE0800F6D118 /* tabbar_5.png */; };
 		AD70D1991946DE0800F6D118 /* tabbar_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD70D1971946DE0800F6D118 /* tabbar_5@2x.png */; };
@@ -396,8 +412,6 @@
 		ADEF87D9192DF8F20057DCB0 /* BEMCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEF87D3192DF8F20057DCB0 /* BEMCircle.m */; };
 		ADEF87DA192DF8F20057DCB0 /* BEMLine.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEF87D5192DF8F20057DCB0 /* BEMLine.m */; };
 		ADEF87DB192DF8F20057DCB0 /* BEMSimpleLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEF87D7192DF8F20057DCB0 /* BEMSimpleLineGraphView.m */; };
-		ADF6F5BF1959632900E45C05 /* RTDoingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF6F5BD1959632900E45C05 /* RTDoingViewController.m */; };
-		ADF6F5C01959632900E45C05 /* RTDoingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADF6F5BE1959632900E45C05 /* RTDoingViewController.xib */; };
 		ADF6F5C319597A7900E45C05 /* ACPButton.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF6F5C219597A7900E45C05 /* ACPButton.m */; };
 		ADF6F5C61959A06100E45C05 /* verticleLine.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADF6F5C51959A06100E45C05 /* verticleLine.jpg */; };
 		E80D1A9BF67B46B2B42DC619 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18288DC4D62C4FAABD5DEDCD /* libPods.a */; };
@@ -643,11 +657,32 @@
 		AD12F634192634B400921894 /* toolbar_retweet_highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar_retweet_highlighted.png; sourceTree = "<group>"; };
 		AD12F635192634B400921894 /* userinfo_relationship_editprofilebutton_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userinfo_relationship_editprofilebutton_background.png; sourceTree = "<group>"; };
 		AD12F88E1926516D00921894 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AD1E4842195D6A360033784B /* DS-DIGI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DS-DIGI.ttf"; sourceTree = "<group>"; };
 		AD2293C41934CD5100796CA2 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		AD3493CA196270DD001A46FC /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
+		AD3493CB196270DD001A46FC /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
+		AD3493CC196270DD001A46FC /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
+		AD3493CD196270DD001A46FC /* MJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBaseView.m; sourceTree = "<group>"; };
+		AD3493CE196270DD001A46FC /* MJRefreshConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshConst.h; sourceTree = "<group>"; };
+		AD3493CF196270DD001A46FC /* MJRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshConst.m; sourceTree = "<group>"; };
+		AD3493D0196270DD001A46FC /* MJRefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshFooterView.h; sourceTree = "<group>"; };
+		AD3493D1196270DD001A46FC /* MJRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshFooterView.m; sourceTree = "<group>"; };
+		AD3493D2196270DD001A46FC /* MJRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshHeaderView.h; sourceTree = "<group>"; };
+		AD3493D3196270DD001A46FC /* MJRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshHeaderView.m; sourceTree = "<group>"; };
+		AD3493D4196270DD001A46FC /* UIScrollView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Extension.h"; sourceTree = "<group>"; };
+		AD3493D5196270DD001A46FC /* UIScrollView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Extension.m"; sourceTree = "<group>"; };
+		AD3493D6196270DD001A46FC /* UIScrollView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJRefresh.h"; sourceTree = "<group>"; };
+		AD3493D7196270DD001A46FC /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
+		AD3493D8196270DD001A46FC /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		AD3493D9196270DD001A46FC /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		AD3493E21962832A001A46FC /* RTMsgNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTMsgNavViewController.h; sourceTree = "<group>"; };
+		AD3493E31962832A001A46FC /* RTMsgNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTMsgNavViewController.m; sourceTree = "<group>"; };
 		AD3C8D3B1947F44D00357DA0 /* RTSportPlanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTSportPlanViewController.h; sourceTree = "<group>"; };
 		AD3C8D3C1947F44D00357DA0 /* RTSportPlanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTSportPlanViewController.m; sourceTree = "<group>"; };
 		AD3C8D3D1947F44D00357DA0 /* RTSportPlanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTSportPlanViewController.xib; sourceTree = "<group>"; };
 		AD3FCA39193451DA00ECEA4B /* pills.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pills.jpg; sourceTree = "<group>"; };
+		AD3FDC4C1961B06500EECFA0 /* tick1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tick1.jpg; sourceTree = "<group>"; };
+		AD3FDC4D1961B06500EECFA0 /* tick.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tick.jpg; sourceTree = "<group>"; };
 		AD46FB081934286300F19BC4 /* RTPillsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTPillsViewController.h; sourceTree = "<group>"; };
 		AD46FB091934286300F19BC4 /* RTPillsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTPillsViewController.m; sourceTree = "<group>"; };
 		AD46FB0A1934286300F19BC4 /* RTPillsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTPillsViewController.xib; sourceTree = "<group>"; };
@@ -757,6 +792,13 @@
 		AD6049BA19245CD200A59798 /* ForthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForthViewController.h; sourceTree = "<group>"; };
 		AD6049BB19245CD200A59798 /* ForthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForthViewController.m; sourceTree = "<group>"; };
 		AD6049BC19245CD200A59798 /* ForthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForthViewController.xib; sourceTree = "<group>"; };
+		AD69107B195D61D000ACB68B /* RTDoingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTDoingViewController.h; sourceTree = "<group>"; };
+		AD69107C195D61D000ACB68B /* RTDoingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTDoingViewController.m; sourceTree = "<group>"; };
+		AD69107D195D61D000ACB68B /* RTDoingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTDoingViewController.xib; sourceTree = "<group>"; };
+		AD69691A195D1D0C00104FDF /* SOLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOLocationManager.h; sourceTree = "<group>"; };
+		AD69691B195D1D0C00104FDF /* SOLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOLocationManager.m; sourceTree = "<group>"; };
+		AD69691C195D1D0C00104FDF /* SOMotionDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOMotionDetector.h; sourceTree = "<group>"; };
+		AD69691D195D1D0C00104FDF /* SOMotionDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOMotionDetector.m; sourceTree = "<group>"; };
 		AD70D1931946A88D00F6D118 /* RTStepCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTStepCounter.h; sourceTree = "<group>"; };
 		AD70D1941946A88D00F6D118 /* RTStepCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTStepCounter.m; sourceTree = "<group>"; };
 		AD70D1961946DE0800F6D118 /* tabbar_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_5.png; sourceTree = "<group>"; };
@@ -914,9 +956,6 @@
 		ADEF87D5192DF8F20057DCB0 /* BEMLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMLine.m; sourceTree = "<group>"; };
 		ADEF87D6192DF8F20057DCB0 /* BEMSimpleLineGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMSimpleLineGraphView.h; sourceTree = "<group>"; };
 		ADEF87D7192DF8F20057DCB0 /* BEMSimpleLineGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMSimpleLineGraphView.m; sourceTree = "<group>"; };
-		ADF6F5BC1959632900E45C05 /* RTDoingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTDoingViewController.h; sourceTree = "<group>"; };
-		ADF6F5BD1959632900E45C05 /* RTDoingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTDoingViewController.m; sourceTree = "<group>"; };
-		ADF6F5BE1959632900E45C05 /* RTDoingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTDoingViewController.xib; sourceTree = "<group>"; };
 		ADF6F5C119597A7900E45C05 /* ACPButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ACPButton.h; path = Health/ACPButton.h; sourceTree = "<group>"; };
 		ADF6F5C219597A7900E45C05 /* ACPButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ACPButton.m; path = Health/ACPButton.m; sourceTree = "<group>"; };
 		ADF6F5C51959A06100E45C05 /* verticleLine.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = verticleLine.jpg; sourceTree = "<group>"; };
@@ -1082,6 +1121,7 @@
 				0469EB6F192886F600388022 /* UIBezierPath+BasicShapes.m */,
 			);
 			name = DPMeterViewLib;
+			path = Health;
 			sourceTree = "<group>";
 		};
 		0469EB72192886FF00388022 /* image */ = {
@@ -1153,24 +1193,24 @@
 			name = "Custom Cell";
 			sourceTree = "<group>";
 		};
-		AD08813619508E6400124A0B /* sportDetailView */ = {
+		AD08813619508E6400124A0B /* SportDetailVC */ = {
 			isa = PBXGroup;
 			children = (
 				AD088131195084EC00124A0B /* RTDetailViewController.h */,
 				AD088132195084EC00124A0B /* RTDetailViewController.m */,
 				AD088133195084EC00124A0B /* RTDetailViewController.xib */,
 			);
-			name = sportDetailView;
+			name = SportDetailVC;
 			sourceTree = "<group>";
 		};
-		AD08813719508E9300124A0B /* sportPlanView */ = {
+		AD08813719508E9300124A0B /* SportPlanVC */ = {
 			isa = PBXGroup;
 			children = (
 				AD3C8D3B1947F44D00357DA0 /* RTSportPlanViewController.h */,
 				AD3C8D3C1947F44D00357DA0 /* RTSportPlanViewController.m */,
 				AD3C8D3D1947F44D00357DA0 /* RTSportPlanViewController.xib */,
 			);
-			name = sportPlanView;
+			name = SportPlanVC;
 			sourceTree = "<group>";
 		};
 		AD08813819508EB600124A0B /* planData */ = {
@@ -1185,6 +1225,7 @@
 		AD0DA0351935C03100A9846E /* MessageView */ = {
 			isa = PBXGroup;
 			children = (
+				AD3493C9196270DD001A46FC /* MJRefresh */,
 				AD5425EE193715E4005F10F4 /* msgImage */,
 				AD0DA0361935C06800A9846E /* RTMsgViewController.h */,
 				AD0DA0371935C06800A9846E /* RTMsgViewController.m */,
@@ -1198,6 +1239,8 @@
 				AD5425DF193703CF005F10F4 /* RTMsgDetailTableViewCell.h */,
 				AD5425E0193703CF005F10F4 /* RTMsgDetailTableViewCell.m */,
 				AD5425E1193703CF005F10F4 /* RTMsgDetailTableViewCell.xib */,
+				AD3493E21962832A001A46FC /* RTMsgNavViewController.h */,
+				AD3493E31962832A001A46FC /* RTMsgNavViewController.m */,
 			);
 			name = MessageView;
 			sourceTree = "<group>";
@@ -1375,6 +1418,29 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		AD3493C9196270DD001A46FC /* MJRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				AD3493CA196270DD001A46FC /* MJRefresh.bundle */,
+				AD3493CB196270DD001A46FC /* MJRefresh.h */,
+				AD3493CC196270DD001A46FC /* MJRefreshBaseView.h */,
+				AD3493CD196270DD001A46FC /* MJRefreshBaseView.m */,
+				AD3493CE196270DD001A46FC /* MJRefreshConst.h */,
+				AD3493CF196270DD001A46FC /* MJRefreshConst.m */,
+				AD3493D0196270DD001A46FC /* MJRefreshFooterView.h */,
+				AD3493D1196270DD001A46FC /* MJRefreshFooterView.m */,
+				AD3493D2196270DD001A46FC /* MJRefreshHeaderView.h */,
+				AD3493D3196270DD001A46FC /* MJRefreshHeaderView.m */,
+				AD3493D4196270DD001A46FC /* UIScrollView+Extension.h */,
+				AD3493D5196270DD001A46FC /* UIScrollView+Extension.m */,
+				AD3493D6196270DD001A46FC /* UIScrollView+MJRefresh.h */,
+				AD3493D7196270DD001A46FC /* UIScrollView+MJRefresh.m */,
+				AD3493D8196270DD001A46FC /* UIView+Extension.h */,
+				AD3493D9196270DD001A46FC /* UIView+Extension.m */,
+			);
+			path = MJRefresh;
+			sourceTree = "<group>";
+		};
 		AD46FB12193431E500F19BC4 /* PillsView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1498,6 +1564,8 @@
 		AD5425EE193715E4005F10F4 /* msgImage */ = {
 			isa = PBXGroup;
 			children = (
+				AD3FDC4C1961B06500EECFA0 /* tick1.jpg */,
+				AD3FDC4D1961B06500EECFA0 /* tick.jpg */,
 				AD542611193716AC005F10F4 /* yxqy.jpg */,
 				AD5425EF193715E4005F10F4 /* dtf.jpg */,
 				AD5425F0193715E4005F10F4 /* gm.jpg */,
@@ -1518,6 +1586,28 @@
 				AD5425FF193715E4005F10F4 /* zy.jpg */,
 			);
 			path = msgImage;
+			sourceTree = "<group>";
+		};
+		AD69107A195D619800ACB68B /* SportDoingVC */ = {
+			isa = PBXGroup;
+			children = (
+				AD69107B195D61D000ACB68B /* RTDoingViewController.h */,
+				AD69107C195D61D000ACB68B /* RTDoingViewController.m */,
+				AD69107D195D61D000ACB68B /* RTDoingViewController.xib */,
+			);
+			name = SportDoingVC;
+			sourceTree = "<group>";
+		};
+		AD696917195D1CB000104FDF /* MotionDetection */ = {
+			isa = PBXGroup;
+			children = (
+				AD69691A195D1D0C00104FDF /* SOLocationManager.h */,
+				AD69691B195D1D0C00104FDF /* SOLocationManager.m */,
+				AD69691C195D1D0C00104FDF /* SOMotionDetector.h */,
+				AD69691D195D1D0C00104FDF /* SOMotionDetector.m */,
+			);
+			name = MotionDetection;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		AD70E500195BF530007D99C1 /* SportRecord */ = {
@@ -1614,6 +1704,7 @@
 			isa = PBXGroup;
 			children = (
 				ADAA5DD5192341090040ED10 /* Health */,
+				0469EB6B192886D500388022 /* DPMeterViewLib */,
 				ADAA5DD6192341090040ED10 /* Supporting Files */,
 				ADAA5DEE192341090040ED10 /* HealthTests */,
 				ADAA5DCE192341090040ED10 /* Frameworks */,
@@ -1671,6 +1762,7 @@
 				0469EB5F192885AE00388022 /* ThirdTableView */,
 				ADAA5E2D192356240040ED10 /* ThirdViewController */,
 				ADAA5E2E192356370040ED10 /* ForthViewController */,
+				AD696917195D1CB000104FDF /* MotionDetection */,
 			);
 			path = Health;
 			sourceTree = "<group>";
@@ -1678,9 +1770,9 @@
 		ADAA5DD6192341090040ED10 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AD1E4842195D6A360033784B /* DS-DIGI.ttf */,
 				0469EB72192886FF00388022 /* image */,
 				AD12F88E1926516D00921894 /* Images.xcassets */,
-				0469EB6B192886D500388022 /* DPMeterViewLib */,
 				AD480F61192497CC0081DAFA /* Window Background@2x.png */,
 				ADAA5DD7192341090040ED10 /* Health-Info.plist */,
 				ADAA5DD8192341090040ED10 /* InfoPlist.strings */,
@@ -1732,14 +1824,12 @@
 				ADAA5E05192343590040ED10 /* FirstViewController.xib */,
 				04B58A7B194566A100A4905C /* StepCounter */,
 				AD4AC134192CCF5D006E6898 /* TableViewCell */,
-				AD08813619508E6400124A0B /* sportDetailView */,
-				AD08813719508E9300124A0B /* sportPlanView */,
+				AD08813619508E6400124A0B /* SportDetailVC */,
+				AD69107A195D619800ACB68B /* SportDoingVC */,
+				AD08813719508E9300124A0B /* SportPlanVC */,
 				AD4AC130192C53D1006E6898 /* PICircularProgressView */,
 				AD08813819508EB600124A0B /* planData */,
 				ADEF87CF192DF8F20057DCB0 /* ChartView */,
-				ADF6F5BC1959632900E45C05 /* RTDoingViewController.h */,
-				ADF6F5BD1959632900E45C05 /* RTDoingViewController.m */,
-				ADF6F5BE1959632900E45C05 /* RTDoingViewController.xib */,
 				ADF6F5C419597A7F00E45C05 /* ButtonType */,
 				AD70E500195BF530007D99C1 /* SportRecord */,
 			);
@@ -1967,6 +2057,8 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
+				"zh-Hans",
 			);
 			mainGroup = ADAA5DC3192341090040ED10;
 			productRefGroup = ADAA5DCD192341090040ED10 /* Products */;
@@ -1986,7 +2078,6 @@
 			files = (
 				AD12F67C192634B400921894 /* navigationbar_home_highlighted.png in Resources */,
 				ADAA5DDA192341090040ED10 /* InfoPlist.strings in Resources */,
-				ADF6F5C01959632900E45C05 /* RTDoingViewController.xib in Resources */,
 				AD12F671192634B400921894 /* navigation_shadow.png in Resources */,
 				AD12F6CA192634B400921894 /* toolbar_retweet_highlighted.png in Resources */,
 				AD9A389719362A5600A8EFFB /* login.png in Resources */,
@@ -2014,6 +2105,7 @@
 				ADA6C2EF1951D8D30037A013 /* timelIneEnd.jpg in Resources */,
 				AD12F6B5192634B400921894 /* timeline_location_icon@2x.png in Resources */,
 				ADCC7A3F1929AF64005B00B4 /* login_bg_ip5@2x.jpg in Resources */,
+				AD3493DA196270DD001A46FC /* MJRefresh.bundle in Resources */,
 				0427170619375D1E00FD3EF3 /* renti(1)_meitu_1 (1).jpg in Resources */,
 				AD12F69B192634B400921894 /* settings_queue_icon.png in Resources */,
 				AD12F677192634B400921894 /* navigationbar_comments.png in Resources */,
@@ -2025,6 +2117,7 @@
 				ADAB1928194A8ED20081C8FA /* tabbar_4@2x.png in Resources */,
 				AD4A30E1194D9CE80078ABFB /* ok.png in Resources */,
 				AD12F6A2192634B400921894 /* tabbar_background.png in Resources */,
+				AD3FDC4F1961B06500EECFA0 /* tick.jpg in Resources */,
 				AD12F68B192634B400921894 /* popover_button@2x.png in Resources */,
 				042716EF19375CE100FD3EF3 /* SecondViewController.xib in Resources */,
 				AD12F63A192634B400921894 /* avatar_grassroot@2x.png in Resources */,
@@ -2149,6 +2242,7 @@
 				AD12F65C192634B400921894 /* empty_retweet.png in Resources */,
 				AD12F67B192634B400921894 /* navigationbar_home.png in Resources */,
 				AD4810361924BF590081DAFA /* mapconfig.dat in Resources */,
+				AD69107F195D61D000ACB68B /* RTDoingViewController.xib in Resources */,
 				AD12F656192634B400921894 /* compose_trendbutton_background.png in Resources */,
 				ADE39B851923A78600E4278B /* arrow.png in Resources */,
 				ADA6C2EE1951D8D30037A013 /* timeLineMidBig.jpg in Resources */,
@@ -2202,6 +2296,7 @@
 				AD542610193715E4005F10F4 /* zy.jpg in Resources */,
 				ADA6C3071951D9930037A013 /* RTDetailViewNewViewController.xib in Resources */,
 				AD12F69E192634B400921894 /* settings_security_icon.png in Resources */,
+				AD3FDC4E1961B06500EECFA0 /* tick1.jpg in Resources */,
 				ADCC7A441929AF64005B00B4 /* login_btn_blue_press.png in Resources */,
 				AD12F644192634B400921894 /* compose_camerabutton_background.png in Resources */,
 				AD12F6BE192634B400921894 /* timeline_trend_icon_unlike@2x.png in Resources */,
@@ -2232,6 +2327,7 @@
 				AD0DA05D1935C57700A9846E /* back-master.png in Resources */,
 				AD12F679192634B400921894 /* navigationbar_compose_highlighted@2x.png in Resources */,
 				ADCC7A521929AF64005B00B4 /* login_textfield_top@2x.png in Resources */,
+				AD1E4843195D6A360033784B /* DS-DIGI.ttf in Resources */,
 				ADA6C2EA1951D8D30037A013 /* 08-chat.png in Resources */,
 				AD12F687192634B400921894 /* navigationbar_title_highlighted@2x.png in Resources */,
 				AD542603193715E4005F10F4 /* jhc.jpg in Resources */,
@@ -2340,20 +2436,26 @@
 			files = (
 				ADA6C3231951D9CE0037A013 /* PNLineChart.m in Sources */,
 				AD4AC138192CCF9D006E6898 /* RTTableViewCell.m in Sources */,
+				AD3493DE196270DD001A46FC /* MJRefreshHeaderView.m in Sources */,
 				ADA6C3221951D9CE0037A013 /* PNChart.m in Sources */,
 				ADA6C2FF1951D9220037A013 /* RTGYBNaviViewController.m in Sources */,
+				AD3493DD196270DD001A46FC /* MJRefreshFooterView.m in Sources */,
 				AD5425DD193700F7005F10F4 /* RTMsgDetailViewController.m in Sources */,
 				ADEF87D8192DF8F20057DCB0 /* BEMAnimations.m in Sources */,
 				AD4810671924C0930081DAFA /* RTMapView.mm in Sources */,
 				ADA9873F1933794400B98092 /* RTfoodViewController.m in Sources */,
+				AD3493E41962832A001A46FC /* RTMsgNavViewController.m in Sources */,
 				AD5425E2193703CF005F10F4 /* RTMsgDetailTableViewCell.m in Sources */,
 				042716E019375C9D00FD3EF3 /* RTDoctor.m in Sources */,
+				AD69691E195D1D0C00104FDF /* SOLocationManager.m in Sources */,
 				042716FF19375D0200FD3EF3 /* RTDiseaseViewController.m in Sources */,
 				ADA6C3011951D9220037A013 /* GYBTableViewController.m in Sources */,
+				AD3493DF196270DD001A46FC /* UIScrollView+Extension.m in Sources */,
 				AD470D78195A9FF1004ECB75 /* RTSportRecord.m in Sources */,
 				042716E719375C9D00FD3EF3 /* RTNeckDisease.m in Sources */,
 				042716EE19375CE100FD3EF3 /* SecondViewController.m in Sources */,
 				ADA6C30F1951D9B30037A013 /* RTFamilyDetailViewController.m in Sources */,
+				AD69107E195D61D000ACB68B /* RTDoingViewController.m in Sources */,
 				04B58A7A1945666B00A4905C /* Reachability.m in Sources */,
 				ADCC7A181929ACDC005B00B4 /* RTLoginViewController.m in Sources */,
 				042053AC193F25A800D0C9EE /* RTRegistBussiness.m in Sources */,
@@ -2363,6 +2465,7 @@
 				ADA6C3241951D9CE0037A013 /* PNBarChart.m in Sources */,
 				042716E219375C9D00FD3EF3 /* RTLegDisease.m in Sources */,
 				ADA6C32C1951D9F20037A013 /* LightMenuBar.m in Sources */,
+				AD3493E1196270DD001A46FC /* UIView+Extension.m in Sources */,
 				04B58A761945659000A4905C /* RTUserInfo.m in Sources */,
 				ADA6C3111951D9B30037A013 /* RTTimeLineTableViewCell.m in Sources */,
 				0469EB70192886F600388022 /* DPMeterView.m in Sources */,
@@ -2393,12 +2496,14 @@
 				0420539A193EC00700D0C9EE /* AVIllness.m in Sources */,
 				042716E519375C9D00FD3EF3 /* RTAbdomenDisease.m in Sources */,
 				0469EB71192886F600388022 /* UIBezierPath+BasicShapes.m in Sources */,
-				ADF6F5BF1959632900E45C05 /* RTDoingViewController.m in Sources */,
 				AD48102D1924BE690081DAFA /* RNFrostedSidebar.m in Sources */,
 				042053B51940793500D0C9EE /* RTUserProfileViewController.m in Sources */,
 				042716E419375C9D00FD3EF3 /* RTBreastDisease.m in Sources */,
+				AD3493E0196270DD001A46FC /* UIScrollView+MJRefresh.m in Sources */,
+				AD3493DB196270DD001A46FC /* MJRefreshBaseView.m in Sources */,
 				042716E819375C9D00FD3EF3 /* RTMedication.m in Sources */,
 				ADAA5DDC192341090040ED10 /* main.m in Sources */,
+				AD69691F195D1D0C00104FDF /* SOMotionDetector.m in Sources */,
 				ADA6C3251951D9CE0037A013 /* PNBar.m in Sources */,
 				AD0DA0391935C06800A9846E /* RTMsgViewController.m in Sources */,
 				042716E319375C9D00FD3EF3 /* RTArmDisease.m in Sources */,
@@ -2409,6 +2514,7 @@
 				AD46FB0B1934286300F19BC4 /* RTPillsViewController.m in Sources */,
 				ADA6C32D1951D9F20037A013 /* LightMenuBarView.m in Sources */,
 				ADA6C3211951D9CE0037A013 /* PNColor.m in Sources */,
+				AD3493DC196270DD001A46FC /* MJRefreshConst.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

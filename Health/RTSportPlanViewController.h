@@ -31,7 +31,6 @@
     NSDateFormatter *dateFormatter3;
     NSDateFormatter *dateFormatter4;
     
-    //NSArray *routeCoord;
     RTPlanData *planData;
     
     BOOL finished;

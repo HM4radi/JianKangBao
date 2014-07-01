@@ -16,6 +16,8 @@
 @synthesize nowCalories;
 @synthesize nowDistance;
 @synthesize nowSpeed;
+@synthesize lastPoint;
+@synthesize thisPoint;
 
 + (RTSportRecord*)shareInstance{
     
@@ -44,6 +46,7 @@
     self.nowSpeed=0;
     self.nowDistance=0;
     self.nowCalories=0;
+    lastPoint=CLLocationCoordinate2DMake(-9999.9999,-9999.9999);
     [realCoordinate removeAllObjects];
     [realTime removeAllObjects];
     [realCalories removeAllObjects];

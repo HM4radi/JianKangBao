@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "RNGridMenu.h"
 #import "RTCenterViewController.h"
-#import "RTMsgViewController.h"
 #import "FirstViewController.h"
 #import "SecondViewController.h"
 #import "ThirdViewController.h"
@@ -17,7 +16,7 @@
 #import "RTGYBNaviViewController.h"
 #import "GYBTableViewController.h"
 #import "RTShareMsg.h"
-
+#import "RTMsgNavViewController.h"
 #define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : 0)
 #define addHeight 88
 

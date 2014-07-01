@@ -182,6 +182,7 @@
     if (!firstViewController) {
         firstViewController=[[FirstViewController alloc]init];
     }
+
     [UIView beginAnimations:@"view flip" context:nil];
     [UIView setAnimationDuration:0.5];
     [UIView transitionWithView:self.view

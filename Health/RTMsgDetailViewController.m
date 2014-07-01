@@ -27,9 +27,18 @@
 
 - (void)viewWillLayoutSubviews{
     [self.navBar setFrame:CGRectMake(0, 0, 320, 64)];
-    //[self.tableView setFrame:CGRectMake(0, 64, 320, 464)];
+    [self.tableView setFrame:CGRectMake(0, 64, 320, 464)];
+    
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"频道"
+                                                                    style:UIBarButtonItemStylePlain target:self action:@selector(touchSelect)];
+    leftButton.tintColor=[UIColor whiteColor];
+    self.navigationItem.leftBarButtonItem = leftButton;
+
 }
 
+- (void)touchSelect{
+    [[self navigationController] popViewControllerAnimated:YES];
+}
 
 
 - (void)viewDidLoad
@@ -39,7 +48,9 @@
 
     [self.tableView setDelegate:self];
 	[self.tableView setDataSource:self];
-
+    [self.tableView addHeaderWithTarget:self action:@selector(headerRereshing)];
+    [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
+    
     self.tableView.separatorColor=[UIColor colorWithRed:130.0/255.0 green:190.0/255.0 blue:20.0/255.0 alpha:1.0];
    
     msgArray=[[NSMutableArray alloc]init];
@@ -52,18 +63,31 @@
                 nil];
 }
 
-- (IBAction)touchBack:(id)sender {
-    [UIView beginAnimations:@"view flip" context:nil];
-    [UIView setAnimationDuration:0.5];
-    [UIView transitionWithView:self.view.superview
-                      duration:0.2
-                       options:UIViewAnimationOptionTransitionFlipFromLeft
-                    animations:^{ [self.view removeFromSuperview];  }
-                    completion:NULL];
-    [UIView commitAnimations];
-}
 
 //*********************tableView********************//
+
+- (void)headerRereshing{
+    // 2.2秒后刷新表格UI
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 刷新表格
+        [self.tableView reloadData];
+        NSLog(@"下拉刷新");
+        // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
+        [self.tableView headerEndRefreshing];
+    });
+    
+}
+
+- (void)footerRereshing{
+    // 2.2秒后刷新表格UI
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 刷新表格
+        [self.tableView reloadData];
+        NSLog(@"上拉刷新");
+        // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
+        [self.tableView footerEndRefreshing];
+    });
+}
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
