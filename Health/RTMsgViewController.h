@@ -10,17 +10,23 @@
 #import "RTCollectionViewCell.h"
 #import "RTMsgDetailViewController.h"
 #import <AVOSCloud/AVOSCloud.h>
+#import "RTUserInfo.h"
 
-@interface RTMsgViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+@interface RTMsgViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,setTitle>
 {
     NSMutableArray *msgArray;
     NSMutableArray *channel;
     RTMsgDetailViewController *detailVC;
     
     BOOL loadDirect;
+    
+    RTUserInfo *userInfo;
+    
+    UILabel *titleLabel;
 }
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
+
 @end

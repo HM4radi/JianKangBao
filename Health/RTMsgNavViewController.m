@@ -7,7 +7,7 @@
 //
 
 #import "RTMsgNavViewController.h"
-#import "RTMsgViewController.h"
+
 @interface RTMsgNavViewController ()
 
 @end
@@ -18,19 +18,19 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        msg=[[RTMsgViewController alloc]init];
     }
     return self;
 }
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    RTMsgViewController *msg=[[RTMsgViewController alloc]init];
+    
     [self.navigationController.navigationBar setFrame:CGRectMake(0, 0, 320, 64)];
     self.navigationController.navigationBar.translucent=YES;
-    //self.navigationItem.titleView=self.titleLabel;
         
     [self pushViewController:msg animated:NO];
 }

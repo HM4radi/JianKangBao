@@ -117,7 +117,7 @@
     
     //初始化key Array
      self.key = [[NSArray alloc] initWithObjects:@"gyb",@"shirui",@"son",nil];
-    NSLog(@"%@",[self.key objectAtIndex:0]);
+    //NSLog(@"%@",[self.key objectAtIndex:0]);
     
 }
 
@@ -187,7 +187,7 @@
 }
 //改变行高
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 130;
+    return 200;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

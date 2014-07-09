@@ -11,6 +11,7 @@
 #import "UIBezierPath+BasicShapes.h"
 
 
+
 @interface GYBTableViewCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *portait;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;

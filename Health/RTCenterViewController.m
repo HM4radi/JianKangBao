@@ -132,6 +132,7 @@
 - (void)initData{
 
     RTAppDelegate* appDlg = (RTAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
     if(appDlg.isReachable)
     {
         AVQuery *infoQuery=[RTUserInfo query];
@@ -150,6 +151,7 @@
                 AVFile *imageFile=user.userImage;
                 NSData *imageData=[imageFile getData];
                 [portraitView setImage:[UIImage imageWithData:imageData]];
+
             } else {
                 // Log details of the failure
                 NSLog(@"Error: %@ %@", error, [error userInfo]);

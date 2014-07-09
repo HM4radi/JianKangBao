@@ -45,7 +45,7 @@
     }
 }
 
-#pragma mark 重写调整frame
+//#pragma mark 重写调整frame
 - (void)adjustFrameWithContentSize
 {
     // 内容的高度
@@ -56,7 +56,7 @@
     self.y = MAX(contentHeight, scrollHeight);
 }
 
-#pragma mark 监听UIScrollView的属性
+//#pragma mark 监听UIScrollView的属性
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     // 不能跟用户交互，直接返回
@@ -66,7 +66,7 @@
         // 调整frame
         [self adjustFrameWithContentSize];
     } else if ([MJRefreshContentOffset isEqualToString:keyPath]) {
-#warning 这个返回一定要放这个位置
+//#warning 这个返回一定要放这个位置
         // 如果正在刷新，直接返回
         if (self.state == MJRefreshStateRefreshing) return;
         
@@ -105,8 +105,8 @@
     }
 }
 
-#pragma mark - 状态相关
-#pragma mark 设置状态
+//#pragma mark - 状态相关
+//#pragma mark 设置状态
 - (void)setState:(MJRefreshState)state
 {
     // 1.一样的就直接返回
@@ -202,14 +202,14 @@
     return totalCount;
 }
 
-#pragma mark 获得scrollView的内容 超出 view 的高度
+//#pragma mark 获得scrollView的内容 超出 view 的高度
 - (CGFloat)heightForContentBreakView
 {
     CGFloat h = self.scrollView.frame.size.height - self.scrollViewOriginalInset.bottom - self.scrollViewOriginalInset.top;
     return self.scrollView.contentSize.height - h;
 }
 
-#pragma mark - 在父类中用得上
+//#pragma mark - 在父类中用得上
 /**
  *  刚好看到上拉刷新控件时的contentOffset.y
  */

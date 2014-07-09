@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RTMsgViewController.h"
 
 @interface RTMsgNavViewController : UINavigationController
-
+{
+    RTMsgViewController *msg;
+}
 @end

@@ -11,7 +11,6 @@
 #import "RTCenterViewController.h"
 #import "FirstViewController.h"
 #import "SecondViewController.h"
-#import "ThirdViewController.h"
 #import "RTForthNavVC.h"
 #import "RTGYBNaviViewController.h"
 #import "GYBTableViewController.h"

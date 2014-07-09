@@ -21,7 +21,7 @@
 @end
 
 @implementation MJRefreshBaseView
-#pragma mark - 控件初始化
+//#pragma mark - 控件初始化
 /**
  *  状态标签
  */
@@ -66,7 +66,7 @@
     return _activityView;
 }
 
-#pragma mark - 初始化方法
+//#pragma mark - 初始化方法
 - (instancetype)initWithFrame:(CGRect)frame {
     frame.size.height = MJRefreshViewHeight;
     if (self = [super initWithFrame:frame]) {
@@ -114,7 +114,7 @@
     }
 }
 
-#pragma mark - 显示到屏幕上
+//#pragma mark - 显示到屏幕上
 - (void)drawRect:(CGRect)rect
 {
     if (self.state == MJRefreshStateWillRefreshing) {
@@ -122,26 +122,26 @@
     }
 }
 
-#pragma mark - 刷新相关
-#pragma mark 是否正在刷新
+//#pragma mark - 刷新相关
+//#pragma mark 是否正在刷新
 - (BOOL)isRefreshing
 {
     return MJRefreshStateRefreshing == self.state;
 }
 
-#pragma mark 开始刷新
+//#pragma mark 开始刷新
 - (void)beginRefreshing
 {
     if (self.window) {
         self.state = MJRefreshStateRefreshing;
     } else {
-#warning 不能调用set方法
+//#warning 不能调用set方法
         _state = MJRefreshStateWillRefreshing;
         [super setNeedsDisplay];
     }
 }
 
-#pragma mark 结束刷新
+//#pragma mark 结束刷新
 - (void)endRefreshing
 {
     double delayInSeconds = 0.3;
@@ -151,7 +151,7 @@
     });
 }
 
-#pragma mark - 设置状态
+//#pragma mark - 设置状态
 - (void)setState:(MJRefreshState)state
 {
     // 0.存储当前的contentInset

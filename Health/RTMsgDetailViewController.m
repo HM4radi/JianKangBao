@@ -45,48 +45,89 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-
+    cellNum=0;
     [self.tableView setDelegate:self];
 	[self.tableView setDataSource:self];
     [self.tableView addHeaderWithTarget:self action:@selector(headerRereshing)];
     [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
-    
     self.tableView.separatorColor=[UIColor colorWithRed:130.0/255.0 green:190.0/255.0 blue:20.0/255.0 alpha:1.0];
    
+    userInfo=[RTUserInfo shareInstance];
     msgArray=[[NSMutableArray alloc]init];
-    msgArray = [NSMutableArray arrayWithObjects:
-                [NSDictionary dictionaryWithObjectsAndKeys:@"每天十个时刻如何补水最养生", @"title",@"对于喝水，喝多都是渴了就喝，这虽然也没有错，但如果能够掌握住喝水的学问，按照最佳的时间段来喝，那不仅仅能解渴，还能排毒养生防病呢？那么，一天中喝水的最佳时间是什么呢？下面，小编告诉你一天中最该喝水的十个时刻。", @"content",@"hs.jpg", @"imagename", nil],
-                [NSDictionary dictionaryWithObjectsAndKeys:@"常吃12种蔬菜对养肝大有裨益", @"title",@"阴虚证：潮热、盗汗、手足心热、贪凉怕热、消瘦、口干咽燥、喜冷饮、小便短赤、大便干结、舌红少苔、脉细数无力。", @"content",@"sc.jpg", @"imagename", nil],
-                [NSDictionary dictionaryWithObjectsAndKeys:@"五一小长假过后吃什么排毒快", @"title",@"假期刚过，您是否在假期中因为亲朋好友相聚免不了大吃大喝呢？事先制定的减肥计划可能又没有付诸实施。而假期中因为不适量饮食以及作息的改变可能会令你体内的毒素沉积。", @"content",@"wuyi.jpg", @"imagename", nil],
-                [NSDictionary dictionaryWithObjectsAndKeys:@"掉头发或许预示5种致命疾病", @"title",@"人体需要铁质帮助生成红细胞，以便向全身输送氧。缺铁会导致贫血，红细胞因此减少，头皮得到的血氧量也随之下降。", @"content",@"dtf.jpg", @"imagename", nil],
-                [NSDictionary dictionaryWithObjectsAndKeys:@"春季：心情焦虑喝一杯菊花茶", @"title",@"美国俄亥俄州立大学一项研究发现，补充欧米伽3脂肪酸可以使焦虑减轻20%。新研究负责人马萨贝鲁里博士表示，经常食用富含欧米伽3脂肪酸的三文鱼、金枪鱼、鲭鱼等深海肥鱼，有助于缓解焦虑情绪。", @"content",@"jhc.jpg", @"imagename", nil],
-                nil];
+    
+    if (!showTextVC) {
+        showTextVC=[[RTMsgShowViewController alloc]init];
+    }
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self.setTitleDelegate setMessageTitle:@"健康资讯"];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    skipTimes=0;
+    [self headerRereshing];
+}
 
 //*********************tableView********************//
 
 - (void)headerRereshing{
-    // 2.2秒后刷新表格UI
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        // 刷新表格
-        [self.tableView reloadData];
-        NSLog(@"下拉刷新");
-        // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
-        [self.tableView headerEndRefreshing];
-    });
     
+    AVQuery *query = [AVQuery queryWithClassName:@"JKChannelNew"];
+    query.limit=6;
+    [query whereKey:@"channelName" containedIn:userInfo.userChannelNews];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            [msgArray removeAllObjects];
+            for (AVObject* news in objects ) {
+                NSString *newsTitle=[news objectForKey:@"newsTitle"];
+                NSString *newsSubTitle=[news objectForKey:@"newsSubTitle"];
+                NSString *objectId=[news objectForKey:@"objectId"];
+                AVFile *imageFile=[news objectForKey:@"newsPicture"];
+                
+                UIImage *newsPicture=[UIImage imageWithData:[imageFile getData]];
+                NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:newsTitle, @"newsTitle",newsSubTitle, @"newsSubTitle",newsPicture, @"newsPicture", objectId,@"objectId",nil];
+                [msgArray addObject:dic];
+            }
+            cellNum=[msgArray count];
+            [self.tableView reloadData];
+            [self.tableView headerEndRefreshing];
+            if (skipTimes==0) {
+                skipTimes++;
+            }
+        } else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"信息加载失败" message:@"网络有点不给力哦，请稍后再试~" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+            [alert show];
+        }
+    }];
 }
 
 - (void)footerRereshing{
-    // 2.2秒后刷新表格UI
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        // 刷新表格
-        [self.tableView reloadData];
-        NSLog(@"上拉刷新");
-        // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
-        [self.tableView footerEndRefreshing];
-    });
+
+    AVQuery *query = [AVQuery queryWithClassName:@"JKChannelNew"];
+    query.limit=6;
+    query.skip=6*skipTimes;
+    [query whereKey:@"channelName" containedIn:userInfo.userChannelNews];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            for (AVObject* news in objects ) {
+                NSString *newsTitle=[news objectForKey:@"newsTitle"];
+                NSString *newsSubTitle=[news objectForKey:@"newsSubTitle"];
+                NSString *objectId=[news objectForKey:@"objectId"];
+                AVFile *imageFile=[news objectForKey:@"newsPicture"];
+                UIImage *newsPicture=[UIImage imageWithData:[imageFile getData]];
+                NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:newsTitle, @"newsTitle",newsSubTitle, @"newsSubTitle",newsPicture, @"newsPicture", objectId,@"objectId",nil];
+                [msgArray addObject:dic];
+            }
+            cellNum=[msgArray count];
+            [self.tableView reloadData];
+            [self.tableView footerEndRefreshing];
+            skipTimes++;
+        } else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"信息加载失败" message:@"网络有点不给力哦，请稍后再试~" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+            [alert show];
+        }
+    }];
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -103,10 +144,9 @@
     
     RTMsgDetailTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:Cellidentifier forIndexPath:indexPath];
 	NSUInteger row=[indexPath row];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     NSDictionary *dic=[msgArray objectAtIndex:row];
-    UIImage *icon = [UIImage imageNamed:[dic objectForKey:@"imagename"]];
+    UIImage *icon = [dic objectForKey:@"newsPicture"];
     CGSize itemSize = CGSizeMake(64, 64);
     UIGraphicsBeginImageContextWithOptions(itemSize, NO ,0.0);
     CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
@@ -115,9 +155,8 @@
     cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
 
-    //cell.imageView.image=[UIImage imageNamed:[dic objectForKey:@"imagename"]];
-    cell.titleLabel.text=[dic objectForKey:@"title"];
-    cell.contentLabel.text=[dic objectForKey:@"content"];
+    cell.titleLabel.text=[dic objectForKey:@"newsTitle"];
+    cell.contentLabel.text=[dic objectForKey:@"newsSubTitle"];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
 	return cell;
@@ -125,7 +164,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return 5;
+	return cellNum;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -134,20 +173,27 @@
 }
 
 //行缩进
-
 -(NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSUInteger row = [indexPath row];
     return row;
 }
 //改变行高
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 100;
+    return 77;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //[self loadDetailView];
+    NSInteger row=[indexPath row];
+    [self loadDetailView:row];
     [[tableView cellForRowAtIndexPath:indexPath] setSelectionStyle:UITableViewCellSelectionStyleNone];
+}
+
+- (void)loadDetailView:(NSInteger)row{
+    NSDictionary *dic=[msgArray objectAtIndex:row];
+    showTextVC.objectId=[dic objectForKey:@"objectId"];
+    [self.setTitleDelegate setMessageTitle:[dic objectForKey:@"newsTitle"]];
+    [self.navigationController pushViewController:showTextVC animated:YES];
 }
 
 

@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVOSCloud/AVOSCloud.h>
+@interface RTMsgShowViewController : UIViewController<UITextViewDelegate>{
+    
+}
 
-@interface RTMsgShowViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
+@property (strong, nonatomic) NSString *objectId;
 
 @end

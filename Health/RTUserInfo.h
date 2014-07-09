@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <AVOSCloud/AVOSCloud.h>
 
-@interface RTUserInfo : AVObject <AVSubclassing>
+@interface RTUserInfo : AVObject <AVSubclassing>{
+    NSMutableArray *userChannelNews;
+}
 //
 @property (nonatomic,copy) NSString *username;
 @property (nonatomic,copy) NSString *userAge;
@@ -37,11 +39,11 @@
 
 
 //
-@property (nonatomic,strong)NSString *userChannelNews;
+@property (nonatomic,strong)NSMutableArray *userChannelNews;
 @property (nonatomic,strong)NSString *salt;
 @property (nonatomic,strong)NSString *familyMemberObjectId;
 
 
-
++ (RTUserInfo *)shareInstance;
 
 @end

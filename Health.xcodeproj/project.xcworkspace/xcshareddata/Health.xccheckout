@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>35E7B9AA-7EC6-41E6-B9CC-CF00496136AE</string>
+	<string>27F0C8E3-ECB1-449B-BE62-EBDC0E60DEC9</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Health</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>77AF210D-7FC5-4B3D-8092-60AAF88A75B2</key>
+		<key>5E420597-AB47-4560-9A57-8983CE9D84F1</key>
 		<string>ssh://github.com/HM4radi/HealthCareApp.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Health.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>77AF210D-7FC5-4B3D-8092-60AAF88A75B2</key>
+		<key>5E420597-AB47-4560-9A57-8983CE9D84F1</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>77AF210D-7FC5-4B3D-8092-60AAF88A75B2</string>
+	<string>5E420597-AB47-4560-9A57-8983CE9D84F1</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>77AF210D-7FC5-4B3D-8092-60AAF88A75B2</string>
+			<string>5E420597-AB47-4560-9A57-8983CE9D84F1</string>
 			<key>IDESourceControlWCCName</key>
 			<string>HealthCareApp</string>
 		</dict>
