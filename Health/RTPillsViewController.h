@@ -19,6 +19,7 @@
     NSString *currentBeforeAfter;
     NSString *currentHour;
     NSString *currentMinute;
+    BOOL setAlarm;
 }
 
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
@@ -34,5 +35,6 @@
 @property (weak, nonatomic) IBOutlet UINavigationBar *addNavBar;
 @property (weak, nonatomic) IBOutlet UILabel *navLabel1;
 @property (weak, nonatomic) IBOutlet UILabel *navLabel2;
+@property (weak, nonatomic) IBOutlet UISwitch *alarmSwitch;
 
 @end

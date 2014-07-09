@@ -31,10 +31,15 @@
     [super viewDidLoad];
     
     [self.navigationbar setFrame:CGRectMake(0, 0, 320, 64)];
-    //[self.navigationbar setBackgroundColor:[UIColor darkGrayColor]];
-    self.navigationbar.translucent=YES;
-    [_configScroll setContentSize:CGSizeMake(320, 666)];
-    [_configScroll setFrame:CGRectMake(0, 64, 320, 504)];
+    self.navigationController.navigationBar.translucent=YES;
+    [_configScroll setContentSize:CGSizeMake(320, 464)];
+
+    UILabel *titleLabel=[[UILabel alloc]initWithFrame:CGRectMake(50, 10, 220, 26)];
+    [titleLabel setTextColor:[UIColor whiteColor]];
+    titleLabel.font=[UIFont fontWithName:@"HelveticaNeue-UltraLight" size:22.00];
+    titleLabel.text=@"更多功能";
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    [self.navigationController.navigationBar addSubview:titleLabel];
 
 }
 
@@ -47,11 +52,9 @@
 - (IBAction)signOutsignOut:(id)sender {
     
     [AVUser logOut];  //清除缓存用户对象
-    AVUser * currentUser = [AVUser currentUser];
-    NSLog(@"CurrentUser:%@",currentUser.username);// 现在的currentUser是nil了
-   
-    [[RTMainViewController shareMainViewControllor] logout];
-   
+
+    [self.logOutDelegate userLogOut];
+    
     //将自动登录设置为0
     NSUserDefaults *mySettingData = [NSUserDefaults standardUserDefaults];
     [mySettingData setBool:NO forKey:@"auto_login"];
@@ -61,8 +64,6 @@
     
     //sync DB , and release if from memory 
     [NSUserDefaults resetStandardUserDefaults];
-    
-
     
 }
 @end

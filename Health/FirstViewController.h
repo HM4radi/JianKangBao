@@ -15,6 +15,7 @@
 #import <AVOSCloud/AVOSCloud.h>
 #import "RTDetailViewController.h"
 #import "RTDoingViewController.h"
+#import "MJRefresh.h"
 
 @interface FirstViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,refreshData>
 {
@@ -25,8 +26,6 @@
     float complete;
     int tag;
     NSMutableArray *recordArray;
-    
-    UIScrollView* scrollView;
     
     int cellNum;
     int totalCalories;
@@ -46,6 +45,14 @@
     RTDoingViewController *doingVC;
     
     int selectingRow;
+    
+    int skipTimes;
+    
+    BOOL firstLoad;
+    UIActivityIndicatorView  *act;
+    
+    BOOL headerRefreshing;
+    BOOL footerRefreshing;
 }
 
 - (void)refreshTableView;

@@ -28,7 +28,6 @@
     [self.navBar setFrame:CGRectMake(0, 0, 320, 64)];
     self.navBar.translucent=YES;
     [self.addNavBar setFrame:CGRectMake(0, 0, 320, 64)];
-    //self.navLabel1.frame=CGRectMake(100,32,120,20);
     self.navLabel2.frame=CGRectMake(100,32,120,20);
 
 }
@@ -36,14 +35,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     
     recordArray=[[NSMutableArray alloc]init];
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
     self.tableView.backgroundColor=[UIColor clearColor];
     
-
     cellNum=5;
     
     recordArray = [NSMutableArray arrayWithObjects:
@@ -64,9 +61,21 @@
     self.nameField.tag=0;
     self.numField.delegate=self;
     self.numField.tag=1;
+    
+    [self.alarmSwitch addTarget:self action:@selector(switchAction) forControlEvents:UIControlEventValueChanged];
+    setAlarm=NO;
+    self.alarmSwitch.on=NO;
  
 }
 
+
+-(void)switchAction{
+    if (self.alarmSwitch.on==YES) {
+        setAlarm=YES;
+    }else{
+        setAlarm=NO;
+    }
+}
 
 - (IBAction)touchBack:(id)sender {
     [UIView beginAnimations:@"view flip" context:nil];
@@ -89,16 +98,7 @@
     [UIView commitAnimations];
 }
 
-//- (void)add{
-//    [UIView beginAnimations:@"view flip" context:nil];
-//    [UIView setAnimationDuration:0.5];
-//    [UIView transitionWithView:self.view.superview
-//                      duration:0.2
-//                       options:UIViewAnimationOptionTransitionFlipFromRight
-//                    animations:^{ [self.view addSubview:self.addView];  }
-//                    completion:NULL];
-//    [UIView commitAnimations];
-//}
+
 - (IBAction)touchFinish:(id)sender {
     if (!currentName||!currentNum||!currentBeforeAfter||!currentHour||!currentMinute) {
         NSString *msg = @"请输入完整信息";
@@ -110,6 +110,10 @@
         [alert show];
     }else
     {
+        if (setAlarm) {
+            [self setAlarmNotification];
+        }
+        
         [recordArray addObject:[NSDictionary dictionaryWithObjectsAndKeys:currentName, @"name",[NSString stringWithFormat:@"%@:%@",currentHour,currentMinute], @"time", currentBeforeAfter, @"before",currentNum,@"number",@"0",@"complete", nil]];
         cellNum++;
         [self.tableView reloadData];
@@ -131,36 +135,6 @@
 
 }
 
-//- (void)touchFinish{
-//    if (!currentName||!currentNum||!currentBeforeAfter||!currentHour||!currentMinute) {
-//        NSString *msg = @"请输入完整信息";
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示"
-//                                                        message:msg
-//                                                       delegate:nil
-//                                              cancelButtonTitle:@"OK"
-//                                              otherButtonTitles:nil];
-//        [alert show];
-//    }else
-//    {
-//        [recordArray addObject:[NSDictionary dictionaryWithObjectsAndKeys:currentName, @"name",[NSString stringWithFormat:@"%@:%@",currentHour,currentMinute], @"time", currentBeforeAfter, @"before",currentNum,@"number",@"0",@"complete", nil]];
-//        cellNum++;
-//        [self.tableView reloadData];
-//        currentName=nil;
-//        currentNum=nil;
-//        currentBeforeAfter=nil;
-//        currentHour=nil;
-//        currentMinute=nil;
-//        
-//    [UIView beginAnimations:@"view flip" context:nil];
-//    [UIView setAnimationDuration:0.5];
-//    [UIView transitionWithView:self.view.superview
-//                      duration:0.2
-//                       options:UIViewAnimationOptionTransitionFlipFromLeft
-//                    animations:^{ [self.addView removeFromSuperview];  }
-//                    completion:NULL];
-//    [UIView commitAnimations];
-//    }
-//}
 - (IBAction)touchCancel:(id)sender {
     [UIView beginAnimations:@"view flip" context:nil];
     [UIView setAnimationDuration:0.5];
@@ -172,17 +146,6 @@
     [UIView commitAnimations];
 }
 
-//- (void)touchCancel{
-//    [UIView beginAnimations:@"view flip" context:nil];
-//    [UIView setAnimationDuration:0.5];
-//    [UIView transitionWithView:self.view.superview
-//                      duration:0.2
-//                       options:UIViewAnimationOptionTransitionFlipFromLeft
-//                    animations:^{ [self.addView removeFromSuperview];  }
-//                    completion:NULL];
-//    [UIView commitAnimations];
-//
-//}
 
 //*********************tableView********************//
 
@@ -205,7 +168,7 @@
     
     if (row==-1) {
         cell.pillsName.text=@"药品名称";
-        cell.pillsTime.text=@"服用时间";
+        cell.pillsTime.text=@"时间";
         cell.pillsFood.text=@"餐前";
         cell.pillsNum.text=@"剂量";
         cell.pillsCmp.hidden=YES;
@@ -276,9 +239,9 @@ numberOfRowsInComponent:(NSInteger)component {
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     if (component == 0)
-        currentHour=[hour objectAtIndex:row];
+        currentHour=[[hour objectAtIndex:row] substringWithRange:NSMakeRange(0, [[hour objectAtIndex:row] length]-1)];
     else
-        currentMinute=[minite objectAtIndex:row];
+        currentMinute=[[minite objectAtIndex:row] substringWithRange:NSMakeRange(0, [[minite objectAtIndex:row] length]-1)];
 }
 
 //*********************textField********************//
@@ -306,6 +269,38 @@ numberOfRowsInComponent:(NSInteger)component {
         currentBeforeAfter=@"前";
     }else if (self.beforeAfter.selectedSegmentIndex==1)
         currentBeforeAfter=@"后";
+}
+
+-(void)setAlarmNotification{
+    
+    NSDate* now = [NSDate date];
+	NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+	NSDateComponents *comps = [[NSDateComponents alloc] init];
+	NSInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit |
+	NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+	comps = [calendar components:unitFlags fromDate:now];
+	int _hour = [comps hour];
+	int _min = [comps minute];
+	int _sec = [comps second];
+	
+	int htime1=[currentHour intValue];
+	int mtime1=[currentMinute intValue];
+    
+	int hs=htime1-_hour;
+	int ms=mtime1-_min;
+    
+	int hm=(hs*3600)+(ms*60)-_sec;
+    
+	UILocalNotification *notification=[[UILocalNotification alloc] init];
+	if (notification!=nil)
+	{
+		NSDate *now=[NSDate new];
+		notification.fireDate=[now dateByAddingTimeInterval:hm];
+		notification.timeZone=[NSTimeZone defaultTimeZone];
+		notification.soundName = UILocalNotificationDefaultSoundName;
+		notification.alertBody = [NSString stringWithFormat:NSLocalizedString(@"您现在该服用%@药品了，剂量为%@片，健康宝祝您健康永存！",nil),self.nameField.text,self.numField.text];
+		[[UIApplication sharedApplication] scheduleLocalNotification:notification];
+	}
 }
 
 

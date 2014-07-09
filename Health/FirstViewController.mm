@@ -38,14 +38,10 @@
 {
     [super viewDidLoad];
     
-    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, 320, 468)];
-    [self.view addSubview:scrollView];
-    progressView=[[PICircularProgressView alloc]initWithFrame:CGRectMake(60, 6, 200, 200)];
+    progressView=[[PICircularProgressView alloc]initWithFrame:CGRectMake(80, 70, 160, 160)];
     progressView.thicknessRatio=0.08;
     progressView.roundedHead=false;
     progressView.showShadow=false;
-    [scrollView addSubview:progressView];
-    scrollView.contentSize=CGSizeMake(self.view.frame.size.width, 226+100*cellNum);
     
     //为progressView 添加点击事件
     progressView.userInteractionEnabled=YES;
@@ -69,29 +65,52 @@
     dateFormatter4=[[NSDateFormatter alloc]init];
     [dateFormatter4 setDateFormat:@"m"];
     
+    firstLoad=YES;
+    headerRefreshing=NO;
+    footerRefreshing=NO;
     [self tableViewInit];
+    
 }
+
 
 - (void)tableViewInit{
     //add tableView
     recordArray=[[NSMutableArray alloc]init];
     [self.tableView setDelegate:self];
 	[self.tableView setDataSource:self];
-    self.tableView.scrollEnabled=false;
+    self.tableView.scrollEnabled=YES;
     self.tableView.separatorColor=[UIColor colorWithRed:130.0/255.0 green:190.0/255.0 blue:20.0/255.0 alpha:1.0];
+    [self.tableView setFrame:CGRectMake(0, 68, 320, 460)];
+    self.tableView.tableHeaderView=progressView;
+    [self.tableView addHeaderWithTarget:self action:@selector(headerRereshing)];
+    [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
+    [self.view addSubview:self.tableView];
+    [self refreshData];
+}
+
+-(void)refreshData{
+
+    if (firstLoad) {
+        act=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        [act setCenter:CGPointMake(160,250)];
+        [self.view addSubview:act];
+        [act startAnimating];
+    }
     
     NSUserDefaults *mySettingData = [NSUserDefaults standardUserDefaults];
-    
     AVQuery *query=[AVQuery queryWithClassName:@"JKHistorySportPlan"];
     query.limit = 5;
+    query.skip=skipTimes*5;
+    skipTimes++;
     [query addDescendingOrder:@"createdAt"];
     [query whereKey:@"userObjectId" equalTo:[mySettingData objectForKey:@"CurrentUserName"]];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            cellNum=[objects count];
-            
-            for (int i=0; i<cellNum; i++) {
+            if (headerRefreshing) {
+                [recordArray removeAllObjects];
+            }
+            for (int i=0; i<[objects count]; i++) {
                 NSString *placeName=[[[objects objectAtIndex:i] objectForKey:@"sportGeoPointDescription"] objectAtIndex:0];
                 NSString *startTime=[dateFormatter1 stringFromDate: [[objects objectAtIndex:i] objectForKey:@"startTime"]];
                 NSString *endTime=[dateFormatter1 stringFromDate: [[objects objectAtIndex:i] objectForKey:@"endTime"]];
@@ -102,13 +121,40 @@
                 NSNumber *progress=[[objects objectAtIndex:i] objectForKey:@"planCompleteProgress"];
                 [recordArray addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:placeName, @"location",startTime, @"startTime", endTime, @"endTime",sportType,@"type",strength,@"strength",calories,@"calories",objectId,@"objectId",progress,@"progress",nil]];
             }
+            cellNum=[recordArray count];
+            [self.tableView reloadData];
             
-            [self.tableView setFrame:CGRectMake(0, 216, 320, 100*cellNum)];//按照cell个数定义高度
-            scrollView.contentSize=CGSizeMake(self.view.frame.size.width, 226+100*cellNum);
-            [scrollView addSubview:self.tableView];
+            if (headerRefreshing) {
+                [self.tableView headerEndRefreshing];
+                headerRefreshing=NO;
+            }
+            if (footerRefreshing) {
+                [self.tableView footerEndRefreshing];
+                footerRefreshing=NO;
+            }
+            
+            if (firstLoad) {
+                [act stopAnimating];
+                act=nil;
+                firstLoad=NO;
+            }
         } else {
-            // Log details of the failure
-            NSLog(@"查找错误");
+            if (headerRefreshing) {
+                [self.tableView headerEndRefreshing];
+                headerRefreshing=NO;
+            }
+            if (footerRefreshing) {
+                [self.tableView footerEndRefreshing];
+                footerRefreshing=NO;
+            }
+            if (firstLoad) {
+                [act stopAnimating];
+                act=nil;
+                firstLoad=NO;
+            }
+            [act stopAnimating];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"信息加载失败" message:@"网络有点不给力哦，请稍后再试~" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+            [alert show];
         }
     }];
     query=nil;
@@ -180,12 +226,10 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    
     UIColor *col1=[UIColor colorWithRed:255.0/255.0 green:136/255.0 blue:49/255.0 alpha:1.0];
     UIColor *col2=[UIColor colorWithRed:244.0/255.0 green:237.0/255.0 blue:138.0/255.0 alpha:1.0];
     progressView.type=2;
     [self setupPregressView:@"卡路里" goal:@"目标:300" complete:236 withTopColor:col1 AndBottomColor:col2];
-    
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
@@ -199,6 +243,17 @@
 }
 
 //*********************tableView********************//
+
+- (void)footerRereshing{
+    footerRefreshing=YES;
+    [self refreshData];
+}
+
+- (void)headerRereshing{
+    headerRefreshing=YES;
+    skipTimes=0;
+    [self refreshData];
+}
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -273,11 +328,9 @@
 }
 
 - (void)refreshTableView{
-    [recordArray addObject:[NSDictionary dictionaryWithObjectsAndKeys:[planData.sportGeoPointDescription objectAtIndex:0], @"location",[dateFormatter1 stringFromDate: planData.startTime ], @"startTime", [dateFormatter1 stringFromDate: planData.endTime], @"endTime",planData.sportType,@"type",planData.strength,@"strength",planData.calories,@"calories",planData.objectId,@"objectId",planData.progress,@"progress",nil]];
+    [recordArray insertObject:[NSDictionary dictionaryWithObjectsAndKeys:[planData.sportGeoPointDescription objectAtIndex:0], @"location",[dateFormatter1 stringFromDate: planData.startTime ], @"startTime", [dateFormatter1 stringFromDate: planData.endTime], @"endTime",planData.sportType,@"type",planData.strength,@"strength",planData.calories,@"calories",planData.objectId,@"objectId",planData.progress,@"progress",nil] atIndex:0];
     cellNum=[recordArray count];
-    [self.tableView setFrame:CGRectMake(0, 216, 320, 100*cellNum)];
     [self.tableView reloadData];
-    scrollView.contentSize=CGSizeMake(self.view.frame.size.width, 226+100*cellNum);
 }
 
 - (void)refreshTableView1{
@@ -327,6 +380,9 @@
                 [self presentViewController:doingVC animated:YES completion:nil];
                 doingVC=nil;
             }
+        }else{
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"信息加载失败" message:@"网络有点不给力哦，请稍后再试~" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+            [alert show];
         }
     }];
 }

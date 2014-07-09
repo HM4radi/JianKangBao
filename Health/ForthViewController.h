@@ -8,13 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import <AVOSCloud/AVOSCloud.h>
-#import "RTMainViewController.h"
+
+@protocol logOut <NSObject>
+@required
+- (void)userLogOut;
+@end
 
 @interface ForthViewController : UIViewController
 
 @property (retain, nonatomic) IBOutlet UINavigationBar *navigationbar;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *configScroll;
+
+@property(nonatomic,weak) id<logOut> logOutDelegate;
+
 - (IBAction)signOutsignOut:(id)sender;
+
 
 @end
