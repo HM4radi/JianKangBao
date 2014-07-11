@@ -33,7 +33,7 @@
     
     [self.navigationController.navigationBar setFrame:CGRectMake(0, 0, 320, 64)];
     self.navigationController.navigationBar.translucent=YES;
-    self.navigationItem.titleView=self.titleLabel;
+   
     
     //将自定义视图控制器push到导航堆栈顶部
 

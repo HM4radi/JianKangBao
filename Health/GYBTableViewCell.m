@@ -9,6 +9,7 @@
 #import "GYBTableViewCell.h"
 #import "DPMeterView.h"
 #import "UIBezierPath+BasicShapes.h"
+#import "RTCustomView.h"
 
 @implementation GYBTableViewCell
 
@@ -18,6 +19,7 @@
 - (void)awakeFromNib
 {
     // Initialization code
+    [self.portait.layer setCornerRadius:CGRectGetHeight(self.portait.bounds)/2];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

@@ -6,65 +6,54 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell1" rowHeight="15" id="KGk-i7-Jjw" customClass="GYBTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCellRed" rowHeight="15" id="KGk-i7-Jjw" customClass="GYBTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="108"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="compose_privatebutton_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="AiF-Fm-0wX">
-                        <rect key="frame" x="20" y="27" width="54" height="61"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Watermeion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDE-xx-lUX">
+                        <rect key="frame" x="98" y="12" width="124" height="31"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="16"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="health-master1.png" translatesAutoresizingMaskIntoConstraints="NO" id="MJ6-hd-YJJ">
+                        <rect key="frame" x="198" y="63" width="24" height="24"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Beijing Chaoyang" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apf-Q9-NhQ">
-                        <rect key="frame" x="118" y="44" width="120" height="19"/>
+                    <imageView userInteractionEnabled="NO" alpha="0.34999999999999964" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sport-master.png" translatesAutoresizingMaskIntoConstraints="NO" id="zHi-gj-lok">
+                        <rect key="frame" x="148" y="63" width="24" height="24"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="12"/>
-                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pills-master.png" translatesAutoresizingMaskIntoConstraints="NO" id="Z4N-E5-Kzt">
+                        <rect key="frame" x="98" y="63" width="24" height="24"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="     Ta的身体真是强壮如牛哦～！" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1g-bm-YbX">
+                        <rect key="frame" x="81" y="39" width="320" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="13"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
-                    </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vx8-EE-qsi">
-                        <rect key="frame" x="97" y="42" width="21" height="23"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Button" image="locationMark.jpg">
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                        <connections>
-                            <action selector="locateInMap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="XFL-q5-QXj"/>
-                        </connections>
-                    </button>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hip-BI-6og" customClass="DPMeterView">
-                        <rect key="frame" x="97" y="66" width="184" height="28"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Father" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDE-xx-lUX">
-                        <rect key="frame" x="97" y="9" width="200" height="41"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="16"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8BT-mG-G9o">
-                        <rect key="frame" x="160" y="19" width="42" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" red="0.92813005317799135" green="1" blue="0.97791802014050244" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
-                <outlet property="locationLabel" destination="apf-Q9-NhQ" id="AC2-ar-FHu"/>
+                <outlet property="WarningImage" destination="MJ6-hd-YJJ" id="sRV-FV-Drg"/>
+                <outlet property="dynamicMessageLabel" destination="q1g-bm-YbX" id="54G-8g-h9e"/>
                 <outlet property="nameLabel" destination="FDE-xx-lUX" id="XMd-9t-GFi"/>
-                <outlet property="portait" destination="AiF-Fm-0wX" id="Uo6-hd-Sqh"/>
-                <outlet property="statueView" destination="hip-BI-6og" id="Mdq-dq-Sye"/>
+                <outlet property="sportImage" destination="zHi-gj-lok" id="IVc-sh-l4d"/>
             </connections>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="compose_privatebutton_background.png" width="48" height="48"/>
-        <image name="locationMark.jpg" width="256" height="256"/>
+        <image name="health-master1.png" width="128" height="128"/>
+        <image name="pills-master.png" width="128" height="128"/>
+        <image name="sport-master.png" width="128" height="128"/>
     </resources>
 </document>

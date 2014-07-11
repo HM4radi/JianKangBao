@@ -40,6 +40,9 @@
 		0427170819375D1E00FD3EF3 /* renti.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0427170419375D1E00FD3EF3 /* renti.jpg */; };
 		04427573196D334D00623295 /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04427571196D331900623295 /* AVOSCloud.framework */; };
 		044734DC196C2FDC00240490 /* RTCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 044734DB196C2FDC00240490 /* RTCustomView.m */; };
+		0457270D196D904B0023F00E /* RTCustomBlueVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 0457270C196D904B0023F00E /* RTCustomBlueVIew.m */; };
+		04644B86196FC79B0068A4D4 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 04644B85196FC79B0068A4D4 /* add.png */; };
+		04644B89196FEB2B0068A4D4 /* RTDataInitBeforeLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = 04644B88196FEB2B0068A4D4 /* RTDataInitBeforeLoad.m */; };
 		0469EB70192886F600388022 /* DPMeterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469EB6D192886F600388022 /* DPMeterView.m */; };
 		0469EB71192886F600388022 /* UIBezierPath+BasicShapes.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469EB6F192886F600388022 /* UIBezierPath+BasicShapes.m */; };
 		0469EB741928871D00388022 /* locationMark.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0469EB731928871D00388022 /* locationMark.jpg */; };
@@ -48,6 +51,16 @@
 		04B58A7A1945666B00A4905C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B58A791945666B00A4905C /* Reachability.m */; };
 		04B58A821945678200A4905C /* RTCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B58A801945678200A4905C /* RTCenterViewController.m */; };
 		04B58A831945678200A4905C /* RTCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B58A811945678200A4905C /* RTCenterViewController.xib */; };
+		04E88A21196E706700B1BE83 /* RTAddFamilyMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E88A1F196E706700B1BE83 /* RTAddFamilyMemberViewController.m */; };
+		04E88A22196E706700B1BE83 /* RTAddFamilyMemberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E88A20196E706700B1BE83 /* RTAddFamilyMemberViewController.xib */; };
+		04E88A25196E747600B1BE83 /* JKBIcon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04E88A23196E747600B1BE83 /* JKBIcon.jpg */; };
+		04E88A26196E747600B1BE83 /* JKBIcon2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04E88A24196E747600B1BE83 /* JKBIcon2.jpg */; };
+		04E88A28196E793E00B1BE83 /* xin2.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E88A27196E793E00B1BE83 /* xin2.png */; };
+		04E88A2A196E7B2D00B1BE83 /* ren.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E88A29196E7B2D00B1BE83 /* ren.png */; };
+		04E88A2D196E81FC00B1BE83 /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E88A2B196E81FC00B1BE83 /* error.png */; };
+		04E88A2E196E81FC00B1BE83 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E88A2C196E81FC00B1BE83 /* right.png */; };
+		04E88A34196E91B300B1BE83 /* RTAddMemResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E88A33196E91B300B1BE83 /* RTAddMemResultView.m */; };
+		04E88A3A196E967A00B1BE83 /* RTFamilyShip.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E88A39196E967A00B1BE83 /* RTFamilyShip.m */; };
 		04FB29D21940BA7700B96AA7 /* RTUserProfileBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FB29D11940BA7700B96AA7 /* RTUserProfileBussiness.m */; };
 		04FB29DA1941ACC100B96AA7 /* 2(1).png in Resources */ = {isa = PBXBuildFile; fileRef = 04FB29D71941ACC100B96AA7 /* 2(1).png */; };
 		04FB29DB1941ACC100B96AA7 /* 3(1).png in Resources */ = {isa = PBXBuildFile; fileRef = 04FB29D81941ACC100B96AA7 /* 3(1).png */; };
@@ -434,6 +447,11 @@
 		04427571196D331900623295 /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloud.framework; sourceTree = "<group>"; };
 		044734DA196C2FDC00240490 /* RTCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCustomView.h; sourceTree = "<group>"; };
 		044734DB196C2FDC00240490 /* RTCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTCustomView.m; sourceTree = "<group>"; };
+		0457270B196D904B0023F00E /* RTCustomBlueVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCustomBlueVIew.h; sourceTree = "<group>"; };
+		0457270C196D904B0023F00E /* RTCustomBlueVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTCustomBlueVIew.m; sourceTree = "<group>"; };
+		04644B85196FC79B0068A4D4 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add.png; path = ../add.png; sourceTree = "<group>"; };
+		04644B87196FEB2B0068A4D4 /* RTDataInitBeforeLoad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTDataInitBeforeLoad.h; sourceTree = "<group>"; };
+		04644B88196FEB2B0068A4D4 /* RTDataInitBeforeLoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTDataInitBeforeLoad.m; sourceTree = "<group>"; };
 		0469EB6C192886F600388022 /* DPMeterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPMeterView.h; sourceTree = "<group>"; };
 		0469EB6D192886F600388022 /* DPMeterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPMeterView.m; sourceTree = "<group>"; };
 		0469EB6E192886F600388022 /* UIBezierPath+BasicShapes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+BasicShapes.h"; sourceTree = "<group>"; };
@@ -447,6 +465,19 @@
 		04B58A7F1945678200A4905C /* RTCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCenterViewController.h; sourceTree = "<group>"; };
 		04B58A801945678200A4905C /* RTCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTCenterViewController.m; sourceTree = "<group>"; };
 		04B58A811945678200A4905C /* RTCenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTCenterViewController.xib; sourceTree = "<group>"; };
+		04E88A1E196E706700B1BE83 /* RTAddFamilyMemberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTAddFamilyMemberViewController.h; sourceTree = "<group>"; };
+		04E88A1F196E706700B1BE83 /* RTAddFamilyMemberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTAddFamilyMemberViewController.m; sourceTree = "<group>"; };
+		04E88A20196E706700B1BE83 /* RTAddFamilyMemberViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTAddFamilyMemberViewController.xib; sourceTree = "<group>"; };
+		04E88A23196E747600B1BE83 /* JKBIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = JKBIcon.jpg; sourceTree = "<group>"; };
+		04E88A24196E747600B1BE83 /* JKBIcon2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = JKBIcon2.jpg; sourceTree = "<group>"; };
+		04E88A27196E793E00B1BE83 /* xin2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xin2.png; sourceTree = "<group>"; };
+		04E88A29196E7B2D00B1BE83 /* ren.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ren.png; sourceTree = "<group>"; };
+		04E88A2B196E81FC00B1BE83 /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = error.png; sourceTree = "<group>"; };
+		04E88A2C196E81FC00B1BE83 /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
+		04E88A32196E91B300B1BE83 /* RTAddMemResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTAddMemResultView.h; sourceTree = "<group>"; };
+		04E88A33196E91B300B1BE83 /* RTAddMemResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTAddMemResultView.m; sourceTree = "<group>"; };
+		04E88A38196E967A00B1BE83 /* RTFamilyShip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTFamilyShip.h; sourceTree = "<group>"; };
+		04E88A39196E967A00B1BE83 /* RTFamilyShip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTFamilyShip.m; sourceTree = "<group>"; };
 		04F1649F19699A6F006B6190 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		04F164A019699A6F006B6190 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		04FB29D01940BA7700B96AA7 /* RTUserProfileBussiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTUserProfileBussiness.h; sourceTree = "<group>"; };
@@ -997,6 +1028,7 @@
 		0469EB5F192885AE00388022 /* ThirdTableView */ = {
 			isa = PBXGroup;
 			children = (
+				04E88A36196E937A00B1BE83 /* ADDFamilyMemberView */,
 				0469EB60192885E700388022 /* DetailView */,
 				ADA6C2F91951D9220037A013 /* RTGYBNaviViewController.h */,
 				ADA6C2FA1951D9220037A013 /* RTGYBNaviViewController.m */,
@@ -1004,6 +1036,8 @@
 				ADA6C2FC1951D9220037A013 /* GYBTableViewController.h */,
 				ADA6C2FD1951D9220037A013 /* GYBTableViewController.m */,
 				ADA6C2FE1951D9220037A013 /* GYBTableViewController.xib */,
+				04644B87196FEB2B0068A4D4 /* RTDataInitBeforeLoad.h */,
+				04644B88196FEB2B0068A4D4 /* RTDataInitBeforeLoad.m */,
 				04FE00771928AAE6002FB4E1 /* Custom Cell */,
 			);
 			name = ThirdTableView;
@@ -1083,6 +1117,28 @@
 			name = StepCounter;
 			sourceTree = "<group>";
 		};
+		04E88A36196E937A00B1BE83 /* ADDFamilyMemberView */ = {
+			isa = PBXGroup;
+			children = (
+				04E88A37196E93A100B1BE83 /* class */,
+				04E88A1E196E706700B1BE83 /* RTAddFamilyMemberViewController.h */,
+				04E88A1F196E706700B1BE83 /* RTAddFamilyMemberViewController.m */,
+				04E88A20196E706700B1BE83 /* RTAddFamilyMemberViewController.xib */,
+				04E88A32196E91B300B1BE83 /* RTAddMemResultView.h */,
+				04E88A33196E91B300B1BE83 /* RTAddMemResultView.m */,
+			);
+			name = ADDFamilyMemberView;
+			sourceTree = "<group>";
+		};
+		04E88A37196E93A100B1BE83 /* class */ = {
+			isa = PBXGroup;
+			children = (
+				04E88A38196E967A00B1BE83 /* RTFamilyShip.h */,
+				04E88A39196E967A00B1BE83 /* RTFamilyShip.m */,
+			);
+			name = class;
+			sourceTree = "<group>";
+		};
 		04FB29D61941ACB300B96AA7 /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -1101,6 +1157,8 @@
 				ADA6C2F61951D9070037A013 /* GYBTableViewCell.xib */,
 				044734DA196C2FDC00240490 /* RTCustomView.h */,
 				044734DB196C2FDC00240490 /* RTCustomView.m */,
+				0457270B196D904B0023F00E /* RTCustomBlueVIew.h */,
+				0457270C196D904B0023F00E /* RTCustomBlueVIew.m */,
 			);
 			name = "Custom Cell";
 			sourceTree = "<group>";
@@ -1186,6 +1244,13 @@
 		AD12F59F192634B400921894 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				04644B85196FC79B0068A4D4 /* add.png */,
+				04E88A2B196E81FC00B1BE83 /* error.png */,
+				04E88A2C196E81FC00B1BE83 /* right.png */,
+				04E88A29196E7B2D00B1BE83 /* ren.png */,
+				04E88A27196E793E00B1BE83 /* xin2.png */,
+				04E88A23196E747600B1BE83 /* JKBIcon.jpg */,
+				04E88A24196E747600B1BE83 /* JKBIcon2.jpg */,
 				AD16874F196CE953003ABF3C /* micro_messenger@2x.png */,
 				AD168750196CE953003ABF3C /* micro_messenger.png */,
 				AD12F5981926314F00921894 /* settings_accounts_icon.png */,
@@ -1923,6 +1988,7 @@
 			files = (
 				AD12F67C192634B400921894 /* navigationbar_home_highlighted.png in Resources */,
 				ADAA5DDA192341090040ED10 /* InfoPlist.strings in Resources */,
+				04E88A2D196E81FC00B1BE83 /* error.png in Resources */,
 				AD12F671192634B400921894 /* navigation_shadow.png in Resources */,
 				AD12F6CA192634B400921894 /* toolbar_retweet_highlighted.png in Resources */,
 				AD9A389719362A5600A8EFFB /* login.png in Resources */,
@@ -1954,6 +2020,7 @@
 				ADCC7A4A1929AF64005B00B4 /* login_textfield_bottom.png in Resources */,
 				ADCC7A431929AF64005B00B4 /* login_btn_blue_nor@2x.png in Resources */,
 				ADE39B8D1923A78600E4278B /* github.png in Resources */,
+				04E88A26196E747600B1BE83 /* JKBIcon2.jpg in Resources */,
 				AD12F69C192634B400921894 /* settings_rate_icon.png in Resources */,
 				AD12F68D192634B400921894 /* popover_button_highlighted@2x.png in Resources */,
 				ADCC7A461929AF64005B00B4 /* login_dropdown_avatar_border.png in Resources */,
@@ -1980,6 +2047,7 @@
 				AD12F68E192634B400921894 /* profile_pop_background.png in Resources */,
 				ADCC7A6A1929E5A6005B00B4 /* RTRegisterViewController.xib in Resources */,
 				AD12F67A192634B400921894 /* navigationbar_floating_bar.png in Resources */,
+				04E88A2E196E81FC00B1BE83 /* right.png in Resources */,
 				ADAB1927194A8ED20081C8FA /* tabbar_4.png in Resources */,
 				AD12F674192634B400921894 /* navigationbar_back_highlighted.png in Resources */,
 				AD12F675192634B400921894 /* navigationbar_background@2x.png in Resources */,
@@ -2079,6 +2147,7 @@
 				AD12F676192634B400921894 /* navigationbar_button_background.png in Resources */,
 				ADA6C3101951D9B30037A013 /* RTFamilyDetailViewController.xib in Resources */,
 				AD54260E193715E4005F10F4 /* ys.jpg in Resources */,
+				04E88A25196E747600B1BE83 /* JKBIcon.jpg in Resources */,
 				0427170719375D1E00FD3EF3 /* renti(1).jpg in Resources */,
 				AD12F6AB192634B400921894 /* tabbar_profile.png in Resources */,
 				AD16874D196CE931003ABF3C /* ForthViewController.xib in Resources */,
@@ -2088,6 +2157,7 @@
 				ADCC7A3B1929AF64005B00B4 /* login_avatar_default.png in Resources */,
 				AD0DA0601935C57700A9846E /* health-master1.png in Resources */,
 				AD4AC13D192CEE98006E6898 /* walking1.jpg in Resources */,
+				04644B86196FC79B0068A4D4 /* add.png in Resources */,
 				AD12F88F1926516D00921894 /* Images.xcassets in Resources */,
 				AD12F686192634B400921894 /* navigationbar_time_group.png in Resources */,
 				AD12F6AA192634B400921894 /* tabbar_more_selected.png in Resources */,
@@ -2115,6 +2185,7 @@
 				ADCC7A481929AF64005B00B4 /* login_dropdown_bg.png in Resources */,
 				ADCC7A471929AF64005B00B4 /* login_dropdown_avatar_border@2x.png in Resources */,
 				AD12F6B4192634B400921894 /* timeline_like_count_icon@2x.png in Resources */,
+				04E88A28196E793E00B1BE83 /* xin2.png in Resources */,
 				ADE39B891923A78600E4278B /* cube.png in Resources */,
 				AD12F67E192634B400921894 /* navigationbar_interest_highlighted.png in Resources */,
 				AD54260A193715E4005F10F4 /* wuyi.jpg in Resources */,
@@ -2146,6 +2217,7 @@
 				AD12F6BD192634B400921894 /* timeline_trend_icon_like@2x.png in Resources */,
 				AD12F680192634B400921894 /* navigationbar_language.png in Resources */,
 				ADA6C2EB1951D8D30037A013 /* 75-phone.png in Resources */,
+				04E88A22196E706700B1BE83 /* RTAddFamilyMemberViewController.xib in Resources */,
 				AD12F683192634B400921894 /* navigationbar_messages.png in Resources */,
 				AD480F62192497CC0081DAFA /* Window Background@2x.png in Resources */,
 				AD168767196CF6AA003ABF3C /* Icon_80x80.png in Resources */,
@@ -2166,6 +2238,7 @@
 				ADAB1926194A8ED20081C8FA /* tabbar_3@2x.png in Resources */,
 				AD12F669192634B400921894 /* login_background.png in Resources */,
 				ADCC7A531929AF64005B00B4 /* login_textfield.png in Resources */,
+				04E88A2A196E7B2D00B1BE83 /* ren.png in Resources */,
 				ADCC7A511929AF64005B00B4 /* login_textfield_top.png in Resources */,
 				AD12F6BA192634B400921894 /* timeline_private_button_background@2x.png in Resources */,
 				ADCC7A6C1929E8D4005B00B4 /* operationbox_text.png in Resources */,
@@ -2204,6 +2277,8 @@
 				AD5425DD193700F7005F10F4 /* RTMsgDetailViewController.m in Sources */,
 				ADEF87D8192DF8F20057DCB0 /* BEMAnimations.m in Sources */,
 				AD4810671924C0930081DAFA /* RTMapView.mm in Sources */,
+				04E88A3A196E967A00B1BE83 /* RTFamilyShip.m in Sources */,
+				04E88A34196E91B300B1BE83 /* RTAddMemResultView.m in Sources */,
 				ADA9873F1933794400B98092 /* RTfoodViewController.m in Sources */,
 				AD3493E41962832A001A46FC /* RTMsgNavViewController.m in Sources */,
 				AD5425E2193703CF005F10F4 /* RTMsgDetailTableViewCell.m in Sources */,
@@ -2215,12 +2290,14 @@
 				AD3493DF196270DD001A46FC /* UIScrollView+Extension.m in Sources */,
 				AD470D78195A9FF1004ECB75 /* RTSportRecord.m in Sources */,
 				AD168756196CE982003ABF3C /* RTMainViewController.m in Sources */,
+				0457270D196D904B0023F00E /* RTCustomBlueVIew.m in Sources */,
 				042716E719375C9D00FD3EF3 /* RTNeckDisease.m in Sources */,
 				AD16874E196CE931003ABF3C /* RTForthNavVC.m in Sources */,
 				042716EE19375CE100FD3EF3 /* SecondViewController.m in Sources */,
 				ADA6C30F1951D9B30037A013 /* RTFamilyDetailViewController.m in Sources */,
 				AD69107E195D61D000ACB68B /* RTDoingViewController.m in Sources */,
 				AD16874C196CE931003ABF3C /* ForthViewController.m in Sources */,
+				04644B89196FEB2B0068A4D4 /* RTDataInitBeforeLoad.m in Sources */,
 				04B58A7A1945666B00A4905C /* Reachability.m in Sources */,
 				ADCC7A181929ACDC005B00B4 /* RTLoginViewController.m in Sources */,
 				042053AC193F25A800D0C9EE /* RTRegistBussiness.m in Sources */,
@@ -2246,6 +2323,7 @@
 				ADCC7A751929F875005B00B4 /* RTShareMsg.m in Sources */,
 				04FB29D21940BA7700B96AA7 /* RTUserProfileBussiness.m in Sources */,
 				AD3C8D3E1947F44D00357DA0 /* RTSportPlanViewController.m in Sources */,
+				04E88A21196E706700B1BE83 /* RTAddFamilyMemberViewController.m in Sources */,
 				042716FB19375D0200FD3EF3 /* RTSndDoctorDetailViewController.m in Sources */,
 				AD5425BC1936C374005F10F4 /* RTCollectionViewCell.m in Sources */,
 				ADA6C3061951D9930037A013 /* RTDetailViewNewViewController.m in Sources */,

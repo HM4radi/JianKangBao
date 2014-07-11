@@ -1,14 +1,14 @@
 //
-//  RTCustomView.m
+//  RTCustomBlueVIew.m
 //  Health
 //
-//  Created by Mac on 7/8/14.
+//  Created by Mac on 7/9/14.
 //  Copyright (c) 2014 RADI Team. All rights reserved.
 //
 
-#import "RTCustomView.h"
+#import "RTCustomBlueVIew.h"
 
-@implementation RTCustomView
+@implementation RTCustomBlueVIew
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -28,13 +28,12 @@
     //// www.paintcodeapp.com
     
     //// Color Declarations
-    UIColor* color7 = [UIColor colorWithRed: 1 green: 0 blue: 0 alpha: 0.235];
+    UIColor* color7 = [UIColor colorWithRed: 0 green: 0.245 blue: 1 alpha: 0.235];
     
     //// Rectangle Drawing
     UIBezierPath* rectanglePath = [UIBezierPath bezierPathWithRect: CGRectMake(0, 0, 320, 130)];
     [color7 setFill];
     [rectanglePath fill];
-
 }
 
 

@@ -10,14 +10,18 @@
 #import"GYBTableViewCell.h"
 #import "DPMeterView.h"
 #import "UIBezierPath+BasicShapes.h"
-
+#import "RTUserInfo.h"
 #import "RTFamilyDetailViewController.h"
 #import "RTDetailViewNewViewController.h"
+#import "RTAddFamilyMemberViewController.h"
+#import <AVOSCloud/AVOSCloud.h>
 
 @interface GYBTableViewController ()
 @property (nonatomic,strong)NSMutableDictionary *listItem;
 @property (nonatomic,strong)NSMutableDictionary *Statue;
-@property (nonatomic,strong)NSArray *key;
+
+@property (nonatomic,strong)NSArray *familyShipObjectId;
+@property (nonatomic,strong)NSMutableArray *protaitImageArray;
 
 
 -(void)initNameDataDiction;
@@ -37,30 +41,80 @@
 }
 
 
--(void)initStatusData
+-(void)queryFamilyShipFromAVOS
 {
-   static NSString *a = @"0.1";
-   static NSString *b = @"0.5";
-   static NSString *c = @"0.8";
-   self.listItem = [NSMutableDictionary dictionary];
     
-        //初始化nameLabel 状态字典
-       [self.listItem setObject:a forKey:@"gyb"];
-       [self.listItem setObject:b forKey:@"shirui"];
-       [self.listItem setObject:c forKey:@"son"];
+    AVUser *current=[AVUser currentUser];
+    AVQuery *query = [AVQuery queryWithClassName:@"JKFriendShip"];
+    [query whereKey:@"frienda_objectid" equalTo:current.objectId];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if ([objects count]>0) {
+            AVObject *o=[objects objectAtIndex:0];
+            self.familyShipObjectId=[o objectForKey:@"friendb_objectid"];
+            [self queryFamilyUser];
+        }
+        else
+        {
+        
+        }
+    }];
     
-    NSLog(@"%@",[self.listItem objectForKey:@"son"]);
-    
-    protaitImageArray=[NSArray arrayWithObjects:@"1.jpg",@"2.jpg", nil];
 }
+
+
+-(void)queryFamilyUser
+{
+    self.protaitImageArray=[[NSMutableArray alloc]init];
+    self.listItem = [NSMutableDictionary dictionary];
+
+    if (self.familyShipObjectId!=nil) {
+    //循环查询
+        for (NSString *objectId in self.familyShipObjectId)
+        {
+            NSLog(@"for循环次数");
+            AVQuery *queryUser=[AVUser query];
+            [queryUser whereKey:@"objectId" equalTo:objectId];
+        
+            [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                if (error == nil) {
+                    RTUserInfo *user=[objects objectAtIndex:0];
+                    [self.listItem setObject:@"0" forKey:user.username];
+                    AVFile *imageFile=user.userImage;
+                    NSData *imageData=[imageFile getData];
+                    
+                    if (imageData==nil) {
+                        UIImage *imgDefault=[UIImage imageNamed:@"tabbar_profile.png"];
+                        [self.protaitImageArray addObject:imgDefault];
+                    }else
+                    {
+                        UIImage *img=[UIImage imageWithData:imageData];;
+                        [self.protaitImageArray addObject:img];
+                    }
+                    
+                   
+                  NSLog(@"for后protaitImageArray长达:%d", [self.protaitImageArray count]);
+                      [self.tableView reloadData];
+                }
+                
+                else {
+                    
+                }
+            }];
+           
+        }
+    }
+  
+
+}
+
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-//    GYBDetailViewController *detailViewController=[[GYBDetailViewController alloc]init];
-//    
-//    [self.navigationController pushViewController:detailViewController animated:YES];
-//    NSLog(@"%d",indexPath.row);
-
+////    GYBDetailViewController *detailViewController=[[GYBDetailViewController alloc]init];
+////    
+////    [self.navigationController pushViewController:detailViewController animated:YES];
+////    NSLog(@"%d",indexPath.row);
+//
 }
 
 
@@ -112,27 +166,37 @@
     
     return [NSArray arrayWithArray:shapeViews];
 }
--(void)initNameDataDiction
-{
-    
-    //初始化key Array
-     self.key = [[NSArray alloc] initWithObjects:@"gyb",@"shirui",@"son",nil];
-    //NSLog(@"%@",[self.key objectAtIndex:0]);
-    
-}
+//-(void)initNameDataDiction
+//{
+//    
+//    //初始化key Array
+//
+//    //NSLog(@"%@",[self.key objectAtIndex:0]);
+//    
+//}
+
+
+
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
 //    [self updateProgressWithDelta:0.6 animated:YES];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self.tableView reloadData];
+}
 - (void)viewDidLoad
 {
+    
+    //初始化数据
+    [self queryFamilyShipFromAVOS];
+    //
+
     [super viewDidLoad];
 
-    [self initNameDataDiction];
-    [self initStatusData];
-    
     
     [self.navigationController.navigationBar setFrame:CGRectMake(0, 0, 320, 64)];
 
@@ -150,13 +214,26 @@
     UILabel *titleLabel=[[UILabel alloc]initWithFrame:CGRectMake(95, 10, 130, 26)];
     [titleLabel setTextColor:[UIColor whiteColor]];
     titleLabel.font=[UIFont fontWithName:@"HelveticaNeue-UltraLight" size:22.00];
-    titleLabel.text=@"家人健康";
+    titleLabel.text=@"家庭圈";
     titleLabel.textAlignment = NSTextAlignmentCenter;
-    [self.navigationController.navigationBar addSubview:titleLabel];
-    self.navigationController.navigationItem.titleView=titleLabel;
+    self.navigationItem.titleView=titleLabel;
     titleLabel=nil;
+    
+    
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd   target:self action:@selector(addFamilyMemberAction:)];
+    
 
 }
+
+-(IBAction)addFamilyMemberAction:(id)sender
+{
+    RTAddFamilyMemberViewController* addFamilyShipVC=[[RTAddFamilyMemberViewController alloc]initWithNibName:nil bundle:nil];
+     [self presentViewController:addFamilyShipVC animated:YES completion:nil];
+
+}
+
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -177,7 +254,7 @@
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 2;
+    return [[self.listItem allKeys] count];
 }
 //行缩进
 
@@ -187,15 +264,45 @@
 }
 //改变行高
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 200;
+    return 100;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+   NSMutableArray *colorArray=[[NSMutableArray alloc]init];
+    UIColor *darkBlue;
+    UIColor *darkYellow;
+    UIColor *darkGreen;
+    for (int i=0; i<=[[self.listItem allKeys]count]; i++)
+    {
+        int a=i%3;
+        switch (a) {
+            case 0:
+                darkBlue=[UIColor colorWithRed:54/255.f green:73/255.f blue:93/255.f alpha:1.f];
+                [colorArray addObject:darkBlue];
+                darkBlue=nil;
+                break;
+            case 1:
+                darkYellow=[UIColor colorWithRed:240/255.f green:197/255.f blue:44/255.f alpha:1.f];
+                
+                [colorArray addObject:darkYellow];
+                darkYellow=nil;
+                break;
+            case 2:
+                darkGreen=[UIColor colorWithRed:44/255.f green:206/255.f blue:118/255.f alpha:1.f];
+                [colorArray addObject:darkGreen];
+                darkGreen=nil;
+                break;
+        }
+        
 
+    }
+    
+    
     static BOOL nibsRegistered = NO;
     
-    static NSString *Cellidentifier=@"cell1";
+    static NSString *Cellidentifier=@"CustomCellRed";
     if (!nibsRegistered) {
         UINib *nib = [UINib nibWithNibName:@"GYBTableViewCell" bundle:nil];
         [tableView registerNib:nib forCellReuseIdentifier:Cellidentifier];
@@ -206,10 +313,25 @@
     GYBTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:Cellidentifier forIndexPath:indexPath];
     NSUInteger row=[indexPath row];
   
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//    cell.backgroundColor= [UIColor colorWithRed: 1 green: 0 blue: 0 alpha: 0.235];
+//    
+//    cell.contentView.backgroundColor=[UIColor colorWithRed: 1 green: 0 blue: 0 alpha: 0.235];
     
-    cell.nameLabel.text=[self.key objectAtIndex:row];
-    [cell.portait setImage:[UIImage imageNamed:[protaitImageArray objectAtIndex:indexPath.row]]];
+    NSArray *keyArray=[self.listItem allKeys];
+    
+    cell.nameLabel.text=[keyArray objectAtIndex:row];
+    
+    UIImageView *portraitView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 20, 62, 62)];
+    [portraitView.layer setCornerRadius:CGRectGetHeight(portraitView.bounds)/2];
+    portraitView.layer.borderColor = [UIColor blueColor].CGColor;
+//    portraitView.layer.borderWidth = 0.5;
+    [portraitView.layer setMasksToBounds:YES];
+    [portraitView setImage:[self.protaitImageArray objectAtIndex:indexPath.row]];
+    [cell.contentView addSubview:portraitView];
+    
+    
+    cell.contentView.backgroundColor=[colorArray objectAtIndex:indexPath.row];
     // shape 4 -- 3 Stars
     [cell.statueView setMeterType:DPMeterTypeLinearHorizontal];
     [cell.statueView setShape:[UIBezierPath stars:5 shapeInFrame:cell.statueView.frame].CGPath];
@@ -230,7 +352,7 @@
     //set statue Value
     cell.statueValue=&(f);
     [cell updateProgressWithDelta:*(cell.statueValue) animated:YES];
-    cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+    
 //     cell.accessoryType=UITableViewCellAccessoryDetailDisclosureButton;
     
     return cell;

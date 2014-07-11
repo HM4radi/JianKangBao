@@ -23,5 +23,10 @@
 - (IBAction)locateInMap:(id)sender;
 
 - (void)updateProgressWithDelta:(CGFloat)delta animated:(BOOL)animated;
+@property (strong, nonatomic) IBOutlet UIImageView *WarningImage;
+@property (strong, nonatomic) IBOutlet UIImageView *sportImage;
+
+@property (strong, nonatomic) IBOutlet UILabel *otherNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *dynamicMessageLabel;
 
 @end
