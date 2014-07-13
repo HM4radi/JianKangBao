@@ -19,7 +19,14 @@
 - (void)awakeFromNib
 {
     // Initialization code
-    [self.portait.layer setCornerRadius:CGRectGetHeight(self.portait.bounds)/2];
+    UIImageView *portraitView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 20, 62, 62)];
+    [portraitView.layer setCornerRadius:CGRectGetHeight(portraitView.bounds)/2];
+    portraitView.layer.borderColor = [UIColor blueColor].CGColor;
+    //    portraitView.layer.borderWidth = 0.5;
+    [portraitView.layer setMasksToBounds:YES];
+
+    self.protaitView=portraitView;
+    [self addSubview:portraitView];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

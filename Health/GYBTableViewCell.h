@@ -13,7 +13,7 @@
 
 
 @interface GYBTableViewCell : UITableViewCell
-@property (strong, nonatomic) IBOutlet UIImageView *portait;
+
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *locationLabel;
 @property CGFloat *statueValue;
@@ -28,5 +28,6 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *otherNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *dynamicMessageLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *protaitView;
 
 @end

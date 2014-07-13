@@ -26,4 +26,11 @@
 
 @property (strong, nonatomic) IBOutlet RTAddMemResultView *resultView2;
 
+
+
+
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *resultFixedInfoLabelCollection;
+
+
+
 @end

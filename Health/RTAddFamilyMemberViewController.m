@@ -19,6 +19,7 @@
 #import "RTAddMemResultView.h"
 #import "RTFamilyDetailViewController.h"
 #import "RTFamilyShip.h"
+
 @interface RTAddFamilyMemberViewController ()
 
 @end
@@ -43,6 +44,11 @@
     self.resultTableView.hidden=YES;
     self.resultView2.hidden=YES;
     self.resultView.hidden=YES;
+    
+    //隐藏不必要label
+    for (UILabel *label in self.resultFixedInfoLabelCollection) {
+        label.hidden=YES;
+    }
 
 }
 
@@ -64,7 +70,9 @@
     if (alertView.tag==10001) {
         if (buttonIndex==0) {
             NSLog(@"ALerView1");
-            [self dismissViewControllerAnimated:YES completion:nil];
+            [self dismissViewControllerAnimated:YES completion:^{
+            }];
+          
         }
         if (buttonIndex==1) {
             NSLog(@"ALerView1");
@@ -207,6 +215,15 @@
 
 
 #pragma mark - textField delegate method
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    for (UILabel *label in self.resultFixedInfoLabelCollection) {
+    label.hidden=YES;
+    
+}
+    self.resultCountLabel.hidden=YES;
+    return YES;
+}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
@@ -225,9 +242,14 @@
         self.resultView2.hidden=YES;
 
     }
-    
+    //显示结果信息label
+    for (UILabel *label in self.resultFixedInfoLabelCollection) {
+        label.hidden=NO;
+    }
+    self.resultCountLabel.hidden=NO;
     if ([self checkPhoneNumber]) {
         [self findUserByPhone:self.AddMemPhoneInputInText.text];
+       
     };
     
     

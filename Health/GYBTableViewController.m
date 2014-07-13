@@ -17,11 +17,15 @@
 #import <AVOSCloud/AVOSCloud.h>
 
 @interface GYBTableViewController ()
+
+@property (strong, nonatomic) IBOutlet UIView *NoMemberInfoView;
 @property (nonatomic,strong)NSMutableDictionary *listItem;
+
+@property (nonatomic,strong)NSMutableDictionary *locallydeleteFamilyShipObjectIdArray;
 @property (nonatomic,strong)NSMutableDictionary *Statue;
 
 @property (nonatomic,strong)NSArray *familyShipObjectId;
-@property (nonatomic,strong)NSMutableArray *protaitImageArray;
+
 
 
 -(void)initNameDataDiction;
@@ -31,7 +35,10 @@
 @end
 
 @implementation GYBTableViewController
+{
+    UIAlertView *loadingAlertView;
 
+}
  static BOOL nibsRegistered = NO;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,10 +52,7 @@
 
 -(void)checkOutDataOnAVOS
 {
-    //初始化数据
     [self queryFamilyShipFromAVOS];
-    
-
 }
 
 -(void)queryFamilyShipFromAVOS
@@ -65,7 +69,8 @@
         }
         else
         {
-        
+            self.reLoadDataResultInfoLabel.text=error.localizedDescription;
+          [self.view addSubview:self.NoMemberInfoView];
         }
     }];
     
@@ -74,49 +79,61 @@
 
 -(void)queryFamilyUser
 {
-     NSMutableArray *protaitImageArray=[[NSMutableArray alloc]init];
-    NSMutableDictionary *listItem = [NSMutableDictionary dictionary];
-
+    if (self.listItem==nil) {
+        
+        NSLog(@"self.listItem被初始化");
+        self.listItem=[[NSMutableDictionary alloc]initWithCapacity:1];
+    }
     if (self.familyShipObjectId!=nil) {
     //循环查询
         for (NSString *objectId in self.familyShipObjectId)
         {
-            NSLog(@"for循环次数");
+           
             AVQuery *queryUser=[AVUser query];
             [queryUser whereKey:@"objectId" equalTo:objectId];
         
             [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-                if (error == nil) {
+                if (error == nil)
+                {
                     RTUserInfo *user=[objects objectAtIndex:0];
-                    [listItem setObject:@"0" forKey:user.username];
+                    NSMutableDictionary *person=[[NSMutableDictionary alloc]initWithCapacity:3];
+                    [person setObject:user.username forKey:@"username"];
                     AVFile *imageFile=user.userImage;
                     NSData *imageData=[imageFile getData];
                     
-                    if (imageData==nil) {
-                        UIImage *imgDefault=[UIImage imageNamed:@"tabbar_profile.png"];
-                        [protaitImageArray addObject:imgDefault];
-                    }else
+                    if (imageData!=nil)
                     {
                         UIImage *img=[UIImage imageWithData:imageData];;
-                        [protaitImageArray addObject:img];
+                        [person setObject:img forKey:@"protaitImage"];
+                    }else
+                    {
+                        UIImage *imgDefault=[UIImage imageNamed:@"tabbar_profile.png"];
+                        [person setObject:imgDefault forKey:@"protaitImage"];
                     }
+                   
                     
                    
-                  NSLog(@"for后protaitImageArray长达:%d", [protaitImageArray count]);
-                    [self.protaitImageArray addObjectsFromArray:protaitImageArray];
-                    [self.listItem addEntriesFromDictionary:listItem];
-                }
-                
-                else {
+                   
+                        [self.listItem setObject:person forKey:user.objectId];
                     
+                   
+                   
+              
+                }
+                else
+                {
+                     self.reLoadDataResultInfoLabel.text=error.localizedDescription;
+                      [self.view addSubview:self.NoMemberInfoView];
                 }
             }];
-           
         }
     }
   
 
 }
+
+
+
 
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
@@ -135,7 +152,6 @@
     
     RTDetailViewNewViewController *detailViewController=[[RTDetailViewNewViewController alloc]initWithNibName:@"RTDetailViewNewViewController" bundle:nil];
     detailViewController.friendNameList=[self.listItem allKeys];
-    detailViewController.friendImage=self.protaitImageArray;
     [detailViewController setCurrentSelectedIndex:indexPath.row];
     [self.navigationController pushViewController:detailViewController animated:YES];
     
@@ -179,14 +195,8 @@
     
     return [NSArray arrayWithArray:shapeViews];
 }
-//-(void)initNameDataDiction
-//{
-//    
-//    //初始化key Array
-//
-//    //NSLog(@"%@",[self.key objectAtIndex:0]);
-//    
-//}
+
+
 
 
 
@@ -197,40 +207,31 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
-    
-    if ([[self.listItem allKeys] count]==0) {
-        
-    }
-    else{
-    [self.tableView reloadData];
-    }
-}
+//-(void)viewWillAppear:(BOOL)animated
+//{
+//
+//}
 - (void)viewDidLoad
 {
-    
-    
-
     [super viewDidLoad];
 //初始化数据本地化数组
-    self.protaitImageArray=[[NSMutableArray alloc]init];
-    self.listItem = [NSMutableDictionary dictionary];
-
+    //初始化AlertView
+    
+    loadingAlertView=[[UIAlertView alloc]initWithTitle:@"提示" message:@"加载中,请稍等！" delegate:self cancelButtonTitle:nil otherButtonTitles:nil, nil];
     
     
     [self.navigationController.navigationBar setFrame:CGRectMake(0, 0, 320, 64)];
-
+    
     self.navigationController.navigationBar.translucent=YES;
     
     // UIApperance
     [[DPMeterView appearance] setTrackTintColor:[UIColor lightGrayColor]];
     [[DPMeterView appearance] setProgressTintColor:[UIColor darkGrayColor]];
     
-//    // shape 4 -- 3 Stars
-//    [self.shape4StarView setMeterType:DPMeterTypeLinearHorizontal];
-//    [self.shape4StarView setShape:[UIBezierPath stars:5 shapeInFrame:self.shape4StarView.frame].CGPath];
-//    self.shape4StarView.progressTintColor = [UIColor colorWithRed:255/255.f green:199/255.f blue:87/255.f alpha:1.f];
+    //    // shape 4 -- 3 Stars
+    //    [self.shape4StarView setMeterType:DPMeterTypeLinearHorizontal];
+    //    [self.shape4StarView setShape:[UIBezierPath stars:5 shapeInFrame:self.shape4StarView.frame].CGPath];
+    //    self.shape4StarView.progressTintColor = [UIColor colorWithRed:255/255.f green:199/255.f blue:87/255.f alpha:1.f];
     
     UILabel *titleLabel=[[UILabel alloc]initWithFrame:CGRectMake(95, 10, 130, 26)];
     [titleLabel setTextColor:[UIColor whiteColor]];
@@ -240,16 +241,38 @@
     self.navigationItem.titleView=titleLabel;
     titleLabel=nil;
     
-    
+    //添加新成员button
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd   target:self action:@selector(addFamilyMemberAction:)];
-    
+  
     
     //初始化下拉刷新控件
     UIRefreshControl *rc=[[UIRefreshControl alloc]init];
     rc.attributedTitle=[[NSAttributedString alloc]initWithString:@"下拉刷新家人列表"];
     [rc addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
     self.refreshControl=rc;
+    
+    [self dragOutDataWhenComefirst];
+  
+}
 
+-(void)setEditing:(BOOL)editing animated:(BOOL)animated
+{
+
+    [super setEditing:editing animated:animated];
+    [self.tableView setEditing:editing animated:animated];
+
+}
+
+
+-(void)dragOutDataWhenComefirst
+{
+
+    //第一次进入自动拉取数据
+    [self.view addSubview:self.NoMemberInfoView];
+    [loadingAlertView show];
+    [self checkOutDataOnAVOS];
+    [self performSelector:@selector(callBackMethod:) withObject:loadingAlertView afterDelay:3];
+    
 }
 
 
@@ -257,7 +280,7 @@
 {
     
     [self.listItem removeAllObjects];
-    [self.protaitImageArray removeAllObjects];
+
     if(self.refreshControl.refreshing)
     {
         self.refreshControl.attributedTitle=[[NSAttributedString alloc]initWithString:@"数据紧张加载中..."];
@@ -265,11 +288,7 @@
         //刷新数据
         [self checkOutDataOnAVOS];
         //请求完成后回调
-        [self performSelector:@selector(callBackMethod:) withObject:nil afterDelay:3];
-        
-        
-        
-    
+        [self performSelector:@selector(callBackMethod:) withObject:self.refreshControl afterDelay:3];
     }
 
 
@@ -278,10 +297,35 @@
 
 -(void)callBackMethod:(id) obj
 {
-    [self.refreshControl endRefreshing];
-    self.refreshControl.attributedTitle=[[NSAttributedString alloc]initWithString:@"下拉刷新家人列表刷新"];
-    [self.tableView reloadData];
-
+    if (obj==self.refreshControl) {
+        [self.refreshControl endRefreshing];
+        self.refreshControl.attributedTitle=[[NSAttributedString alloc]initWithString:@"下拉刷新家人列表刷新"];
+        if ([[self.listItem allKeys] count]!=0) {
+            
+            [self.NoMemberInfoView removeFromSuperview];
+            
+            [self.tableView reloadData];
+           
+        }
+        else{
+            [self.view addSubview:self.NoMemberInfoView];
+        }
+        [self.tableView reloadData];
+    }
+    else
+    {
+        if ([[self.listItem allKeys] count]!=0) {
+            
+            [self.NoMemberInfoView removeFromSuperview];
+            
+            [self.tableView reloadData];
+            
+        }
+        else{
+            [self.view addSubview:self.NoMemberInfoView];
+        }
+         [loadingAlertView dismissWithClickedButtonIndex:0 animated:NO];
+    }
 }
 
 
@@ -326,6 +370,15 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 100;
 }
+
+
+
+
+
+
+
+
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -380,39 +433,42 @@
     
     NSArray *keyArray=[self.listItem allKeys];
     
-    cell.nameLabel.text=[keyArray objectAtIndex:row];
     
-    UIImageView *portraitView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 20, 62, 62)];
-    [portraitView.layer setCornerRadius:CGRectGetHeight(portraitView.bounds)/2];
-    portraitView.layer.borderColor = [UIColor blueColor].CGColor;
-//    portraitView.layer.borderWidth = 0.5;
-    [portraitView.layer setMasksToBounds:YES];
-    [portraitView setImage:[self.protaitImageArray objectAtIndex:indexPath.row]];
-    [cell.contentView addSubview:portraitView];
+    
+    [cell.protaitView setImage:nil];
+  
+    NSDictionary *person=[self.listItem    objectForKey:
+                          [keyArray  objectAtIndex:indexPath.row]
+                          ];
+    [cell.protaitView setImage:[person objectForKey:@"protaitImage"]];
+    
+    cell.nameLabel.text=[person objectForKey:@"username"];
+
+    
     
     
     cell.contentView.backgroundColor=[colorArray objectAtIndex:indexPath.row];
-    // shape 4 -- 3 Stars
-    [cell.statueView setMeterType:DPMeterTypeLinearHorizontal];
-    [cell.statueView setShape:[UIBezierPath stars:5 shapeInFrame:cell.statueView.frame].CGPath];
-    
-    cell.statueView.progressTintColor = [UIColor colorWithRed:255/255.f green:199/255.f blue:87/255.f alpha:1.f];
-    
-    cell.selectionStyle=UITableViewCellSelectionStyleNone;
-    
-    
-    //从字典中读取string 然后转化为CGFloat
-    NSString *key=cell.nameLabel.text;
-    
-    NSString *Delta=[self.listItem objectForKey:key];
-    float floatString = [Delta floatValue];
-//    NSLog(@"%@",Delta);
-    CGFloat f = (CGFloat)floatString;
-    
-    //set statue Value
-    cell.statueValue=&(f);
-    [cell updateProgressWithDelta:*(cell.statueValue) animated:YES];
-    
+//    // shape 4 -- 3 Stars
+//    [cell.statueView setMeterType:DPMeterTypeLinearHorizontal];
+//    [cell.statueView setShape:[UIBezierPath stars:5 shapeInFrame:cell.statueView.frame].CGPath];
+//    
+//    cell.statueView.progressTintColor = [UIColor colorWithRed:255/255.f green:199/255.f blue:87/255.f alpha:1.f];
+//    
+//    cell.selectionStyle=UITableViewCellSelectionStyleNone;
+//    
+//
+//    //从字典中读取string 然后转化为CGFloat
+//    NSString *key=cell.nameLabel.text;
+//    
+//    NSString *Delta=[self.listItem objectForKey:key];
+//    float floatString = [Delta floatValue];
+////    NSLog(@"%@",Delta);
+//    CGFloat f = (CGFloat)floatString;
+//    
+//    //set statue Value
+//    cell.statueValue=&(f);
+//    [cell updateProgressWithDelta:*(cell.statueValue) animated:YES];
+//    
 //     cell.accessoryType=UITableViewCellAccessoryDetailDisclosureButton;
     
     return cell;
@@ -432,18 +488,88 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+        NSArray *key=[self.listItem allKeys];
+        NSString *wantDeleteObjectID=[key
+                     objectAtIndex:indexPath.row];
+        NSDictionary *p=[self.listItem objectForKey:wantDeleteObjectID];
+        NSString *msg=@"确定将 ";
+        
+        msg=[msg stringByAppendingString:[p objectForKey:@"username"]];
+        msg=[msg stringByAppendingString:@" 移除你的家庭圈么？"];
+        
+        UIAlertView *deleteConfirmAlertView=[[UIAlertView alloc]initWithTitle:@"提示" message:msg delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
+        [deleteConfirmAlertView show];
+        if (self.locallydeleteFamilyShipObjectIdArray==nil) {
+            self.locallydeleteFamilyShipObjectIdArray=[[NSMutableDictionary alloc]initWithCapacity:1];
+        }
+        //将要删除的加入到本地删除字典；
+        [self.locallydeleteFamilyShipObjectIdArray setObject:p forKey:wantDeleteObjectID];
+        //
+//            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            
+    
+        
+        }
+//        else if (editingStyle == UITableViewCellEditingStyleInsert) {
+//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+//    }   
 }
-*/
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex==0) {
+      
+        //从本地数据字典中删除
+        for (NSString *ObjectId in [self.locallydeleteFamilyShipObjectIdArray allKeys]) {
+            
+            [self.listItem removeObjectForKey:ObjectId];
+           
+            
+            //从服务器中删除
+            //判断是否联网
+            
+            loadingAlertView=[[UIAlertView alloc]initWithTitle:@"提示" message:@"正在删除..." delegate:self cancelButtonTitle:nil otherButtonTitles:nil, nil];
+            [loadingAlertView show];
+            [self performSelector:@selector(deleteObjectOnAVOS:) withObject:ObjectId afterDelay:1];
+        }
+        
+    }
+    if(buttonIndex==1)
+    {
+        [self.locallydeleteFamilyShipObjectIdArray removeAllObjects];
+    }
+}
+
+
+
+-(void)deleteObjectOnAVOS:(id)obj
+{
+    //删除本好友列表中的friendb_objecId字段
+    AVQuery *query = [AVQuery queryWithClassName:@"JKFriendShip"];
+    AVUser *currentUser=[AVUser currentUser];
+    
+    [query whereKey:@"frienda_objectid" equalTo:currentUser.objectId];
+    
+    NSArray *resultSet=[query findObjects];
+    
+    for (AVObject *MyfamilyShipObject in resultSet) {
+        [MyfamilyShipObject removeObject:obj forKey:@"friendb_objectid"];
+        [MyfamilyShipObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            [loadingAlertView dismissWithClickedButtonIndex:0 animated:YES];
+            [self.locallydeleteFamilyShipObjectIdArray removeObjectForKey:obj];
+        }];
+    }
+    
+    [self.tableView reloadData];
+    
+}
 
 /*
 // Override to support rearranging the table view.
