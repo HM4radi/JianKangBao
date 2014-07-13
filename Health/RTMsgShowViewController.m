@@ -65,7 +65,11 @@
 
 - (void)viewWillLayoutSubviews{
     [self.navBar setFrame:CGRectMake(0, 0, 320, 64)];
-    
+    if (DEVICE_IS_IPHONE5) {
+        [self.textView setFrame:CGRectMake(0, 0, 320, 518)];
+    }else{
+        [self.textView setFrame:CGRectMake(0, 0, 320, 440)];
+    }
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"返回"
                                                                    style:UIBarButtonItemStylePlain target:self action:@selector(touchBack)];
     leftButton.tintColor=[UIColor whiteColor];

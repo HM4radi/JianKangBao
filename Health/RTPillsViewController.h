@@ -8,18 +8,30 @@
 
 #import <UIKit/UIKit.h>
 #import "RTPillsTableViewCell.h"
+#import "DDList.h"
+#import <AVOSCloud/AVOSCloud.h>
+#import "MJRefresh.h"
 
-@interface RTPillsViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate>{
+@interface RTPillsViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate,PassValueDelegate>{
     int cellNum;
     NSMutableArray *recordArray;
-    NSArray *hour;
-    NSArray *minite;
+
     NSString *currentName;
     NSString *currentNum;
     NSString *currentBeforeAfter;
-    NSString *currentHour;
-    NSString *currentMinute;
+    NSString *selectedTime;
+    
     BOOL setAlarm;
+    DDList *_ddList;
+    
+    NSMutableArray *pillsInDB;
+    NSMutableArray *pillsSearching;
+    
+    NSDateFormatter *dateFormatter1;
+    NSDateFormatter *dateFormatter;
+    int refreshTimes;
+    
+    BOOL footer;
 }
 
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
@@ -28,7 +40,7 @@
 
 @property (strong, nonatomic) IBOutlet UIView *addView;
 
-@property (weak, nonatomic) IBOutlet UIPickerView *pickView;
+@property (weak, nonatomic) IBOutlet UIDatePicker *timePicker;
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *numField;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *beforeAfter;
@@ -36,5 +48,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *navLabel1;
 @property (weak, nonatomic) IBOutlet UILabel *navLabel2;
 @property (weak, nonatomic) IBOutlet UISwitch *alarmSwitch;
+@property (weak, nonatomic) IBOutlet UIScrollView *controlScroll;
 
 @end

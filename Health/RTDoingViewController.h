@@ -47,4 +47,5 @@
 
 @property(nonatomic,weak) id<refreshData> dataDelegate;
 
+@property (weak, nonatomic) IBOutlet UIView *controlView;
 @end

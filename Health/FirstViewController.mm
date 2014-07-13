@@ -80,7 +80,6 @@
 	[self.tableView setDataSource:self];
     self.tableView.scrollEnabled=YES;
     self.tableView.separatorColor=[UIColor colorWithRed:130.0/255.0 green:190.0/255.0 blue:20.0/255.0 alpha:1.0];
-    [self.tableView setFrame:CGRectMake(0, 68, 320, 460)];
     self.tableView.tableHeaderView=progressView;
     [self.tableView addHeaderWithTarget:self action:@selector(headerRereshing)];
     [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
@@ -230,6 +229,12 @@
     UIColor *col2=[UIColor colorWithRed:244.0/255.0 green:237.0/255.0 blue:138.0/255.0 alpha:1.0];
     progressView.type=2;
     [self setupPregressView:@"卡路里" goal:@"目标:300" complete:236 withTopColor:col1 AndBottomColor:col2];
+    
+    if (DEVICE_IS_IPHONE5) {
+        [self.tableView setFrame:CGRectMake(0, 68, 320, 460)];
+    }else{
+        [self.tableView setFrame:CGRectMake(0, 68, 320, 372)];
+    }
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{

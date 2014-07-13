@@ -40,19 +40,27 @@
     
     if ([planData.sportType isEqualToString:@"跑步"]||[planData.sportType isEqualToString:@"步行"]||[planData.sportType isEqualToString:@"骑行"]) {
         if (!_mapView) {
-            _mapView= [[RTMapView alloc] initWithFrame:CGRectMake(0, 64, 320, 264)];
+            if (DEVICE_IS_IPHONE5) {
+                _mapView= [[RTMapView alloc] initWithFrame:CGRectMake(0, 64, 320, 264)];}
+            else{
+                _mapView= [[RTMapView alloc] initWithFrame:CGRectMake(0, 64, 320, 220)];
+            }
             [self.view insertSubview:_mapView belowSubview:self.labelValues];
         }
         [self loadChartView];
         self.labelValues.hidden=YES;
     }else{
         if (!_mapView) {
-            _mapView= [[RTMapView alloc] initWithFrame:CGRectMake(0, 64, 320, 354)];
+            if (DEVICE_IS_IPHONE5) {
+                _mapView= [[RTMapView alloc] initWithFrame:CGRectMake(0, 64, 320, 354)];}
+            else{
+                _mapView= [[RTMapView alloc] initWithFrame:CGRectMake(0, 64, 320, 286)];
+            }
             [self.view insertSubview:_mapView belowSubview:self.labelValues];
         }
         [self.myGraph removeFromSuperview];
         [self.labelValues removeFromSuperview];
-        [self.infoView setFrame:CGRectMake(0, 418, 320, 100)];
+        [self.infoView setFrame:CGRectMake(0, _mapView.frame.origin.y+_mapView.frame.size.height, 320, 100)];
         [self.view addSubview:self.infoView];
     }
 
@@ -89,7 +97,12 @@
     
     //BEMSimpleLineGraphView *myGraph = [[BEMSimpleLineGraphView alloc] initWithFrame:CGRectMake(0, 328, 320, 200)];
     myGraph.delegate = self;
-    self.myGraph.frame=CGRectMake(0, 328, 320, 195);
+    if (DEVICE_IS_IPHONE5) {
+        self.myGraph.frame=CGRectMake(0, 328, 320, 195);
+    }else{
+        self.myGraph.frame=CGRectMake(0, 284, 320, 239);
+    }
+    
     // Customization of the graph
     self.myGraph.enableTouchReport = YES;
     self.myGraph.colorTop = [UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0];
@@ -123,7 +136,7 @@
 
 - (void)didTouchGraphWithClosestIndex:(int)index {
     self.labelValues.textColor=[UIColor yellowColor];
-    self.labelValues.frame=CGRectMake(self.labelValues.frame.origin.x, 320, self.labelValues.frame.size.width, self.labelValues.frame.size.height);
+    self.labelValues.frame=CGRectMake(self.labelValues.frame.origin.x, self.myGraph.frame.origin.y-8, self.labelValues.frame.size.width, self.labelValues.frame.size.height);
     self.labelValues.hidden=NO;
     self.labelValues.text = [NSString stringWithFormat:@"%@KCal", [self.ArrayOfValues objectAtIndex:index]];
     

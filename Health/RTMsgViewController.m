@@ -120,7 +120,11 @@
 - (void)viewWillLayoutSubviews{
 
     self.navBar.frame=CGRectMake(0, 0, 320, 64);
-    self.collectionView.frame=CGRectMake(0, 0, 320, 518);
+    if (DEVICE_IS_IPHONE5) {
+        self.collectionView.frame=CGRectMake(0, 0, 320, 518);
+    }else{
+        self.collectionView.frame=CGRectMake(0, 0, 320, 430);
+    }
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"确定"
                                                                     style:UIBarButtonItemStyleDone target:self action:@selector(touchOK)];
     rightButton.tintColor=[UIColor whiteColor];

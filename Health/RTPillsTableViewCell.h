@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *pillsNum;
 
 @property (weak, nonatomic) IBOutlet UISwitch *pillsCmp;
+@property (weak, nonatomic) IBOutlet UILabel *pillsDay;
 
 @property (weak, nonatomic) IBOutlet UILabel *lbl1;
 @property (weak, nonatomic) IBOutlet UILabel *lbl2;

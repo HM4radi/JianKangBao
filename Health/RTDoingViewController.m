@@ -48,6 +48,13 @@
 - (void)viewWillLayoutSubviews{
     [self.navBar setFrame:CGRectMake(0, 0, 320, 64)];
     self.navBar.translucent=YES;
+    
+    if (DEVICE_IS_IPHONE5) {
+        self.controlView.frame=CGRectMake(0, 327, 320, 191);
+    }else{
+        self.controlView.frame=CGRectMake(0, 239, 320, 191);
+    }
+    
     [self.startButton setStyleType:ACPButtonOK];
     [self.startButton setLabelTextColor:[UIColor whiteColor] highlightedColor:[UIColor greenColor] disableColor:nil];
     [self.startButton setCornerRadius:40];
@@ -65,7 +72,12 @@
     // Do any additional setup after loading the view from its nib.
     
     if (!_mapView) {
-        _mapView= [[RTMapView alloc] initWithFrame:CGRectMake(0, 64, 320, 264)];
+        if (DEVICE_IS_IPHONE5) {
+            _mapView= [[RTMapView alloc] initWithFrame:CGRectMake(0, 64, 320, 264)];
+        }else{
+            _mapView= [[RTMapView alloc] initWithFrame:CGRectMake(0, 64, 320, 176)];
+        }
+        
         [self.view addSubview:_mapView];
     }
     
