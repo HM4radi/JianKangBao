@@ -16,6 +16,10 @@
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO"/>
             <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="dataSource" destination="-1" id="fzH-lP-CvN"/>
+                <outlet property="delegate" destination="-1" id="IKb-NM-4zT"/>
+            </connections>
         </tableView>
     </objects>
 </document>

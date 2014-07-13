@@ -31,6 +31,8 @@
 @end
 
 @implementation GYBTableViewController
+
+ static BOOL nibsRegistered = NO;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -40,6 +42,14 @@
     return self;
 }
 
+
+-(void)checkOutDataOnAVOS
+{
+    //初始化数据
+    [self queryFamilyShipFromAVOS];
+    
+
+}
 
 -(void)queryFamilyShipFromAVOS
 {
@@ -64,8 +74,8 @@
 
 -(void)queryFamilyUser
 {
-    self.protaitImageArray=[[NSMutableArray alloc]init];
-    self.listItem = [NSMutableDictionary dictionary];
+     NSMutableArray *protaitImageArray=[[NSMutableArray alloc]init];
+    NSMutableDictionary *listItem = [NSMutableDictionary dictionary];
 
     if (self.familyShipObjectId!=nil) {
     //循环查询
@@ -78,22 +88,23 @@
             [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
                 if (error == nil) {
                     RTUserInfo *user=[objects objectAtIndex:0];
-                    [self.listItem setObject:@"0" forKey:user.username];
+                    [listItem setObject:@"0" forKey:user.username];
                     AVFile *imageFile=user.userImage;
                     NSData *imageData=[imageFile getData];
                     
                     if (imageData==nil) {
                         UIImage *imgDefault=[UIImage imageNamed:@"tabbar_profile.png"];
-                        [self.protaitImageArray addObject:imgDefault];
+                        [protaitImageArray addObject:imgDefault];
                     }else
                     {
                         UIImage *img=[UIImage imageWithData:imageData];;
-                        [self.protaitImageArray addObject:img];
+                        [protaitImageArray addObject:img];
                     }
                     
                    
-                  NSLog(@"for后protaitImageArray长达:%d", [self.protaitImageArray count]);
-                      [self.tableView reloadData];
+                  NSLog(@"for后protaitImageArray长达:%d", [protaitImageArray count]);
+                    [self.protaitImageArray addObjectsFromArray:protaitImageArray];
+                    [self.listItem addEntriesFromDictionary:listItem];
                 }
                 
                 else {
@@ -188,17 +199,25 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    
+    if ([[self.listItem allKeys] count]==0) {
+        
+    }
+    else{
     [self.tableView reloadData];
+    }
 }
 - (void)viewDidLoad
 {
     
-    //初始化数据
-    [self queryFamilyShipFromAVOS];
-    //
+    
 
     [super viewDidLoad];
+//初始化数据本地化数组
+    self.protaitImageArray=[[NSMutableArray alloc]init];
+    self.listItem = [NSMutableDictionary dictionary];
 
+    
     
     [self.navigationController.navigationBar setFrame:CGRectMake(0, 0, 320, 64)];
 
@@ -224,8 +243,47 @@
     
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd   target:self action:@selector(addFamilyMemberAction:)];
     
+    
+    //初始化下拉刷新控件
+    UIRefreshControl *rc=[[UIRefreshControl alloc]init];
+    rc.attributedTitle=[[NSAttributedString alloc]initWithString:@"下拉刷新家人列表"];
+    [rc addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl=rc;
 
 }
+
+
+-(void)refreshTableView
+{
+    
+    [self.listItem removeAllObjects];
+    [self.protaitImageArray removeAllObjects];
+    if(self.refreshControl.refreshing)
+    {
+        self.refreshControl.attributedTitle=[[NSAttributedString alloc]initWithString:@"数据紧张加载中..."];
+        
+        //刷新数据
+        [self checkOutDataOnAVOS];
+        //请求完成后回调
+        [self performSelector:@selector(callBackMethod:) withObject:nil afterDelay:3];
+        
+        
+        
+    
+    }
+
+
+}
+
+
+-(void)callBackMethod:(id) obj
+{
+    [self.refreshControl endRefreshing];
+    self.refreshControl.attributedTitle=[[NSAttributedString alloc]initWithString:@"下拉刷新家人列表刷新"];
+    [self.tableView reloadData];
+
+}
+
 
 -(IBAction)addFamilyMemberAction:(id)sender
 {
@@ -273,6 +331,17 @@
 {
     
    NSMutableArray *colorArray=[[NSMutableArray alloc]init];
+    static NSString *Cellidentifier=@"CustomCellRed";
+    if (!nibsRegistered) {
+        UINib *nib = [UINib nibWithNibName:@"GYBTableViewCell" bundle:nil];
+        [tableView registerNib:nib forCellReuseIdentifier:Cellidentifier];
+        nibsRegistered = YES;
+    }
+     NSUInteger row=[indexPath row];
+    GYBTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:Cellidentifier forIndexPath:indexPath];
+    
+    
+   
     UIColor *darkBlue;
     UIColor *darkYellow;
     UIColor *darkGreen;
@@ -298,22 +367,11 @@
                 break;
         }
         
+        
+    }
+    
 
-    }
-    
-    
-    static BOOL nibsRegistered = NO;
-    
-    static NSString *Cellidentifier=@"CustomCellRed";
-    if (!nibsRegistered) {
-        UINib *nib = [UINib nibWithNibName:@"GYBTableViewCell" bundle:nil];
-        [tableView registerNib:nib forCellReuseIdentifier:Cellidentifier];
-        nibsRegistered = YES;
-    }
-    
-    
-    GYBTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:Cellidentifier forIndexPath:indexPath];
-    NSUInteger row=[indexPath row];
+   
   
 //    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 //    cell.backgroundColor= [UIColor colorWithRed: 1 green: 0 blue: 0 alpha: 0.235];
