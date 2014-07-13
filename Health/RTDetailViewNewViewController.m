@@ -15,18 +15,7 @@
 @end
 
 @implementation RTDetailViewNewViewController
-{
-    NSArray *dayStatusValueArray;
-    NSArray *weekStatusValusArray;
-    NSMutableDictionary *friendDataListDict;
-    NSArray *selfHealthdataArray;
-    NSArray *friend;
-    
-    NSArray *friendNameList;
-    
-    NSUInteger currentSelectedIndex;
 
-}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -56,34 +45,37 @@
     
     
     //初始化数据
-    friendNameList=[NSArray arrayWithObjects:@"gyb",@"shirui",nil];
-  
     NSArray *b1=[NSArray arrayWithObjects:@"1",@"5",@"2",@"6",@"8",@"7",@"9",@"5",@"1",@"10",@"8",@"4", nil];
     
     NSArray *b2=[NSArray arrayWithObjects:@"1",@"5",@"2",@"6",@"8",@"7",@"9", nil];
     NSArray *b3=[NSArray arrayWithObjects:@"90/100",@"60/100",@"90/100",nil ];
    
     NSArray *f1=[NSArray arrayWithObjects:b3,b1,b2, nil];
-    UIImage* i1=[UIImage imageNamed:@"1.jpg"];
-    friendDataListDict=[NSMutableDictionary dictionaryWithObject:f1 forKey:[friendNameList objectAtIndex:0]];
-    [friendDataListDict setObject:i1 forKey:[[friendNameList objectAtIndex:0] stringByAppendingString:@"image"]];
+
+    for (int i=0; i<[self.friendNameList count]; i++) {
+        self.friendDataListDict=[NSMutableDictionary dictionaryWithObject:f1 forKey:[self.friendNameList objectAtIndex:i]];
+        
+        [self.friendDataListDict setObject:[self.friendImage objectAtIndex:i]   forKey:[[self.friendNameList objectAtIndex:0] stringByAppendingString:@"image"]];
+    }
+    
+  
 //    [friendDict setObject:i2 forKey:@"watermeion"];
     
     
     
-    NSArray *a1=[NSArray arrayWithObjects:@"10",@"3",@"2",@"5",@"8",@"7",@"9",@"10",@"1",@"10",@"8",@"2", nil];
-    
-    NSArray *a2=[NSArray arrayWithObjects:@"10",@"6",@"9",@"7",@"1",@"3",@"9", nil];
-    
-    NSArray *a3=[NSArray arrayWithObjects:@"30/100",@"80/100",@"75/100",nil];
-    
-     NSArray *f2=[NSArray arrayWithObjects:a3,a1,a2,nil];
-    UIImage* i2=[UIImage imageNamed:@"2.jpg"];
-    [friendDataListDict setObject:f2 forKey:[friendNameList objectAtIndex:1]];
-   //添加用户头像
-    [friendDataListDict setObject:i2 forKey:[[friendNameList objectAtIndex:1] stringByAppendingString:@"image"]];
-    
-    
+//    NSArray *a1=[NSArray arrayWithObjects:@"10",@"3",@"2",@"5",@"8",@"7",@"9",@"10",@"1",@"10",@"8",@"2", nil];
+//    
+//    NSArray *a2=[NSArray arrayWithObjects:@"10",@"6",@"9",@"7",@"1",@"3",@"9", nil];
+//    
+//    NSArray *a3=[NSArray arrayWithObjects:@"30/100",@"80/100",@"75/100",nil];
+//    
+//     NSArray *f2=[NSArray arrayWithObjects:a3,a1,a2,nil];
+//    UIImage* i2=[UIImage imageNamed:@"2.jpg"];
+//    [friendDataListDict setObject:f2 forKey:[friendNameList objectAtIndex:1]];
+//   //添加用户头像
+//    [friendDataListDict setObject:i2 forKey:[[friendNameList objectAtIndex:1] stringByAppendingString:@"image"]];
+//    
+//    
     
     // Do any additional setup after loading the view from its nib.
     
@@ -94,7 +86,7 @@
     menuBar.bounces = YES;
     //menuBar
   
-    menuBar.selectedItemIndex = currentSelectedIndex;
+    menuBar.selectedItemIndex = self.currentSelectedIndex;
 //    currentSelectedIndex=0;
     
     menuBar.backgroundColor = [UIColor whiteColor];
@@ -109,7 +101,7 @@
     
     
     
-    [self loadProfileImage:[friendDataListDict objectForKey:[[friendNameList objectAtIndex:currentSelectedIndex] stringByAppendingString:@"image"]]];
+    [self loadProfileImage:[self.friendDataListDict objectForKey:[[self.friendNameList objectAtIndex:self.currentSelectedIndex] stringByAppendingString:@"image"]]];
     //add line chart
     //Add LineChart
 //	UILabel * lineChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, SCREEN_WIDTH, 30)];
@@ -145,9 +137,9 @@
 
 -(void)setChartData
 {
-    if (currentSelectedIndex<[friendNameList count]) {
-        dayStatusValueArray=[[friendDataListDict objectForKey:[friendNameList objectAtIndex:currentSelectedIndex]] objectAtIndex:1];
-        weekStatusValusArray=[[friendDataListDict objectForKey:[friendNameList objectAtIndex:currentSelectedIndex]] objectAtIndex:2];
+    if (_currentSelectedIndex<[_friendNameList count]) {
+        _dayStatusValueArray=[[_friendDataListDict objectForKey:[_friendNameList objectAtIndex:_currentSelectedIndex]] objectAtIndex:1];
+        _weekStatusValusArray=[[_friendDataListDict objectForKey:[_friendNameList objectAtIndex:_currentSelectedIndex]] objectAtIndex:2];
       
 
     }
@@ -157,10 +149,10 @@
 
 -(void)loadDataLabelText
 {
-    self.data1Label.text=[[[friendDataListDict objectForKey:
-                            [friendNameList objectAtIndex:currentSelectedIndex]] objectAtIndex:0] objectAtIndex:0];
-    self.data2Label.text=[[[friendDataListDict objectForKey:[friendNameList objectAtIndex:currentSelectedIndex]] objectAtIndex:0] objectAtIndex:1];
-    self.data3Label.text=[[[friendDataListDict objectForKey:[friendNameList objectAtIndex:currentSelectedIndex]] objectAtIndex:0] objectAtIndex:2];
+    self.data1Label.text=[[[_friendDataListDict objectForKey:
+                            [_friendNameList objectAtIndex:_currentSelectedIndex]] objectAtIndex:0] objectAtIndex:0];
+    self.data2Label.text=[[[_friendDataListDict objectForKey:[_friendNameList objectAtIndex:_currentSelectedIndex]] objectAtIndex:0] objectAtIndex:1];
+    self.data3Label.text=[[[_friendDataListDict objectForKey:[_friendNameList objectAtIndex:_currentSelectedIndex]] objectAtIndex:0] objectAtIndex:2];
 
 
 }
@@ -176,16 +168,10 @@
 
 }
 
--(void)setCurrentSelectedIndex:(NSUInteger) i
-{
-    currentSelectedIndex=i;
-
-}
-
 
 #pragma mark LightMenuBarDelegate
 - (NSUInteger)itemCountInMenuBar:(LightMenuBar *)menuBar {
-    return [friendNameList count];
+    return [_friendNameList count];
 }
 
 
@@ -193,7 +179,7 @@
 - (NSString *)itemTitleAtIndex:(NSUInteger)index inMenuBar:(LightMenuBar *)menuBar {
    
     NSLog(@"index:%lu",(unsigned long)index);
-    return [friendNameList objectAtIndex:index];
+    return [_friendNameList objectAtIndex:index];
     
     
 }
@@ -202,7 +188,7 @@
 - (void)itemSelectedAtIndex:(NSUInteger)index inMenuBar:(LightMenuBar *)menuBar {
 //    dispLabel.text = [NSString stringWithFormat:@"%d Selected", index];
     [self setCurrentSelectedIndex:index];
-    [self loadProfileImage:[friendDataListDict objectForKey:[[friendNameList objectAtIndex:index] stringByAppendingString:@"image"]]];
+    [self loadProfileImage:[_friendDataListDict objectForKey:[[_friendNameList objectAtIndex:index] stringByAppendingString:@"image"]]];
     
     [self setChartData];
     [self loadDayDataAndDrawLine];
@@ -314,7 +300,7 @@
     //设置x轴点的个数
     [lineChart setXNodeNum:12.0];
 	[lineChart setXLabels:@[@"0点",@"2点",@"4点",@"6点",@"8点",@"10点",@"12点",@"14点",@"16点",@"18点",@"20点",@"22点"]];
-	[lineChart setYValues:dayStatusValueArray];
+	[lineChart setYValues:_dayStatusValueArray];
 	[lineChart strokeChart];
  
 	[self.friendBriefChat addSubview:lineChart];
@@ -333,7 +319,7 @@
     //设置x轴点的个数
     [lineChart setXNodeNum:7.0];
 	[lineChart setXLabels:@[@"Mon",@"Tue",@"Wed",@"Thu",@"Fri",@"Sat",@"Sun"]];
-	[lineChart setYValues:weekStatusValusArray];
+	[lineChart setYValues:_weekStatusValusArray];
 	[lineChart strokeChart];
     
 	[self.friendBriefChat addSubview:lineChart];

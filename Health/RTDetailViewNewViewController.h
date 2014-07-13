@@ -19,6 +19,29 @@
 }
 
 
+ @property (strong, nonatomic)   NSArray *dayStatusValueArray;
+@property (strong, nonatomic)    NSArray *weekStatusValusArray;
+@property (strong, nonatomic)    NSMutableDictionary *friendDataListDict;
+@property (strong, nonatomic)   NSArray *selfHealthdataArray;
+@property (strong, nonatomic)   NSArray * friend;
+    
+@property (strong, nonatomic)   NSArray *friendNameList;
+@property (strong,nonatomic)NSArray *friendImage;
+@property  NSUInteger currentSelectedIndex;
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
 @property (strong, nonatomic) IBOutlet UIButton *moreInfoBtn;
 
 - (IBAction)moreInfoAction:(id)sender;

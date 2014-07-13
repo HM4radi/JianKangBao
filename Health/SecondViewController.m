@@ -487,10 +487,6 @@
             cell.textLabel.text = doctor.name;
             cell.detailTextLabel.text=doctor.info;
             [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
-            
-            
-            
-            
             break;
             
             
