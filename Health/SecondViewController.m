@@ -334,7 +334,7 @@
             break;
         case 10004:
            rowcount=[self.filteredAll count];
-
+            return rowcount;
         default:
             rowcount=0;
             break;
@@ -487,10 +487,6 @@
             cell.textLabel.text = doctor.name;
             cell.detailTextLabel.text=doctor.info;
             [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
-            
-            
-            
-            
             break;
             
             

@@ -121,8 +121,10 @@
 //添加点击事件
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     RTDetailViewNewViewController *detailViewController=[[RTDetailViewNewViewController alloc]initWithNibName:@"RTDetailViewNewViewController" bundle:nil];
-
+    detailViewController.friendNameList=[self.listItem allKeys];
+    detailViewController.friendImage=self.protaitImageArray;
     [detailViewController setCurrentSelectedIndex:indexPath.row];
     [self.navigationController pushViewController:detailViewController animated:YES];
     
