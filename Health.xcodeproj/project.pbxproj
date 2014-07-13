@@ -191,13 +191,16 @@
 		AD168752196CE953003ABF3C /* micro_messenger.png in Resources */ = {isa = PBXBuildFile; fileRef = AD168750196CE953003ABF3C /* micro_messenger.png */; };
 		AD168756196CE982003ABF3C /* RTMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD168754196CE982003ABF3C /* RTMainViewController.m */; };
 		AD168757196CE982003ABF3C /* RTMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD168755196CE982003ABF3C /* RTMainViewController.xib */; };
-		AD16875B196CEA94003ABF3C /* RTPillsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD168759196CEA94003ABF3C /* RTPillsViewController.m */; };
-		AD16875C196CEA94003ABF3C /* RTPillsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD16875A196CEA94003ABF3C /* RTPillsViewController.xib */; };
-		AD168766196CF6AA003ABF3C /* Icon_58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = AD168763196CF6AA003ABF3C /* Icon_58x58.png */; };
-		AD168767196CF6AA003ABF3C /* Icon_80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = AD168764196CF6AA003ABF3C /* Icon_80x80.png */; };
-		AD168768196CF6AA003ABF3C /* Icon_120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = AD168765196CF6AA003ABF3C /* Icon_120x120.png */; };
 		AD1E4843195D6A360033784B /* DS-DIGI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD1E4842195D6A360033784B /* DS-DIGI.ttf */; };
 		AD2293C51934CD5100796CA2 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD2293C41934CD5100796CA2 /* background.jpg */; };
+		AD327F45197034C000D8FEAB /* DDList.m in Sources */ = {isa = PBXBuildFile; fileRef = AD327F3E197034C000D8FEAB /* DDList.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AD327F46197034C000D8FEAB /* RTPillsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD327F40197034C000D8FEAB /* RTPillsViewController.m */; };
+		AD327F47197034C000D8FEAB /* RTPillsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD327F41197034C000D8FEAB /* RTPillsViewController.xib */; };
+		AD327F48197034C000D8FEAB /* RTPillsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD327F43197034C000D8FEAB /* RTPillsTableViewCell.m */; };
+		AD327F49197034C000D8FEAB /* RTPillsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD327F44197034C000D8FEAB /* RTPillsTableViewCell.xib */; };
+		AD327F4D197034F000D8FEAB /* Icon_58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = AD327F4A197034F000D8FEAB /* Icon_58x58.png */; };
+		AD327F4E197034F000D8FEAB /* Icon_80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = AD327F4B197034F000D8FEAB /* Icon_80x80.png */; };
+		AD327F4F197034F000D8FEAB /* Icon_120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = AD327F4C197034F000D8FEAB /* Icon_120x120.png */; };
 		AD3493DA196270DD001A46FC /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AD3493CA196270DD001A46FC /* MJRefresh.bundle */; };
 		AD3493DB196270DD001A46FC /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3493CD196270DD001A46FC /* MJRefreshBaseView.m */; };
 		AD3493DC196270DD001A46FC /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3493CF196270DD001A46FC /* MJRefreshConst.m */; };
@@ -212,8 +215,15 @@
 		AD3C8D3F1947F44D00357DA0 /* RTSportPlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD3C8D3D1947F44D00357DA0 /* RTSportPlanViewController.xib */; };
 		AD3FDC4E1961B06500EECFA0 /* tick1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD3FDC4C1961B06500EECFA0 /* tick1.jpg */; };
 		AD3FDC4F1961B06500EECFA0 /* tick.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD3FDC4D1961B06500EECFA0 /* tick.jpg */; };
-		AD46FB10193431CE00F19BC4 /* RTPillsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD46FB0E193431CE00F19BC4 /* RTPillsTableViewCell.m */; };
-		AD46FB11193431CE00F19BC4 /* RTPillsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD46FB0F193431CE00F19BC4 /* RTPillsTableViewCell.xib */; };
+		AD464FF819715190000E9323 /* RTChecksUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD464FF619715190000E9323 /* RTChecksUpViewController.m */; };
+		AD464FF919715190000E9323 /* RTChecksUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD464FF719715190000E9323 /* RTChecksUpViewController.xib */; };
+		AD464FFD19715A5D000E9323 /* RTTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD464FFB19715A5D000E9323 /* RTTypeCell.m */; };
+		AD464FFE19715A5D000E9323 /* RTTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD464FFC19715A5D000E9323 /* RTTypeCell.xib */; };
+		AD46500219715A98000E9323 /* RTIndexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD46500019715A98000E9323 /* RTIndexCell.m */; };
+		AD46500319715A98000E9323 /* RTIndexCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD46500119715A98000E9323 /* RTIndexCell.xib */; };
+		AD46500A19716065000E9323 /* RTAddCheckUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AD46500819716065000E9323 /* RTAddCheckUpVC.m */; };
+		AD46500B19716065000E9323 /* RTAddCheckUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD46500919716065000E9323 /* RTAddCheckUpVC.xib */; };
+		AD46500F1971808C000E9323 /* CheckUpDictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD46500E1971808C000E9323 /* CheckUpDictionary.plist */; };
 		AD470D78195A9FF1004ECB75 /* RTSportRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = AD470D77195A9FF1004ECB75 /* RTSportRecord.m */; };
 		AD480F62192497CC0081DAFA /* Window Background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD480F61192497CC0081DAFA /* Window Background@2x.png */; };
 		AD48102A1924BDFC0081DAFA /* RNGridMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4810291924BDFC0081DAFA /* RNGridMenu.m */; };
@@ -619,14 +629,19 @@
 		AD168753196CE982003ABF3C /* RTMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTMainViewController.h; sourceTree = "<group>"; };
 		AD168754196CE982003ABF3C /* RTMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTMainViewController.m; sourceTree = "<group>"; };
 		AD168755196CE982003ABF3C /* RTMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTMainViewController.xib; sourceTree = "<group>"; };
-		AD168758196CEA94003ABF3C /* RTPillsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTPillsViewController.h; sourceTree = "<group>"; };
-		AD168759196CEA94003ABF3C /* RTPillsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTPillsViewController.m; sourceTree = "<group>"; };
-		AD16875A196CEA94003ABF3C /* RTPillsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTPillsViewController.xib; sourceTree = "<group>"; };
-		AD168763196CF6AA003ABF3C /* Icon_58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_58x58.png; sourceTree = "<group>"; };
-		AD168764196CF6AA003ABF3C /* Icon_80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_80x80.png; sourceTree = "<group>"; };
-		AD168765196CF6AA003ABF3C /* Icon_120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_120x120.png; sourceTree = "<group>"; };
 		AD1E4842195D6A360033784B /* DS-DIGI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DS-DIGI.ttf"; sourceTree = "<group>"; };
 		AD2293C41934CD5100796CA2 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		AD327F3D197034C000D8FEAB /* DDList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDList.h; sourceTree = "<group>"; };
+		AD327F3E197034C000D8FEAB /* DDList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDList.m; sourceTree = "<group>"; };
+		AD327F3F197034C000D8FEAB /* RTPillsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTPillsViewController.h; sourceTree = "<group>"; };
+		AD327F40197034C000D8FEAB /* RTPillsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTPillsViewController.m; sourceTree = "<group>"; };
+		AD327F41197034C000D8FEAB /* RTPillsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTPillsViewController.xib; sourceTree = "<group>"; };
+		AD327F42197034C000D8FEAB /* RTPillsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTPillsTableViewCell.h; sourceTree = "<group>"; };
+		AD327F43197034C000D8FEAB /* RTPillsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTPillsTableViewCell.m; sourceTree = "<group>"; };
+		AD327F44197034C000D8FEAB /* RTPillsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTPillsTableViewCell.xib; sourceTree = "<group>"; };
+		AD327F4A197034F000D8FEAB /* Icon_58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_58x58.png; sourceTree = "<group>"; };
+		AD327F4B197034F000D8FEAB /* Icon_80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_80x80.png; sourceTree = "<group>"; };
+		AD327F4C197034F000D8FEAB /* Icon_120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_120x120.png; sourceTree = "<group>"; };
 		AD3493CA196270DD001A46FC /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
 		AD3493CB196270DD001A46FC /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
 		AD3493CC196270DD001A46FC /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
@@ -651,9 +666,19 @@
 		AD3C8D3D1947F44D00357DA0 /* RTSportPlanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTSportPlanViewController.xib; sourceTree = "<group>"; };
 		AD3FDC4C1961B06500EECFA0 /* tick1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tick1.jpg; sourceTree = "<group>"; };
 		AD3FDC4D1961B06500EECFA0 /* tick.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tick.jpg; sourceTree = "<group>"; };
-		AD46FB0D193431CE00F19BC4 /* RTPillsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTPillsTableViewCell.h; sourceTree = "<group>"; };
-		AD46FB0E193431CE00F19BC4 /* RTPillsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTPillsTableViewCell.m; sourceTree = "<group>"; };
-		AD46FB0F193431CE00F19BC4 /* RTPillsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTPillsTableViewCell.xib; sourceTree = "<group>"; };
+		AD464FF519715190000E9323 /* RTChecksUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTChecksUpViewController.h; sourceTree = "<group>"; };
+		AD464FF619715190000E9323 /* RTChecksUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTChecksUpViewController.m; sourceTree = "<group>"; };
+		AD464FF719715190000E9323 /* RTChecksUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTChecksUpViewController.xib; sourceTree = "<group>"; };
+		AD464FFA19715A5D000E9323 /* RTTypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTTypeCell.h; sourceTree = "<group>"; };
+		AD464FFB19715A5D000E9323 /* RTTypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTTypeCell.m; sourceTree = "<group>"; };
+		AD464FFC19715A5D000E9323 /* RTTypeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTTypeCell.xib; sourceTree = "<group>"; };
+		AD464FFF19715A98000E9323 /* RTIndexCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTIndexCell.h; sourceTree = "<group>"; };
+		AD46500019715A98000E9323 /* RTIndexCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTIndexCell.m; sourceTree = "<group>"; };
+		AD46500119715A98000E9323 /* RTIndexCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTIndexCell.xib; sourceTree = "<group>"; };
+		AD46500719716065000E9323 /* RTAddCheckUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTAddCheckUpVC.h; sourceTree = "<group>"; };
+		AD46500819716065000E9323 /* RTAddCheckUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTAddCheckUpVC.m; sourceTree = "<group>"; };
+		AD46500919716065000E9323 /* RTAddCheckUpVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTAddCheckUpVC.xib; sourceTree = "<group>"; };
+		AD46500E1971808C000E9323 /* CheckUpDictionary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CheckUpDictionary.plist; sourceTree = "<group>"; };
 		AD470D76195A9FF1004ECB75 /* RTSportRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTSportRecord.h; sourceTree = "<group>"; };
 		AD470D77195A9FF1004ECB75 /* RTSportRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTSportRecord.m; sourceTree = "<group>"; };
 		AD480F61192497CC0081DAFA /* Window Background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Window Background@2x.png"; sourceTree = "<group>"; };
@@ -1071,9 +1096,9 @@
 		0469EB72192886FF00388022 /* image */ = {
 			isa = PBXGroup;
 			children = (
-				AD168763196CF6AA003ABF3C /* Icon_58x58.png */,
-				AD168764196CF6AA003ABF3C /* Icon_80x80.png */,
-				AD168765196CF6AA003ABF3C /* Icon_120x120.png */,
+				AD327F4A197034F000D8FEAB /* Icon_58x58.png */,
+				AD327F4B197034F000D8FEAB /* Icon_80x80.png */,
+				AD327F4C197034F000D8FEAB /* Icon_120x120.png */,
 				ADA6C2E01951D8D30037A013 /* 08-chat.png */,
 				ADA6C2E11951D8D30037A013 /* 75-phone.png */,
 				ADA6C2E21951D8D30037A013 /* 78-stopwatch.png */,
@@ -1388,15 +1413,38 @@
 			path = MJRefresh;
 			sourceTree = "<group>";
 		};
+		AD464FF419715113000E9323 /* ChecksUp */ = {
+			isa = PBXGroup;
+			children = (
+				AD46500E1971808C000E9323 /* CheckUpDictionary.plist */,
+				AD464FF519715190000E9323 /* RTChecksUpViewController.h */,
+				AD464FF619715190000E9323 /* RTChecksUpViewController.m */,
+				AD464FF719715190000E9323 /* RTChecksUpViewController.xib */,
+				AD46500719716065000E9323 /* RTAddCheckUpVC.h */,
+				AD46500819716065000E9323 /* RTAddCheckUpVC.m */,
+				AD46500919716065000E9323 /* RTAddCheckUpVC.xib */,
+				AD464FFA19715A5D000E9323 /* RTTypeCell.h */,
+				AD464FFB19715A5D000E9323 /* RTTypeCell.m */,
+				AD464FFC19715A5D000E9323 /* RTTypeCell.xib */,
+				AD464FFF19715A98000E9323 /* RTIndexCell.h */,
+				AD46500019715A98000E9323 /* RTIndexCell.m */,
+				AD46500119715A98000E9323 /* RTIndexCell.xib */,
+			);
+			name = ChecksUp;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		AD46FB12193431E500F19BC4 /* PillsView */ = {
 			isa = PBXGroup;
 			children = (
-				AD168758196CEA94003ABF3C /* RTPillsViewController.h */,
-				AD168759196CEA94003ABF3C /* RTPillsViewController.m */,
-				AD16875A196CEA94003ABF3C /* RTPillsViewController.xib */,
-				AD46FB0D193431CE00F19BC4 /* RTPillsTableViewCell.h */,
-				AD46FB0E193431CE00F19BC4 /* RTPillsTableViewCell.m */,
-				AD46FB0F193431CE00F19BC4 /* RTPillsTableViewCell.xib */,
+				AD327F3D197034C000D8FEAB /* DDList.h */,
+				AD327F3E197034C000D8FEAB /* DDList.m */,
+				AD327F3F197034C000D8FEAB /* RTPillsViewController.h */,
+				AD327F40197034C000D8FEAB /* RTPillsViewController.m */,
+				AD327F41197034C000D8FEAB /* RTPillsViewController.xib */,
+				AD327F42197034C000D8FEAB /* RTPillsTableViewCell.h */,
+				AD327F43197034C000D8FEAB /* RTPillsTableViewCell.m */,
+				AD327F44197034C000D8FEAB /* RTPillsTableViewCell.xib */,
 			);
 			name = PillsView;
 			sourceTree = "<group>";
@@ -1592,8 +1640,6 @@
 				04B58A801945678200A4905C /* RTCenterViewController.m */,
 				04B58A811945678200A4905C /* RTCenterViewController.xib */,
 				ADA9873519332A9C00B98092 /* image */,
-				AD46FB13193431FD00F19BC4 /* FoodView */,
-				AD46FB12193431E500F19BC4 /* PillsView */,
 			);
 			name = CenterViewController;
 			sourceTree = "<group>";
@@ -1679,6 +1725,9 @@
 				AD4810641924C0450081DAFA /* MapView */,
 				ADAA5E29192343C30040ED10 /* MainViewController */,
 				ADA9872F1933102400B98092 /* CenterViewController */,
+				AD464FF419715113000E9323 /* ChecksUp */,
+				AD46FB12193431E500F19BC4 /* PillsView */,
+				AD46FB13193431FD00F19BC4 /* FoodView */,
 				AD0DA0351935C03100A9846E /* MessageView */,
 				ADAA5E2A192355BE0040ED10 /* FirstViewController */,
 				ADAA5E2C192356050040ED10 /* SecondViewController */,
@@ -1955,6 +2004,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "RADI Team";
 				TargetAttributes = {
+					ADAA5DCB192341090040ED10 = {
+						DevelopmentTeam = 7946C3CJS9;
+					};
 					ADAA5DE6192341090040ED10 = {
 						TestTargetID = ADAA5DCB192341090040ED10;
 					};
@@ -1987,6 +2039,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD12F67C192634B400921894 /* navigationbar_home_highlighted.png in Resources */,
+				AD46500F1971808C000E9323 /* CheckUpDictionary.plist in Resources */,
 				ADAA5DDA192341090040ED10 /* InfoPlist.strings in Resources */,
 				04E88A2D196E81FC00B1BE83 /* error.png in Resources */,
 				AD12F671192634B400921894 /* navigation_shadow.png in Resources */,
@@ -1996,10 +2049,10 @@
 				ADCC7A4E1929AF64005B00B4 /* login_textfield_more_flip@2x.png in Resources */,
 				AD12F6C3192634B400921894 /* toolbar_favorite.png in Resources */,
 				AD2293C51934CD5100796CA2 /* background.jpg in Resources */,
-				AD168768196CF6AA003ABF3C /* Icon_120x120.png in Resources */,
 				AD12F6C5192634B400921894 /* toolbar_more.png in Resources */,
 				AD12F682192634B400921894 /* navigationbar_mentions.png in Resources */,
 				AD54260B193715E4005F10F4 /* xljk.jpg in Resources */,
+				AD327F49197034C000D8FEAB /* RTPillsTableViewCell.xib in Resources */,
 				ADCC7A4C1929AF64005B00B4 /* login_textfield_mid.png in Resources */,
 				AD0DA05E1935C57700A9846E /* food-master.png in Resources */,
 				AD12F652192634B400921894 /* compose_publicbutton_background.png in Resources */,
@@ -2024,7 +2077,6 @@
 				AD12F69C192634B400921894 /* settings_rate_icon.png in Resources */,
 				AD12F68D192634B400921894 /* popover_button_highlighted@2x.png in Resources */,
 				ADCC7A461929AF64005B00B4 /* login_dropdown_avatar_border.png in Resources */,
-				AD168766196CF6AA003ABF3C /* Icon_58x58.png in Resources */,
 				AD12F5991926314F00921894 /* settings_accounts_icon.png in Resources */,
 				ADA9874419337F6D00B98092 /* ld.jpg in Resources */,
 				AD168752196CE953003ABF3C /* micro_messenger.png in Resources */,
@@ -2058,8 +2110,8 @@
 				ADCC7A451929AF64005B00B4 /* login_btn_blue_press@2x.png in Resources */,
 				04FB29DB1941ACC100B96AA7 /* 3(1).png in Resources */,
 				AD12F655192634B400921894 /* compose_toolbar_background.png in Resources */,
+				AD464FFE19715A5D000E9323 /* RTTypeCell.xib in Resources */,
 				AD12F6BC192634B400921894 /* timeline_retweet_count_icon@2x.png in Resources */,
-				AD16875C196CEA94003ABF3C /* RTPillsViewController.xib in Resources */,
 				AD12F6B7192634B400921894 /* timeline_membership_icon@2x.png in Resources */,
 				AD0DA05C1935C57700A9846E /* add-master.png in Resources */,
 				AD12F6A7192634B400921894 /* tabbar_message_center.png in Resources */,
@@ -2109,6 +2161,8 @@
 				AD12F6C9192634B400921894 /* toolbar_retweet.png in Resources */,
 				AD542606193715E4005F10F4 /* mxb.jpg in Resources */,
 				AD12F6A6192634B400921894 /* tabbar_home_highlighted.png in Resources */,
+				AD46500319715A98000E9323 /* RTIndexCell.xib in Resources */,
+				AD327F4F197034F000D8FEAB /* Icon_120x120.png in Resources */,
 				AD12F67D192634B400921894 /* navigationbar_interest.png in Resources */,
 				AD12F6B8192634B400921894 /* timeline_meyou_button_background@2x.png in Resources */,
 				AD12F6BB192634B400921894 /* timeline_retweet_background@2x.png in Resources */,
@@ -2129,6 +2183,7 @@
 				AD12F656192634B400921894 /* compose_trendbutton_background.png in Resources */,
 				ADE39B851923A78600E4278B /* arrow.png in Resources */,
 				ADA6C2EE1951D8D30037A013 /* timeLineMidBig.jpg in Resources */,
+				AD327F47197034C000D8FEAB /* RTPillsViewController.xib in Resources */,
 				ADCC7A3C1929AF64005B00B4 /* login_avatar_default@2x.png in Resources */,
 				ADE39B881923A78600E4278B /* bluetooth.png in Resources */,
 				042716FC19375D0200FD3EF3 /* RTSndDoctorDetailViewController.xib in Resources */,
@@ -2141,6 +2196,7 @@
 				ADAB1921194A8ED20081C8FA /* tabbar_1.png in Resources */,
 				AD12F6C0192634B400921894 /* toolbar_background.png in Resources */,
 				AD4810341924BF430081DAFA /* TencentStreetView.bundle in Resources */,
+				AD464FF919715190000E9323 /* RTChecksUpViewController.xib in Resources */,
 				AD12F6A0192634B400921894 /* settings_theme_icon.png in Resources */,
 				ADCC7A3D1929AF64005B00B4 /* login_avatar.png in Resources */,
 				AD12F6B2192634B400921894 /* timeline_icon_like.png in Resources */,
@@ -2161,6 +2217,7 @@
 				AD12F88F1926516D00921894 /* Images.xcassets in Resources */,
 				AD12F686192634B400921894 /* navigationbar_time_group.png in Resources */,
 				AD12F6AA192634B400921894 /* tabbar_more_selected.png in Resources */,
+				AD46500B19716065000E9323 /* RTAddCheckUpVC.xib in Resources */,
 				ADA6C2F11951D8D30037A013 /* timeLine2.jpg in Resources */,
 				0427170819375D1E00FD3EF3 /* renti.jpg in Resources */,
 				ADA6C2EC1951D8D30037A013 /* 78-stopwatch.png in Resources */,
@@ -2179,7 +2236,6 @@
 				AD12F6BE192634B400921894 /* timeline_trend_icon_unlike@2x.png in Resources */,
 				ADCC7A3E1929AF64005B00B4 /* login_avatar@2x.png in Resources */,
 				AD542609193715E4005F10F4 /* sc.jpg in Resources */,
-				AD46FB11193431CE00F19BC4 /* RTPillsTableViewCell.xib in Resources */,
 				ADA9874A19338F5300B98092 /* kugua.jpg in Resources */,
 				0469EB741928871D00388022 /* locationMark.jpg in Resources */,
 				ADCC7A481929AF64005B00B4 /* login_dropdown_bg.png in Resources */,
@@ -2191,8 +2247,10 @@
 				AD54260A193715E4005F10F4 /* wuyi.jpg in Resources */,
 				ADA6C3001951D9220037A013 /* RTGYBNaviViewController.xib in Resources */,
 				AD5425BE1936C3F0005F10F4 /* RTCollectionViewCell.xib in Resources */,
+				AD327F4D197034F000D8FEAB /* Icon_58x58.png in Resources */,
 				AD168757196CE982003ABF3C /* RTMainViewController.xib in Resources */,
 				ADCC7A4D1929AF64005B00B4 /* login_textfield_more_flip.png in Resources */,
+				AD327F4E197034F000D8FEAB /* Icon_80x80.png in Resources */,
 				AD4810331924BF430081DAFA /* TencentMapAPI.bundle in Resources */,
 				ADA6C2F01951D8D30037A013 /* timeLineBegin.jpg in Resources */,
 				AD12F69D192634B400921894 /* settings_recommend_icon.png in Resources */,
@@ -2220,7 +2278,6 @@
 				04E88A22196E706700B1BE83 /* RTAddFamilyMemberViewController.xib in Resources */,
 				AD12F683192634B400921894 /* navigationbar_messages.png in Resources */,
 				AD480F62192497CC0081DAFA /* Window Background@2x.png in Resources */,
-				AD168767196CF6AA003ABF3C /* Icon_80x80.png in Resources */,
 				ADAB191F194A8ED20081C8FA /* tabbar_0.png in Resources */,
 				AD12F6A9192634B400921894 /* tabbar_more.png in Resources */,
 				ADCC7A421929AF64005B00B4 /* login_btn_blue_nor.png in Resources */,
@@ -2270,7 +2327,9 @@
 			files = (
 				ADA6C3231951D9CE0037A013 /* PNLineChart.m in Sources */,
 				AD4AC138192CCF9D006E6898 /* RTTableViewCell.m in Sources */,
+				AD46500A19716065000E9323 /* RTAddCheckUpVC.m in Sources */,
 				AD3493DE196270DD001A46FC /* MJRefreshHeaderView.m in Sources */,
+				AD46500219715A98000E9323 /* RTIndexCell.m in Sources */,
 				ADA6C3221951D9CE0037A013 /* PNChart.m in Sources */,
 				ADA6C2FF1951D9220037A013 /* RTGYBNaviViewController.m in Sources */,
 				AD3493DD196270DD001A46FC /* MJRefreshFooterView.m in Sources */,
@@ -2303,6 +2362,7 @@
 				042053AC193F25A800D0C9EE /* RTRegistBussiness.m in Sources */,
 				ADF6F5C319597A7900E45C05 /* ACPButton.m in Sources */,
 				042716F019375CE100FD3EF3 /* RTHumanBodySearchView.m in Sources */,
+				AD327F45197034C000D8FEAB /* DDList.m in Sources */,
 				AD168745196CE8CE003ABF3C /* PICircularProgressView.m in Sources */,
 				ADA6C3241951D9CE0037A013 /* PNBarChart.m in Sources */,
 				042716E219375C9D00FD3EF3 /* RTLegDisease.m in Sources */,
@@ -2318,9 +2378,9 @@
 				ADEF87DB192DF8F20057DCB0 /* BEMSimpleLineGraphView.m in Sources */,
 				AD70D1951946A88D00F6D118 /* RTStepCounter.m in Sources */,
 				042053AF193F25B800D0C9EE /* RTLoginBusiness.m in Sources */,
-				AD46FB10193431CE00F19BC4 /* RTPillsTableViewCell.m in Sources */,
 				04B58A821945678200A4905C /* RTCenterViewController.m in Sources */,
 				ADCC7A751929F875005B00B4 /* RTShareMsg.m in Sources */,
+				AD327F46197034C000D8FEAB /* RTPillsViewController.m in Sources */,
 				04FB29D21940BA7700B96AA7 /* RTUserProfileBussiness.m in Sources */,
 				AD3C8D3E1947F44D00357DA0 /* RTSportPlanViewController.m in Sources */,
 				04E88A21196E706700B1BE83 /* RTAddFamilyMemberViewController.m in Sources */,
@@ -2331,6 +2391,7 @@
 				ADCC7A691929E5A5005B00B4 /* RTRegisterViewController.m in Sources */,
 				ADAA5DE0192341090040ED10 /* RTAppDelegate.m in Sources */,
 				ADA6C3201951D9CE0037A013 /* PNChartLabel.m in Sources */,
+				AD464FF819715190000E9323 /* RTChecksUpViewController.m in Sources */,
 				AD088134195084EC00124A0B /* RTDetailViewController.m in Sources */,
 				AD48102A1924BDFC0081DAFA /* RNGridMenu.m in Sources */,
 				ADEF87DA192DF8F20057DCB0 /* BEMLine.m in Sources */,
@@ -2342,15 +2403,16 @@
 				AD3493E0196270DD001A46FC /* UIScrollView+MJRefresh.m in Sources */,
 				AD3493DB196270DD001A46FC /* MJRefreshBaseView.m in Sources */,
 				AD69B9501963E9FF0046AECC /* RTMsgShowViewController.m in Sources */,
-				AD16875B196CEA94003ABF3C /* RTPillsViewController.m in Sources */,
 				042716E819375C9D00FD3EF3 /* RTMedication.m in Sources */,
 				ADAA5DDC192341090040ED10 /* main.m in Sources */,
 				AD69691F195D1D0C00104FDF /* SOMotionDetector.m in Sources */,
+				AD327F48197034C000D8FEAB /* RTPillsTableViewCell.m in Sources */,
 				ADA6C3251951D9CE0037A013 /* PNBar.m in Sources */,
 				AD0DA0391935C06800A9846E /* RTMsgViewController.m in Sources */,
 				042716E319375C9D00FD3EF3 /* RTArmDisease.m in Sources */,
 				ADAA5E0F192343880040ED10 /* tabbarView.m in Sources */,
 				042716E619375C9D00FD3EF3 /* RTHandDisease.m in Sources */,
+				AD464FFD19715A5D000E9323 /* RTTypeCell.m in Sources */,
 				042716FD19375D0200FD3EF3 /* RTSndMedicationViewController.m in Sources */,
 				ADA6C32D1951D9F20037A013 /* LightMenuBarView.m in Sources */,
 				ADA6C3211951D9CE0037A013 /* PNColor.m in Sources */,
@@ -2474,6 +2536,8 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -2488,7 +2552,7 @@
 					"$(PROJECT_DIR)/Health/SDKExport",
 				);
 				PRODUCT_NAME = "健康宝";
-				PROVISIONING_PROFILE = "6EE43E9A-0653-4AE2-8510-77B4F6205197";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2499,6 +2563,8 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -2513,7 +2579,7 @@
 					"$(PROJECT_DIR)/Health/SDKExport",
 				);
 				PRODUCT_NAME = "健康宝";
-				PROVISIONING_PROFILE = "6EE43E9A-0653-4AE2-8510-77B4F6205197";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

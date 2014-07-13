@@ -81,7 +81,12 @@
     }
     
     if (!_mapView) {
-        _mapView= [[RTMapView alloc] initWithFrame:CGRectMake(0, 220, 320, 308)];
+        if (DEVICE_IS_IPHONE5) {
+            _mapView= [[RTMapView alloc] initWithFrame:CGRectMake(0, 220, 320, 308)];
+        }else{
+            _mapView= [[RTMapView alloc] initWithFrame:CGRectMake(0, 220, 320, 220)];
+        }
+        
         [self.view addSubview:_mapView];
         
         //定位按钮

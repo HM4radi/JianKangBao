@@ -11,6 +11,7 @@
 #import "RTfoodViewController.h"
 #import "FirstViewController.h"
 #import "RTPillsViewController.h"
+#import "RTChecksUpViewController.h"
 #import "DPMeterView.h"
 #import "UIBezierPath+BasicShapes.h"
 #import "RTAppDelegate.h"
@@ -19,6 +20,7 @@
     RTfoodViewController *foodViewController;
     FirstViewController *firstViewController;
     RTPillsViewController *pillsViewController;
+    RTChecksUpViewController *ChecksUpViewController;
     UIImageView * portraitView;
 }
 
@@ -43,5 +45,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *CalorieLabel;
 @property (weak, nonatomic) IBOutlet UILabel *heightLabel;
 @property (weak, nonatomic) IBOutlet UILabel *BMILabel;
+@property (weak, nonatomic) IBOutlet UIImageView *line1;
+@property (weak, nonatomic) IBOutlet UIImageView *line2;
+
 
 @end

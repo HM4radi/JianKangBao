@@ -32,8 +32,11 @@
     
     [self.navigationbar setFrame:CGRectMake(0, 0, 320, 64)];
     self.navigationController.navigationBar.translucent=YES;
-    [_configScroll setContentSize:CGSizeMake(320, 464)];
-
+    if (DEVICE_IS_IPHONE5){
+        [_configScroll setContentSize:CGSizeMake(320, 464)];
+    }else{
+        [_configScroll setContentSize:CGSizeMake(320, 376)];
+    }
     UILabel *titleLabel=[[UILabel alloc]initWithFrame:CGRectMake(50, 10, 220, 26)];
     [titleLabel setTextColor:[UIColor whiteColor]];
     titleLabel.font=[UIFont fontWithName:@"HelveticaNeue-UltraLight" size:22.00];

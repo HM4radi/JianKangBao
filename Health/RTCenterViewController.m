@@ -57,21 +57,23 @@
 {
     [super viewDidLoad];
     
-    // Do any additional setup after loading the view from its nib.
     [self.navBar setFrame:CGRectMake(0, 0, 320, 64)];
     self.navBar.translucent=YES;
     self.navLabel.frame=CGRectMake(100,32,120,20);
-    self.scrollView.frame=CGRectMake(0, 100, 320, 468);
 
-    [self.view insertSubview:self.scrollView belowSubview:self.navBar];
-    self.scrollView.contentSize=CGSizeMake(self.view.frame.size.width, self.view.frame.size.height-self.navBar.frame.size.height-40);
+    if (DEVICE_IS_IPHONE5) {
+        self.scrollView.frame=CGRectMake(0, 64, 320, 464);
+    }else{
+        self.scrollView.frame=CGRectMake(0, 64, 320, 376);
+    }
+    self.scrollView.contentSize=CGSizeMake(self.view.frame.size.width,464);
     
+    [self.view insertSubview:self.scrollView belowSubview:self.navBar];
+
     portraitView = [[UIImageView alloc]initWithFrame:CGRectMake(110, 50, 100, 100)];
     [portraitView.layer setCornerRadius:CGRectGetHeight(portraitView.bounds)/2];
     portraitView.layer.borderColor = [UIColor blueColor].CGColor;
-    //portraitView.layer.borderWidth = 0.5;
     [portraitView.layer setMasksToBounds:YES];
-    //[portraitView setImage:[UIImage imageNamed:@"1.jpg"]];
     [self.scrollView addSubview:portraitView];
 
     //血糖
@@ -197,7 +199,17 @@
 
 - (void)viewClick3:(UITapGestureRecognizer *)gesture
 {
-    
+    if (!ChecksUpViewController) {
+        ChecksUpViewController=[[RTChecksUpViewController alloc]init];
+    }
+    [UIView beginAnimations:@"view flip" context:nil];
+    [UIView setAnimationDuration:0.5];
+    [UIView transitionWithView:self.view
+                      duration:0.2
+                       options:UIViewAnimationOptionTransitionFlipFromRight
+                    animations:^{ [self.view addSubview:ChecksUpViewController.view];  }
+                    completion:NULL];
+    [UIView commitAnimations];
 }
 
 - (void)viewClick4:(UITapGestureRecognizer *)gesture

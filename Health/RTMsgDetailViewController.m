@@ -27,8 +27,11 @@
 
 - (void)viewWillLayoutSubviews{
     [self.navBar setFrame:CGRectMake(0, 0, 320, 64)];
-    [self.tableView setFrame:CGRectMake(0, 64, 320, 464)];
-    
+    if (DEVICE_IS_IPHONE5) {
+        [self.tableView setFrame:CGRectMake(0, 64, 320, 464)];
+    }else{
+        [self.tableView setFrame:CGRectMake(0, 64, 320, 376)];
+    }
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"频道"
                                                                     style:UIBarButtonItemStylePlain target:self action:@selector(touchSelect)];
     leftButton.tintColor=[UIColor whiteColor];
