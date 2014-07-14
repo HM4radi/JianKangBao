@@ -19,13 +19,17 @@
 }
 
 
- @property (strong, nonatomic)   NSArray *dayStatusValueArray;
+@property (strong, nonatomic)   NSArray *dayStatusValueArray;
 @property (strong, nonatomic)    NSArray *weekStatusValusArray;
 @property (strong, nonatomic)    NSMutableDictionary *friendDataListDict;
+
+
 @property (strong, nonatomic)   NSArray *selfHealthdataArray;
+
 @property (strong, nonatomic)   NSArray * friend;
     
-@property (strong, nonatomic)   NSArray *friendNameList;
+@property (strong, nonatomic)   NSMutableArray *friendNameList;
+
 @property (strong,nonatomic)NSArray *friendImage;
 @property  NSUInteger currentSelectedIndex;
     

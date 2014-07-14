@@ -97,6 +97,7 @@
                 {
                     RTUserInfo *user=[objects objectAtIndex:0];
                     NSMutableDictionary *person=[[NSMutableDictionary alloc]initWithCapacity:3];
+                    [person setObject:user forKey:@"RTUserInfoObject"];
                     [person setObject:user.username forKey:@"username"];
                     AVFile *imageFile=user.userImage;
                     NSData *imageData=[imageFile getData];
@@ -151,8 +152,22 @@
 {
     
     RTDetailViewNewViewController *detailViewController=[[RTDetailViewNewViewController alloc]initWithNibName:@"RTDetailViewNewViewController" bundle:nil];
-    detailViewController.friendNameList=[self.listItem allKeys];
+    
+    detailViewController.friendDataListDict=self.listItem;
     [detailViewController setCurrentSelectedIndex:indexPath.row];
+    //初始化数据
+    for (int i=0; i<[[detailViewController.friendDataListDict allKeys] count]; i++) {
+        NSString *objectId=[[detailViewController.friendDataListDict allKeys] objectAtIndex:i];
+        
+        NSDictionary *friendDict=[detailViewController.friendDataListDict objectForKey:objectId];
+        if (detailViewController.friendNameList==nil) {
+            detailViewController.friendNameList=[[NSMutableArray alloc]initWithCapacity:1];
+        }
+        [detailViewController.friendNameList addObject:[friendDict objectForKey:@"username"]];
+    }
+    
+
+    
     [self.navigationController pushViewController:detailViewController animated:YES];
     
 }
@@ -392,8 +407,6 @@
     }
      NSUInteger row=[indexPath row];
     GYBTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:Cellidentifier forIndexPath:indexPath];
-    
-    
    
     UIColor *darkBlue;
     UIColor *darkYellow;
