@@ -27,6 +27,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+      self.view.frame=[UIScreen mainScreen].bounds;
     [self.navigationBar setFrame:CGRectMake(0, 0, 320, 64)];
     self.navigationBar.translucent=YES;
     self.navigationBar.delegate=self;

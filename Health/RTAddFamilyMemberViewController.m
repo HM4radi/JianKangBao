@@ -19,6 +19,7 @@
 #import "RTAddMemResultView.h"
 #import "RTFamilyDetailViewController.h"
 #import "RTFamilyShip.h"
+
 @interface RTAddFamilyMemberViewController ()
 
 @end
@@ -30,6 +31,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
     }
     return self;
 }
@@ -37,12 +39,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.frame=[UIScreen mainScreen].bounds;
+    NSLog(@"self.view.hieght:%f",self.view.frame.size.height);
+    NSLog(@"self.view2.y:%f",self.SubmitAddBtn.frame.origin.y);
     
     // Do any additional setup after loading the view from its nib.
     self.rightAndErrorImage.hidden=YES;
     self.resultTableView.hidden=YES;
     self.resultView2.hidden=YES;
     self.resultView.hidden=YES;
+    
+    //隐藏不必要label
+    for (UILabel *label in self.resultFixedInfoLabelCollection) {
+        label.hidden=YES;
+    }
 
 }
 
@@ -64,7 +74,9 @@
     if (alertView.tag==10001) {
         if (buttonIndex==0) {
             NSLog(@"ALerView1");
-            [self dismissViewControllerAnimated:YES completion:nil];
+            [self dismissViewControllerAnimated:YES completion:^{
+            }];
+          
         }
         if (buttonIndex==1) {
             NSLog(@"ALerView1");
@@ -207,6 +219,15 @@
 
 
 #pragma mark - textField delegate method
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    for (UILabel *label in self.resultFixedInfoLabelCollection) {
+    label.hidden=YES;
+    
+}
+    self.resultCountLabel.hidden=YES;
+    return YES;
+}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
@@ -225,9 +246,14 @@
         self.resultView2.hidden=YES;
 
     }
-    
+    //显示结果信息label
+    for (UILabel *label in self.resultFixedInfoLabelCollection) {
+        label.hidden=NO;
+    }
+    self.resultCountLabel.hidden=NO;
     if ([self checkPhoneNumber]) {
         [self findUserByPhone:self.AddMemPhoneInputInText.text];
+       
     };
     
     
@@ -309,7 +335,7 @@
             namelabel.text=temp.username;
             [self.resultView addSubview:namelabel];
             // 添加加好友button
-            UIButton *AddBtn=[[UIButton alloc]initWithFrame:CGRectMake(280, 30, 20, 20)];
+            UIButton *AddBtn=[[UIButton alloc]initWithFrame:CGRectMake(230, 10, 64, 64)];
             
             [AddBtn setImage:[UIImage imageNamed:@"add.png"] forState:UIControlStateNormal];
             //设置button事件
@@ -339,7 +365,7 @@
             namelabel.text=temp.username;
             [self.resultView addSubview:namelabel];
             
-            UIButton *AddBtn=[[UIButton alloc]initWithFrame:CGRectMake(280, 30, 20, 20)];
+            UIButton *AddBtn=[[UIButton alloc]initWithFrame:CGRectMake(230, 10, 64, 64)];
             
             [AddBtn setImage:[UIImage imageNamed:@"add.png"] forState:UIControlStateNormal];
             [AddBtn addTarget:self action:@selector(doAddFamilyShipIntoAVOS:) forControlEvents:UIControlEventTouchUpInside];
@@ -362,7 +388,7 @@
             namelabel.text=temp.username;
             [self.resultView2 addSubview:namelabel];
             
-            UIButton *AddBtn2=[[UIButton alloc]initWithFrame:CGRectMake(280, 30, 20, 20)];
+            UIButton *AddBtn2=[[UIButton alloc]initWithFrame:CGRectMake(230, 10, 64, 64)];
             
             [AddBtn2 setImage:[UIImage imageNamed:@"add.png"] forState:UIControlStateNormal];
             [AddBtn2 addTarget:self action:@selector(doAddFamilyShipIntoAVOS:) forControlEvents:UIControlEventTouchUpInside];

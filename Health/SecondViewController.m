@@ -84,6 +84,8 @@
     self.searchDisplayController.searchResultsTableView.tag=10004;
     //Disease 示范数据
     
+    
+    self.view.frame=[UIScreen mainScreen].bounds;
     AVQuery *queryIllness=[AVIllness query];
     queryIllness.limit=10;
 //    [queryIllness selectKeys:@[@"name", @"info"]];
@@ -234,19 +236,22 @@
     
     [self.tableView setDelegate:self];
 	[self.tableView setDataSource:self];
-    [self.tableView setFrame:CGRectMake(0, 57, 320, 400)];
+    [self.tableView setFrame:CGRectMake(0, 57, 320, 400*(self.view.bounds.size.height/568))];
     [self.tableView removeFromSuperview];
     
 //    [self.thirdView setFrame:CGRectMake(0, 64, 320, 464)];
+    
+    
     [self.view addSubview:self.thirdView];
-    self.thirdView.frame=CGRectMake(0, 64, 320,464);
+    
+    self.thirdView.frame=CGRectMake(0, 64, 320,464*(self.view.bounds.size.height/568));
     
     
-    [self.HumanSearchResultView setFrame:CGRectMake(0, 64, 320,464)];
+    [self.HumanSearchResultView setFrame:CGRectMake(0, 64, 320,464*(self.view.bounds.size.height/568))];
     
     
-    [self.MedicationView setFrame:CGRectMake(0, 57, 320, 400)];
-    [self.DiseaseView setFrame:CGRectMake(0, 57, 320, 400)];
+    [self.MedicationView setFrame:CGRectMake(0, 57, 320, 400*(self.view.bounds.size.height/568))];
+    [self.DiseaseView setFrame:CGRectMake(0, 57, 320, 400*(self.view.bounds.size.height/568))];
     //    UIImageView *bkgView=[[UIImageView alloc] initWithFrame:CGRectMake(0, 64, 320, 504)];
     //    [bkgView setImage:[UIImage imageNamed:@"Window Background@2x.png"]];
     //    self.tableView.backgroundView=bkgView;

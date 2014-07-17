@@ -16,6 +16,9 @@
                 <outlet property="resultView2" destination="Hg2-F9-UbA" id="hWa-cj-xzJ"/>
                 <outlet property="rightAndErrorImage" destination="j9t-0e-w0f" id="6qJ-HO-dl1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="resultFixedInfoLabelCollection" destination="kP3-aA-gXo" id="ybq-b6-Wy5"/>
+                <outletCollection property="resultFixedInfoLabelCollection" destination="msu-xK-NR7" id="S8d-6i-eF5"/>
+                <outletCollection property="resultFixedInfoLabelCollection" destination="PIa-pI-GTr" id="TYP-4E-O7b"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -85,7 +88,7 @@
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="位家庭成员哦～" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msu-xK-NR7">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="位家庭成员哦～" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msu-xK-NR7">
                     <rect key="frame" x="56" y="337" width="87" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>

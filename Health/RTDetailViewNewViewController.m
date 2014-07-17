@@ -9,9 +9,11 @@
 #import "RTDetailViewNewViewController.h"
 #import "PNChart.h"
 #import "RTFamilyDetailViewController.h"
+#import "RTUserInfo.h"
 
 @interface RTDetailViewNewViewController ()
 
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @end
 
 @implementation RTDetailViewNewViewController
@@ -42,23 +44,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
-    //初始化数据
-    NSArray *b1=[NSArray arrayWithObjects:@"1",@"5",@"2",@"6",@"8",@"7",@"9",@"5",@"1",@"10",@"8",@"4", nil];
-    
-    NSArray *b2=[NSArray arrayWithObjects:@"1",@"5",@"2",@"6",@"8",@"7",@"9", nil];
-    NSArray *b3=[NSArray arrayWithObjects:@"90/100",@"60/100",@"90/100",nil ];
-   
-    NSArray *f1=[NSArray arrayWithObjects:b3,b1,b2, nil];
-
-    for (int i=0; i<[self.friendNameList count]; i++) {
-        self.friendDataListDict=[NSMutableDictionary dictionaryWithObject:f1 forKey:[self.friendNameList objectAtIndex:i]];
-        
-        [self.friendDataListDict setObject:[self.friendImage objectAtIndex:i]   forKey:[[self.friendNameList objectAtIndex:0] stringByAppendingString:@"image"]];
-    }
-    
-  
+    self.view.frame=[UIScreen mainScreen].bounds;
+//    [self.view addSubview:self.scrollView];
 //    [friendDict setObject:i2 forKey:@"watermeion"];
     
     
@@ -100,9 +87,20 @@
     [portraitView.layer setMasksToBounds:YES];
     
     
+    //初始化数据，以用户为单元
+//    RTUserInfo *currentFamilyMemberUser=[self.friendDataListDict objectForKey:
+//                                          [[self.friendDataListDict allKeys] objectAtIndex:self.currentSelectedIndex]];
     
-    [self loadProfileImage:[self.friendDataListDict objectForKey:[[self.friendNameList objectAtIndex:self.currentSelectedIndex] stringByAppendingString:@"image"]]];
-    //add line chart
+      
+    if (self.friendDataListDict!=nil) {
+        NSArray *namekey=[self.friendDataListDict allKeys];
+        NSString *name=[namekey objectAtIndex:self.currentSelectedIndex];
+        NSDictionary *personDict=[self.friendDataListDict objectForKey:name];
+        UIImage *img=[personDict objectForKey:@"protaitImage"];
+        [self loadProfileImage:img];
+        //add line chart
+    }
+   
     //Add LineChart
 //	UILabel * lineChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, SCREEN_WIDTH, 30)];
 //	lineChartLabel.text = @"Line Chart";
@@ -137,22 +135,33 @@
 
 -(void)setChartData
 {
-    if (_currentSelectedIndex<[_friendNameList count]) {
-        _dayStatusValueArray=[[_friendDataListDict objectForKey:[_friendNameList objectAtIndex:_currentSelectedIndex]] objectAtIndex:1];
-        _weekStatusValusArray=[[_friendDataListDict objectForKey:[_friendNameList objectAtIndex:_currentSelectedIndex]] objectAtIndex:2];
+//    if (_currentSelectedIndex<[_friendNameList count]) {
+    
+        NSArray *b1=[NSArray arrayWithObjects:@"1",@"5",@"2",@"6",@"8",@"7",@"9",@"5",@"1",@"10",@"8",@"4", nil];
+        
+        NSArray *b2=[NSArray arrayWithObjects:@"1",@"5",@"2",@"6",@"8",@"7",@"9", nil];
+        _dayStatusValueArray=b1;
+        _weekStatusValusArray=b2;
       
 
-    }
+//    }
 
 }
 
 
 -(void)loadDataLabelText
 {
-    self.data1Label.text=[[[_friendDataListDict objectForKey:
-                            [_friendNameList objectAtIndex:_currentSelectedIndex]] objectAtIndex:0] objectAtIndex:0];
-    self.data2Label.text=[[[_friendDataListDict objectForKey:[_friendNameList objectAtIndex:_currentSelectedIndex]] objectAtIndex:0] objectAtIndex:1];
-    self.data3Label.text=[[[_friendDataListDict objectForKey:[_friendNameList objectAtIndex:_currentSelectedIndex]] objectAtIndex:0] objectAtIndex:2];
+    
+    
+    NSArray *b3=[NSArray arrayWithObjects:@"90/100",@"60/100",@"90/100",nil ];
+    
+    self.data1Label.text=[b3 objectAtIndex:0];
+    self.data2Label.text=[b3 objectAtIndex:1];
+    self.data3Label.text=[b3 objectAtIndex:2];
+//    self.data1Label.text=[[[_friendDataListDict objectForKey:
+//                            [_friendNameList objectAtIndex:_currentSelectedIndex]] objectAtIndex:0] objectAtIndex:0];
+//    self.data2Label.text=[[[_friendDataListDict objectForKey:[_friendNameList objectAtIndex:_currentSelectedIndex]] objectAtIndex:0] objectAtIndex:1];
+//    self.data3Label.text=[[[_friendDataListDict objectForKey:[_friendNameList objectAtIndex:_currentSelectedIndex]] objectAtIndex:0] objectAtIndex:2];
 
 
 }
@@ -188,8 +197,8 @@
 - (void)itemSelectedAtIndex:(NSUInteger)index inMenuBar:(LightMenuBar *)menuBar {
 //    dispLabel.text = [NSString stringWithFormat:@"%d Selected", index];
     [self setCurrentSelectedIndex:index];
-    [self loadProfileImage:[_friendDataListDict objectForKey:[[_friendNameList objectAtIndex:index] stringByAppendingString:@"image"]]];
-    
+    [self loadProfileImage:[[self.friendDataListDict objectForKey:
+                             [[self.friendDataListDict allKeys] objectAtIndex:self.currentSelectedIndex]] objectForKey:@"protaitImage"]];
     [self setChartData];
     [self loadDayDataAndDrawLine];
     //设置头像右侧label  数据逻辑  friendDataList["gyb"].[0].[x];
@@ -198,7 +207,7 @@
 //itemWidth
 //< Optional
 - (CGFloat)itemWidthAtIndex:(NSUInteger)index inMenuBar:(LightMenuBar *)menuBar {
-    return 60.0f;
+    return 80.0f;
 }
 
 #if USE_CUSTOM_DISPLAY

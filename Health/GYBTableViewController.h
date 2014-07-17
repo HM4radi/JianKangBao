@@ -13,6 +13,7 @@
 //
 //@property (strong, nonatomic) IBOutlet UINavigationController *navigationController;
 //@property (strong, nonatomic) IBOutlet UITableView *tableView;
-
+@property (strong, nonatomic) IBOutlet UILabel *reLoadDataResultInfoLabel;
+-(void)dragOutDataWhenComefirst;
 //@property (strong, nonatomic) IBOutlet DPMeterView *shape4StarView;
 @end
