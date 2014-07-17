@@ -108,7 +108,7 @@
                         [person setObject:img forKey:@"protaitImage"];
                     }else
                     {
-                        UIImage *imgDefault=[UIImage imageNamed:@"tabbar_profile.png"];
+                        UIImage *imgDefault=[UIImage imageNamed:@"github.png"];
                         [person setObject:imgDefault forKey:@"protaitImage"];
                     }
                    
@@ -346,7 +346,10 @@
 
 -(IBAction)addFamilyMemberAction:(id)sender
 {
-    RTAddFamilyMemberViewController* addFamilyShipVC=[[RTAddFamilyMemberViewController alloc]initWithNibName:nil bundle:nil];
+    
+    
+//    @"RTAddFamilyMemberViewControllerIphone"
+    RTAddFamilyMemberViewController* addFamilyShipVC=[[RTAddFamilyMemberViewController alloc]initWithNibName: @"RTAddFamilyMemberViewControllerIphone" bundle:nil];
      [self presentViewController:addFamilyShipVC animated:YES completion:nil];
 
 }
@@ -445,9 +448,7 @@
 //    cell.contentView.backgroundColor=[UIColor colorWithRed: 1 green: 0 blue: 0 alpha: 0.235];
     
     NSArray *keyArray=[self.listItem allKeys];
-    
-    
-    
+
     [cell.protaitView setImage:nil];
   
     NSDictionary *person=[self.listItem    objectForKey:

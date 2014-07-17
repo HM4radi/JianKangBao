@@ -13,6 +13,7 @@
 
 @interface RTDetailViewNewViewController ()
 
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @end
 
 @implementation RTDetailViewNewViewController
@@ -43,9 +44,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
-  
+    self.view.frame=[UIScreen mainScreen].bounds;
+//    [self.view addSubview:self.scrollView];
 //    [friendDict setObject:i2 forKey:@"watermeion"];
     
     
