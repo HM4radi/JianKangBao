@@ -2,11 +2,12 @@
 //  RTAddCheckUpVC.m
 //  Health
 //
-//  Created by GeoBeans on 14-7-12.
+//  Created by GeoBeans on 14-7-14.
 //  Copyright (c) 2014年 RADI Team. All rights reserved.
 //
 
 #import "RTAddCheckUpVC.h"
+#import "BlockTextPromptAlertView.h"
 
 @interface RTAddCheckUpVC ()
 
@@ -28,59 +29,78 @@
     self.navBar.translucent=YES;
 }
 
+- (IBAction)touchOK:(id)sender {
+    [self.dataDelegate refreshTableView];
+    self.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)touchBack:(id)sender {
+    [checkUpRecord resetting];
+    self.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-//    NSArray *arr1=[[NSArray alloc]initWithObjects:@"白细胞计数(WBC)",@"红细胞计数(RBC)",@"血红蛋白浓度(HGB)",@"红细胞压积(HCT)",@"平均红细胞体积(MCV)",@"平均红细胞血红蛋白含量(MCH)",@"平均红细胞血红蛋白浓度(MCHC)",@"血小板计数(PLT)",@"淋巴细胞比值(LY%)",@"单核细胞比例(MONO%)",@"中性粒细胞比例(NEUT%)",@"淋巴细胞计数(LY)(参考值：0.8~4.0)",@"单核细胞计数(MONO)",@"中性粒细胞计数(NEUT)",@"红细胞分布宽度",@"血小板体积分布宽度(PDW)", nil];
-//    NSDictionary *dic1=[[NSDictionary alloc]initWithObjectsAndKeys:@"血常规",@"typeName",arr1,@"indexArray", nil];
-//    
-//    NSArray *arr2=[[NSArray alloc]initWithObjects:@"丙氨酸转氨酶(ALT)",@"谷-丙转氨酶(GPT)",@"门冬氨酸转氨酶(AST)",@"谷-草转氨酶(GOT)",@"碱性磷酸酶(ALP)",@"γ-谷氨酰转肽酶(GGT)",@"总胆汁酸",@"白蛋白/球蛋白(A/G)",@"总胆红素(T-Bil)",@"直接胆红素(D-Bil)",nil];
-//    NSDictionary *dic2=[[NSDictionary alloc]initWithObjectsAndKeys:@"肝功能",@"typeName",arr2,@"indexArray", nil];
-//    
-//    NSArray *arr3=[[NSArray alloc]initWithObjects:@"血尿素氮(BUN)",@"血肌酐(Scr)",@"血尿素",@"血尿酸",@"尿肌酐(Cr)",@"尿蛋白",@"选择性蛋白尿指数(SPI)",@"β2-微球蛋白清除试验",@"尿素清除率",@"血内生肌酐清除率",@"尿素氮/肌酐比值(BUN)",@"酚红(酚磺太)排泄试验(PSP)",nil];
-//    NSDictionary *dic3=[[NSDictionary alloc]initWithObjectsAndKeys:@"肾功能",@"typeName",arr3,@"indexArray", nil];
-//    
-//    NSArray *arr4=[[NSArray alloc]initWithObjects:@"尿白细胞（LEU）",@"亚硝酸盐（NIT）",@"尿蛋白（PRO）",@"葡萄糖（GLU-U）",@"酮体（KET）",@"尿胆原（URO）",@"胆红素（BIL）",@"尿液酸碱度（PH-U）",@"比重（SG）",@"隐血（BLU）",@"抗坏血酸（VC）",@"颜色（COL）",@"透明度（TMD）",@"吞噬细胞（TSXB）",@"白细胞管型（U_WBC-C）",@"颗粒管型（KLGX-F）",@"透明管型（U_TM-CA）",@"红细胞管型（U_RBC-）",@"蜡样管型（LYGX）",@"白细胞镜检（WBC-J1）",@"红细胞镜检",nil];
-//    NSDictionary *dic4=[[NSDictionary alloc]initWithObjectsAndKeys:@"尿常规",@"typeName",arr4,@"indexArray", nil];
-//    
-//    NSArray *arr5=[[NSArray alloc]initWithObjects:@"总胆固醇(TC)",@"甘油三酯(TG)",@"高密度脂蛋白胆固醇(HDL-C)",@"低密度脂蛋白胆固醇(LDL-C)",@"载脂蛋白A1(ApoA1)",@"载脂蛋白B(ApoB)",@"胆固醇脂",nil];
-//    NSDictionary *dic5=[[NSDictionary alloc]initWithObjectsAndKeys:@"血脂分析",@"typeName",arr5,@"indexArray", nil];
-//    
-//    NSArray *arr6=[[NSArray alloc]initWithObjects:@"血糖",@"类风湿因子甲胎蛋白",@"癌坯抗原",@"糖类抗原（CA-199）",@"糖类抗原（CA7-24）",@"糖类抗原（CA-242）",@"神经元特异性烯醇化酶",@"前列腺特异性抗原",@"三碘甲状腺原氨酸",@"甲状腺素",@"促甲状腺素",@"骨密度",@"骨密度",@"血压",@"心率",@"雄性激素",@"雌性激素",nil];
-//    NSDictionary *dic6=[[NSDictionary alloc]initWithObjectsAndKeys:@"其他指标",@"typeName",arr6,@"indexArray", nil];
-    
-    //typeArray=[[NSMutableArray alloc]initWithObjects:dic1,dic2,dic3,dic4,dic5,dic6, nil];
-    
     self.tableView1.dataSource=self;
     self.tableView1.delegate=self;
     self.tableView1.tag=1;
-    self.tableView2.dataSource=self;
-    self.tableView2.delegate=self;
+    self.tableView1.rowHeight = 44;
+    
+    
+    self.tableView2.delegate = self;
+    self.tableView2.dataSource = self;
     self.tableView2.tag=2;
+    self.tableView2.rowHeight = 44;
+    self.tableView2.allowsSelection = NO; // We essentially implement our own selection
+    self.tableView2.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    
     currentRow=0;
     NSString *plistPath=[[NSBundle mainBundle] pathForResource:@"CheckUpDictionary" ofType:@"plist"];
     checkPlist=[[NSMutableArray alloc]initWithContentsOfFile:plistPath];
     typeList =[[NSMutableArray alloc]init];
+    allIndex=[[NSArray alloc]init];
+
+    NSMutableArray *tempArray=[[NSMutableArray alloc]init];
     for (NSDictionary *dic in checkPlist) {
         [typeList addObject:[dic objectForKey:@"typeName"]];
+        [tempArray addObjectsFromArray:[dic objectForKey:@"indexArray"]];
     }
+    allIndex=[tempArray copy];
+    tempArray=nil;
     
-}
-- (IBAction)touchBack:(id)sender {
-    self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-- (IBAction)touchOK:(id)sender {
-    self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    [self dismissViewControllerAnimated:YES completion:nil];
+    searchResults=[[NSMutableArray alloc]init];
+    beginSearch=NO;
+    
+    checkUpRecord=[RTCheckUpRecord shareInstance];
 }
 
-- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (tableView.tag==1) {
+        return [typeList count];
+    }else if(tableView.tag==2){
+    return [[[checkPlist objectAtIndex:currentRow] objectForKey:@"indexArray"] count];
+    }
+    else{
+        return [searchResults count];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (tableView.tag==1) {
+        currentRow=[indexPath row];
+        [self.tableView2 reloadData];
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellIdentifier = @"Cell";
+    
     if (tableView.tag==1) {
         
-        static BOOL nibsRegistered = NO;
+        BOOL nibsRegistered = NO;
         static NSString *Cellidentifier=@"RTTypeCell";
         if (!nibsRegistered) {
             UINib *nib = [UINib nibWithNibName:@"RTTypeCell" bundle:nil];
@@ -94,63 +114,224 @@
         cell.typeNameLabel.text=[typeList objectAtIndex:row];
         return cell;
         
-    }else{
-        static BOOL nibsRegistered = NO;
-        static NSString *Cellidentifier=@"RTIndexCell";
-        if (!nibsRegistered) {
-            UINib *nib = [UINib nibWithNibName:@"RTIndexCell" bundle:nil];
-            [tableView registerNib:nib forCellReuseIdentifier:Cellidentifier];
-            nibsRegistered = YES;
-        }
+    }else if (tableView.tag==2){
+    
+        SWTableViewCell *cell = (SWTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+        NSInteger row=[indexPath row];
+    
+        NSString *s1=[[[[checkPlist objectAtIndex:currentRow] objectForKey:@"indexArray"] objectAtIndex:row] objectForKey:@"range"];
         
-        RTIndexCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RTIndexCell"];
+        if (cell == nil) {
+            NSMutableArray *rightUtilityButtons = [NSMutableArray new];
+            
+            [rightUtilityButtons addUtilityButtonWithColor:
+             [UIColor colorWithRed:1.0f green:0.51f blue:0.51f alpha:1.0]
+                                                     title:@"偏高"];
+            [rightUtilityButtons addUtilityButtonWithColor:
+             [UIColor colorWithRed:0.14f green:0.94f blue:0.89f alpha:1.0f]
+                                                     title:@"偏低"];
+            [rightUtilityButtons addUtilityButtonWithColor:
+             [UIColor colorWithRed:0.24f green:0.53f blue:0.93f alpha:1.0f]
+                                                     title:@"输入"];
+
+            cell = [[SWTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                          reuseIdentifier:cellIdentifier
+                                      containingTableView:_tableView2
+                                       leftUtilityButtons:nil
+                                      rightUtilityButtons:rightUtilityButtons];
+            cell.delegate = self;
+        }
+        cell.textLabel.text = [[[[checkPlist objectAtIndex:currentRow] objectForKey:@"indexArray"] objectAtIndex:row] objectForKey:@"indexName"];
+        
+        NSString *s2=[[[[checkPlist objectAtIndex:currentRow] objectForKey:@"indexArray"] objectAtIndex:row] objectForKey:@"unit"];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"参考值:%@ %@",s1,s2];
+        cell.textLabel.font=[UIFont fontWithName:@"Arial-BoldItalicMT" size:14];
+    return cell;
+    
+    }
+    else{
+        
+        SWTableViewCell *cell = (SWTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        
+        if (cell == nil) {
+            NSMutableArray *rightUtilityButtons = [NSMutableArray new];
+            
+            [rightUtilityButtons addUtilityButtonWithColor:
+             [UIColor colorWithRed:1.0f green:0.51f blue:0.51f alpha:1.0]
+                                                     title:@"偏高"];
+            [rightUtilityButtons addUtilityButtonWithColor:
+             [UIColor colorWithRed:0.14f green:0.94f blue:0.89f alpha:1.0f]
+                                                     title:@"偏低"];
+            [rightUtilityButtons addUtilityButtonWithColor:
+             [UIColor colorWithRed:0.24f green:0.53f blue:0.93f alpha:1.0f]
+                                                     title:@"输入"];
+            
+            cell = [[SWTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                          reuseIdentifier:cellIdentifier
+                                      containingTableView:_tableView2 // Used for row height and selection
+                                       leftUtilityButtons:nil
+                                      rightUtilityButtons:rightUtilityButtons];
+            cell.delegate = self;
+        }
         
         NSUInteger row=[indexPath row];
         
-        NSDictionary *dic=[checkPlist objectAtIndex:currentRow];
-        NSArray *indexArr=[dic objectForKey:@"indexArray"];
-        cell.indexNameLabel.text=[indexArr objectAtIndex:row];
+        cell.textLabel.text=[[searchResults objectAtIndex:row] objectForKey:@"indexName"];
+        NSString *s1=[[searchResults objectAtIndex:row] objectForKey:@"range"];
+        NSString *s2=[[searchResults objectAtIndex:row] objectForKey:@"unit"];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"参考值:%@ %@",s1,s2];
 
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        cell.textLabel.font=[UIFont fontWithName:@"Arial-BoldItalicMT" size:14];
         
         return cell;
+
     }
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (tableView.tag==1) {
-        return [typeList count];
-    }else
-        
-        return [[[checkPlist objectAtIndex:currentRow] objectForKey:@"indexArray"] count];
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    //NSLog(@"scroll view did begin dragging");
 }
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Set background color of cell here if you don't want white
 }
 
-//行缩进
--(NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSUInteger row = [indexPath row];
-    return row;
-}
+#pragma mark - SWTableViewDelegate
 
-//改变行高
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (tableView.tag==1) {
-        return 44;
-    }else
-        
-        return 44;
-}
+//- (void)swippableTableViewCell:(SWTableViewCell *)cell didTriggerLeftUtilityButtonWithIndex:(NSInteger)index {
+//    switch (index) {
+//        case 0:
+//            NSLog(@"left button 0 was pressed");
+//            break;
+//        case 1:
+//            NSLog(@"left button 1 was pressed");
+//            break;
+//        case 2:
+//            NSLog(@"left button 2 was pressed");
+//            break;
+//        case 3:
+//            NSLog(@"left btton 3 was pressed");
+//        default:
+//            break;
+//    }
+//}
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (tableView.tag==1) {
-        currentRow=[indexPath row];
-        [self.tableView2 reloadData];
+- (void)swippableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index {
+    
+    switch (index) {
+        case 0:
+        {
+            NSDictionary *dic=[[NSDictionary alloc] initWithObjectsAndKeys:cell.textLabel.text,@"indexName",cell.detailTextLabel.text,@"reference",@"偏高",@"status",@"",@"value",nil];
+            [checkUpRecord.indexArray addObject:dic];
+            [cell hideUtilityButtonsAnimated:YES];
+            [self displayNotification];
+            break;
+        }
+        case 1:
+        {
+            NSDictionary *dic=[[NSDictionary alloc] initWithObjectsAndKeys:cell.textLabel.text,@"indexName",cell.detailTextLabel.text,@"reference",@"偏低",@"status",@"",@"value",nil];
+            [checkUpRecord.indexArray addObject:dic];
+            
+            [cell hideUtilityButtonsAnimated:YES];
+            [self displayNotification];
+            break;
+        }
+        case 2:
+        {
+            [cell hideUtilityButtonsAnimated:YES];
+            [self showTextInputView:cell.textLabel.text And:cell.detailTextLabel.text];
+            break;
+        }
+        default:
+            break;
     }
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+//search bar
+- (void)filterContentForSearchText:(NSString*)searchText{
+    
+    [searchResults removeAllObjects];
+    for (NSDictionary *dic in allIndex) {
+        NSRange range=[[dic objectForKey:@"indexName"] rangeOfString:searchText options:NSCaseInsensitiveSearch];
+        if (range.location!=NSNotFound) {
+            [searchResults addObject:dic];
+        }
+    }
+}
+
+#pragma mark - UISearchDisplayController delegate methods
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+    
+    [self filterContentForSearchText:searchString];
+    
+    return YES;
+}
+
+- (void)searchDisplayControllerDidBeginSearch:(UISearchDisplayController *)controller{
+    beginSearch=YES;
+}
+
+- (void)searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller{
+    beginSearch=NO;
+
+}
+
+
+//AlertView
+-(void)showTextInputView:(NSString*)string1 And:(NSString*)string2{
+    UITextField *textField;
+    
+    BlockTextPromptAlertView *alert = [BlockTextPromptAlertView promptWithTitle:string1 message:string2 textField:&textField block:^(BlockTextPromptAlertView *alert){
+        [alert.textField resignFirstResponder];
+        return YES;
+    }];
+    
+    alert.textField.keyboardType=UIKeyboardTypeDecimalPad;
+    [alert setCancelButtonWithTitle:@"取消" block:nil];
+    [alert addButtonWithTitle:@"确定" block:^{
+        
+        NSString *string3;
+        NSLog(@"%d",[string2 rangeOfString:@" "].location);
+        NSString *temps=[string2 substringWithRange:NSMakeRange([string2 rangeOfString:@":"].location+1,[string2 rangeOfString:@" "].location-[string2 rangeOfString:@":"].location)];
+        float low=[[temps substringWithRange:NSMakeRange(0, [temps rangeOfString:@"-"].location)] floatValue];
+        float high=[[temps substringFromIndex:[temps rangeOfString:@"-"].location+1] floatValue];
+        if ([textField.text floatValue]>high) {
+            string3=@"偏高";
+        }else if ([textField.text floatValue]<low){
+            string3=@"偏低";
+        }else{
+            string3=@"正常";
+        }
+        NSDictionary *dic=[[NSDictionary alloc] initWithObjectsAndKeys:string1,@"indexName",string2,@"reference",string3,@"status",textField.text,@"value",nil];
+        [checkUpRecord.indexArray addObject:dic];
+        [self displayNotification];
+    }];
+    [alert show];
+
+}
+
+- (void)displayNotification {
+    if (self.notify.isAnimating) return;
+    
+    [self.view addSubview:self.notify];
+    [self.notify presentWithDuration:0.5f speed:0.3f inView:self.view completion:^{
+        [self.notify removeFromSuperview];
+    }];
+}
+
+- (BDKNotifyHUD *)notify {
+    if (_notify != nil) return _notify;
+    _notify = [BDKNotifyHUD notifyHUDWithImage:[UIImage imageNamed:@"Checkmark.png"] text:@"添加成功"];
+    _notify.center = CGPointMake(self.view.center.x, self.view.center.y - 20);
+    return _notify;
+    
 }
 
 - (void)didReceiveMemoryWarning

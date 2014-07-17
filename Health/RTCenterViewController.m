@@ -57,6 +57,14 @@
 {
     [super viewDidLoad];
     
+//    NSDictionary *parameters=[[NSDictionary alloc]init];
+//    [AVCloud callFunctionInBackground:@"hello" withParameters:nil block:^(id object, NSError *error) {
+//        if (!error) {
+//            NSLog(@"object=%@",object);
+//        }
+//    }
+//     ];
+    
     [self.navBar setFrame:CGRectMake(0, 0, 320, 64)];
     self.navBar.translucent=YES;
     self.navLabel.frame=CGRectMake(100,32,120,20);
@@ -187,29 +195,14 @@
         firstViewController=[[FirstViewController alloc]init];
     }
 
-    [UIView beginAnimations:@"view flip" context:nil];
-    [UIView setAnimationDuration:0.5];
-    [UIView transitionWithView:self.view
-                      duration:0.2
-                       options:UIViewAnimationOptionTransitionFlipFromRight
-                    animations:^{ [self.view addSubview:firstViewController.view];  }
-                    completion:NULL];
-    [UIView commitAnimations];
-}
+    [self presentViewController:firstViewController animated:YES completion:nil];}
 
 - (void)viewClick3:(UITapGestureRecognizer *)gesture
 {
     if (!ChecksUpViewController) {
         ChecksUpViewController=[[RTChecksUpViewController alloc]init];
     }
-    [UIView beginAnimations:@"view flip" context:nil];
-    [UIView setAnimationDuration:0.5];
-    [UIView transitionWithView:self.view
-                      duration:0.2
-                       options:UIViewAnimationOptionTransitionFlipFromRight
-                    animations:^{ [self.view addSubview:ChecksUpViewController.view];  }
-                    completion:NULL];
-    [UIView commitAnimations];
+    [self presentViewController:ChecksUpViewController animated:YES completion:nil];
 }
 
 - (void)viewClick4:(UITapGestureRecognizer *)gesture
@@ -217,30 +210,16 @@
     if (!foodViewController) {
         foodViewController=[[RTfoodViewController alloc]init];
     }
-    [UIView beginAnimations:@"view flip" context:nil];
-    [UIView setAnimationDuration:0.5];
-    [UIView transitionWithView:self.view
-                      duration:0.2
-                       options:UIViewAnimationOptionTransitionFlipFromRight
-                    animations:^{ [self.view addSubview:foodViewController.view];  }
-                    completion:NULL];
-    [UIView commitAnimations];
+    [self presentViewController:foodViewController animated:YES completion:nil];
 }
 
 
 - (void)viewClick5:(UITapGestureRecognizer *)gesture
 {
-        if (!pillsViewController) {
-            pillsViewController=[[RTPillsViewController alloc]init];
-        }
-        [UIView beginAnimations:@"view flip" context:nil];
-        [UIView setAnimationDuration:0.5];
-        [UIView transitionWithView:self.view
-                          duration:0.2
-                           options:UIViewAnimationOptionTransitionFlipFromRight
-                        animations:^{ [self.view addSubview:pillsViewController.view];  }
-                        completion:NULL];
-        [UIView commitAnimations];
+    if (!pillsViewController) {
+        pillsViewController=[[RTPillsViewController alloc]init];
+    }
+    [self presentViewController:pillsViewController animated:YES completion:nil];
 }
 
 

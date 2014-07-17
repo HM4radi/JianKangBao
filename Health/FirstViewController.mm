@@ -69,7 +69,6 @@
     headerRefreshing=NO;
     footerRefreshing=NO;
     [self tableViewInit];
-    
 }
 
 
@@ -165,8 +164,6 @@
         sportPlanVC.dataDelegate=self;
     }
     
-    sportPlanVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    
     [self presentViewController:sportPlanVC animated:YES completion:nil];
     
     sportPlanVC=nil;
@@ -231,9 +228,9 @@
     [self setupPregressView:@"卡路里" goal:@"目标:300" complete:236 withTopColor:col1 AndBottomColor:col2];
     
     if (DEVICE_IS_IPHONE5) {
-        [self.tableView setFrame:CGRectMake(0, 68, 320, 460)];
+        [self.tableView setFrame:CGRectMake(0, 68, 320, 500)];
     }else{
-        [self.tableView setFrame:CGRectMake(0, 68, 320, 372)];
+        [self.tableView setFrame:CGRectMake(0, 68, 320, 412)];
     }
 }
 
@@ -372,7 +369,6 @@
                 if(!detailVC){
                     detailVC=[[RTDetailViewController alloc]init];
                 }
-                detailVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
                 [self presentViewController:detailVC animated:YES completion:nil];
                 detailVC=nil;
             }
@@ -381,7 +377,6 @@
                     doingVC=[[RTDoingViewController alloc]init];
                     doingVC.dataDelegate=self;
                 }
-                doingVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
                 [self presentViewController:doingVC animated:YES completion:nil];
                 doingVC=nil;
             }
@@ -394,14 +389,7 @@
 
 
 - (IBAction)touchBack:(id)sender {
-    [UIView beginAnimations:@"view flip" context:nil];
-    [UIView setAnimationDuration:0.5];
-    [UIView transitionWithView:self.view.superview
-                      duration:0.2
-                       options:UIViewAnimationOptionTransitionFlipFromLeft
-                    animations:^{ [self.view removeFromSuperview];  }
-                    completion:NULL];
-    [UIView commitAnimations];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

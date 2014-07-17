@@ -41,9 +41,9 @@
     if ([planData.sportType isEqualToString:@"跑步"]||[planData.sportType isEqualToString:@"步行"]||[planData.sportType isEqualToString:@"骑行"]) {
         if (!_mapView) {
             if (DEVICE_IS_IPHONE5) {
-                _mapView= [[RTMapView alloc] initWithFrame:CGRectMake(0, 64, 320, 264)];}
+                _mapView= [[RTMapView alloc] initWithFrame:CGRectMake(0, 64, 320, 304)];}
             else{
-                _mapView= [[RTMapView alloc] initWithFrame:CGRectMake(0, 64, 320, 220)];
+                _mapView= [[RTMapView alloc] initWithFrame:CGRectMake(0, 64, 320, 260)];
             }
             [self.view insertSubview:_mapView belowSubview:self.labelValues];
         }
@@ -52,9 +52,9 @@
     }else{
         if (!_mapView) {
             if (DEVICE_IS_IPHONE5) {
-                _mapView= [[RTMapView alloc] initWithFrame:CGRectMake(0, 64, 320, 354)];}
+                _mapView= [[RTMapView alloc] initWithFrame:CGRectMake(0, 64, 320, 394)];}
             else{
-                _mapView= [[RTMapView alloc] initWithFrame:CGRectMake(0, 64, 320, 286)];
+                _mapView= [[RTMapView alloc] initWithFrame:CGRectMake(0, 64, 320, 326)];
             }
             [self.view insertSubview:_mapView belowSubview:self.labelValues];
         }
@@ -73,11 +73,9 @@
         [self addPointAnno:route[0]];
         [_mapView setCenterCoord:route[0]];
     }
-    
 }
 
 - (IBAction)touchBack:(id)sender {
-    self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -98,9 +96,9 @@
     //BEMSimpleLineGraphView *myGraph = [[BEMSimpleLineGraphView alloc] initWithFrame:CGRectMake(0, 328, 320, 200)];
     myGraph.delegate = self;
     if (DEVICE_IS_IPHONE5) {
-        self.myGraph.frame=CGRectMake(0, 328, 320, 195);
+        self.myGraph.frame=CGRectMake(0, 368, 320, 200);
     }else{
-        self.myGraph.frame=CGRectMake(0, 284, 320, 239);
+        self.myGraph.frame=CGRectMake(0, 324, 320, 245);
     }
     
     // Customization of the graph

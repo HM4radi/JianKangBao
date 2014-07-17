@@ -1,14 +1,14 @@
 //
-//  RTIndexCell.m
+//  RTTimeLineCell.m
 //  Health
 //
-//  Created by GeoBeans on 14-7-12.
+//  Created by GeoBeans on 14-7-16.
 //  Copyright (c) 2014年 RADI Team. All rights reserved.
 //
 
-#import "RTIndexCell.h"
+#import "RTTimeLineCell.h"
 
-@implementation RTIndexCell
+@implementation RTTimeLineCell
 
 - (void)awakeFromNib
 {

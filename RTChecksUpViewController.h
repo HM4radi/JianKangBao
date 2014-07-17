@@ -7,12 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RTAddCheckUpVC.h"
+#import "RTCheckUp.h"
+#import "RTTimeLineCell.h"
+#import "RTCheckUpRecord.h"
+#import "MJRefresh.h"
+#import "UIPopoverListView.h"
 
+@interface RTChecksUpViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,addCheckUpRecord,UIPopoverListViewDataSource, UIPopoverListViewDelegate>{
+    RTCheckUp *addCheckUp;
+    NSMutableArray *checkUpRecordsArray;
+    RTCheckUpRecord *checkUpRecord;
+    int refreshTimes;
+    BOOL footer;
 
-@interface RTChecksUpViewController : UIViewController{
-    RTAddCheckUpVC *addCheckUp;
+    NSString *currentMemberName;
 }
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end

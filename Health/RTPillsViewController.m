@@ -30,12 +30,12 @@
     [self.addNavBar setFrame:CGRectMake(0, 0, 320, 64)];
     self.navLabel2.frame=CGRectMake(100,32,120,20);
     if (DEVICE_IS_IPHONE5) {
-        [self.controlScroll setFrame:CGRectMake(0, 64, 320, 464)];
-        self.controlScroll.contentSize=CGSizeMake(self.view.frame.size.width,464);
+        [self.controlScroll setFrame:CGRectMake(0, 64, 320, 504)];
+        self.controlScroll.contentSize=CGSizeMake(self.view.frame.size.width,504);
     }
     else{
-        [self.controlScroll setFrame:CGRectMake(0, 64, 320, 376)];
-        self.controlScroll.contentSize=CGSizeMake(self.view.frame.size.width,464);
+        [self.controlScroll setFrame:CGRectMake(0, 64, 320, 416)];
+        self.controlScroll.contentSize=CGSizeMake(self.view.frame.size.width,504);
     }
 }
 
@@ -48,12 +48,12 @@
     [self.tableView setDataSource:self];
     self.tableView.backgroundColor=[UIColor clearColor];
     cellNum=0; 
+//    if (!DEVICE_IS_IPHONE5) {
+//        [self.tableView setFrame:CGRectMake(0, 64, 320, 416)];
+//    }
     [self.tableView addHeaderWithTarget:self action:@selector(headerRereshing)];
     [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
-    if (!DEVICE_IS_IPHONE5) {
-        [self.tableView setFrame:CGRectMake(0, 64, 320, 376)];
-    }
-    
+
     [self.timePicker addTarget:self action:@selector(datePickerValueChanged) forControlEvents:UIControlEventValueChanged];
     dateFormatter1=[[NSDateFormatter alloc]init];
     [dateFormatter1 setDateFormat:@"HH:mm"];
@@ -112,14 +112,7 @@
 }
 
 - (IBAction)touchBack:(id)sender {
-    [UIView beginAnimations:@"view flip" context:nil];
-    [UIView setAnimationDuration:0.5];
-    [UIView transitionWithView:self.view.superview
-                      duration:0.2
-                       options:UIViewAnimationOptionTransitionFlipFromLeft
-                    animations:^{ [self.view removeFromSuperview];  }
-                    completion:NULL];
-    [UIView commitAnimations];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)add:(id)sender {
@@ -132,7 +125,7 @@
     [UIView setAnimationDuration:0.5];
     [UIView transitionWithView:self.view.superview
                       duration:0.2
-                       options:UIViewAnimationOptionTransitionFlipFromRight
+                       options:UIViewAnimationOptionTransitionCurlUp
                     animations:^{ [self.view addSubview:self.addView];  }
                     completion:NULL];
     [UIView commitAnimations];
@@ -159,7 +152,7 @@
         [UIView setAnimationDuration:0.5];
         [UIView transitionWithView:self.view.superview
                           duration:0.2
-                           options:UIViewAnimationOptionTransitionFlipFromLeft
+                           options:UIViewAnimationOptionTransitionCurlDown
                         animations:^{ [self.addView removeFromSuperview];  }
                         completion:NULL];
         [UIView commitAnimations];
@@ -292,7 +285,7 @@
     [UIView setAnimationDuration:0.5];
     [UIView transitionWithView:self.view.superview
                       duration:0.2
-                       options:UIViewAnimationOptionTransitionFlipFromLeft
+                       options:UIViewAnimationOptionTransitionCurlDown
                     animations:^{ [self.addView removeFromSuperview];  }
                     completion:NULL];
     [UIView commitAnimations];

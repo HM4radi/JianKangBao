@@ -65,6 +65,18 @@
 		04FB29DA1941ACC100B96AA7 /* 2(1).png in Resources */ = {isa = PBXBuildFile; fileRef = 04FB29D71941ACC100B96AA7 /* 2(1).png */; };
 		04FB29DB1941ACC100B96AA7 /* 3(1).png in Resources */ = {isa = PBXBuildFile; fileRef = 04FB29D81941ACC100B96AA7 /* 3(1).png */; };
 		04FB29DC1941ACC100B96AA7 /* 1(1).png in Resources */ = {isa = PBXBuildFile; fileRef = 04FB29D91941ACC100B96AA7 /* 1(1).png */; };
+		AD02A9EC197648F9009A239B /* RTTimeLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD02A9EA197648F9009A239B /* RTTimeLineCell.m */; };
+		AD02A9ED197648F9009A239B /* RTTimeLineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD02A9EB197648F9009A239B /* RTTimeLineCell.xib */; };
+		AD02A9F1197651FE009A239B /* timeLine2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD02A9F0197651FE009A239B /* timeLine2.jpg */; };
+		AD02A9F319766000009A239B /* verticleLine.png in Resources */ = {isa = PBXBuildFile; fileRef = AD02A9F219765FFF009A239B /* verticleLine.png */; };
+		AD02A9F51976643B009A239B /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = AD02A9F41976643B009A239B /* clock.png */; };
+		AD02A9F719766651009A239B /* 547FCF04-E11B-43D1-8A95-DD6D95B752EC.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD02A9F619766651009A239B /* 547FCF04-E11B-43D1-8A95-DD6D95B752EC.jpg */; };
+		AD02A9FE19766F8E009A239B /* downarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = AD02A9F819766F8E009A239B /* downarrow.png */; };
+		AD02A9FF19766F8E009A239B /* photo.png in Resources */ = {isa = PBXBuildFile; fileRef = AD02A9F919766F8E009A239B /* photo.png */; };
+		AD02AA0019766F8E009A239B /* timeLine-master.png in Resources */ = {isa = PBXBuildFile; fileRef = AD02A9FA19766F8E009A239B /* timeLine-master.png */; };
+		AD02AA0119766F8E009A239B /* timeLineBox.png in Resources */ = {isa = PBXBuildFile; fileRef = AD02A9FB19766F8E009A239B /* timeLineBox.png */; };
+		AD02AA0219766F8E009A239B /* typeIn.png in Resources */ = {isa = PBXBuildFile; fileRef = AD02A9FC19766F8E009A239B /* typeIn.png */; };
+		AD02AA0319766F8E009A239B /* uparrow.png in Resources */ = {isa = PBXBuildFile; fileRef = AD02A9FD19766F8E009A239B /* uparrow.png */; };
 		AD088134195084EC00124A0B /* RTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD088132195084EC00124A0B /* RTDetailViewController.m */; };
 		AD088135195084EC00124A0B /* RTDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD088133195084EC00124A0B /* RTDetailViewController.xib */; };
 		AD0DA0391935C06800A9846E /* RTMsgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0DA0371935C06800A9846E /* RTMsgViewController.m */; };
@@ -191,8 +203,18 @@
 		AD168752196CE953003ABF3C /* micro_messenger.png in Resources */ = {isa = PBXBuildFile; fileRef = AD168750196CE953003ABF3C /* micro_messenger.png */; };
 		AD168756196CE982003ABF3C /* RTMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD168754196CE982003ABF3C /* RTMainViewController.m */; };
 		AD168757196CE982003ABF3C /* RTMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD168755196CE982003ABF3C /* RTMainViewController.xib */; };
+		AD189905197769720026AC30 /* addImage.png in Resources */ = {isa = PBXBuildFile; fileRef = AD189904197769720026AC30 /* addImage.png */; };
+		AD18991F1977CEBE0026AC30 /* UIPopoverListView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD18991E1977CEBE0026AC30 /* UIPopoverListView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AD1E4843195D6A360033784B /* DS-DIGI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD1E4842195D6A360033784B /* DS-DIGI.ttf */; };
 		AD2293C51934CD5100796CA2 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD2293C41934CD5100796CA2 /* background.jpg */; };
+		AD2AB60D1974F801002D1E16 /* RTCheckUpRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2AB60C1974F801002D1E16 /* RTCheckUpRecord.m */; };
+		AD2AB61019751290002D1E16 /* BDKNotifyHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2AB60F19751290002D1E16 /* BDKNotifyHUD.m */; };
+		AD2AB6131975129C002D1E16 /* Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = AD2AB6111975129C002D1E16 /* Checkmark.png */; };
+		AD2AB6141975129C002D1E16 /* Checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD2AB6121975129C002D1E16 /* Checkmark@2x.png */; };
+		AD2AB61819751637002D1E16 /* indexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2AB61619751637002D1E16 /* indexCell.m */; };
+		AD2AB61919751637002D1E16 /* indexCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD2AB61719751637002D1E16 /* indexCell.xib */; };
+		AD2AB65E19757E88002D1E16 /* ZYQAssetPicker.Bundle in Resources */ = {isa = PBXBuildFile; fileRef = AD2AB65B19757E88002D1E16 /* ZYQAssetPicker.Bundle */; };
+		AD2AB65F19757E88002D1E16 /* ZYQAssetPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2AB65D19757E88002D1E16 /* ZYQAssetPickerController.m */; };
 		AD327F45197034C000D8FEAB /* DDList.m in Sources */ = {isa = PBXBuildFile; fileRef = AD327F3E197034C000D8FEAB /* DDList.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AD327F46197034C000D8FEAB /* RTPillsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD327F40197034C000D8FEAB /* RTPillsViewController.m */; };
 		AD327F47197034C000D8FEAB /* RTPillsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD327F41197034C000D8FEAB /* RTPillsViewController.xib */; };
@@ -211,6 +233,20 @@
 		AD3493E1196270DD001A46FC /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3493D9196270DD001A46FC /* UIView+Extension.m */; };
 		AD3493E41962832A001A46FC /* RTMsgNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3493E31962832A001A46FC /* RTMsgNavViewController.m */; };
 		AD3493E61962F712001A46FC /* jfsx.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD3493E51962F712001A46FC /* jfsx.jpg */; };
+		AD39B5F8197373040007F4E6 /* SWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD39B5F7197373040007F4E6 /* SWTableViewCell.m */; };
+		AD39B69F197390900007F4E6 /* RTAddCheckUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AD39B69D197390900007F4E6 /* RTAddCheckUpVC.m */; };
+		AD39B6A0197390900007F4E6 /* RTAddCheckUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD39B69E197390900007F4E6 /* RTAddCheckUpVC.xib */; };
+		AD39B6A31973AE990007F4E6 /* BlockTextPromptAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD39B6A21973AE990007F4E6 /* BlockTextPromptAlertView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AD39B6A61973AEA90007F4E6 /* BlockAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD39B6A51973AEA90007F4E6 /* BlockAlertView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AD39B6A91973AEE40007F4E6 /* BlockBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = AD39B6A81973AEE40007F4E6 /* BlockBackground.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AD39B6EB1973B5AE0007F4E6 /* alert-window.png in Resources */ = {isa = PBXBuildFile; fileRef = AD39B6EA1973B5AE0007F4E6 /* alert-window.png */; };
+		AD39B6ED1973B5B20007F4E6 /* alert-window@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD39B6EC1973B5B20007F4E6 /* alert-window@2x.png */; };
+		AD39B6F01973B9290007F4E6 /* alert-black-button.png in Resources */ = {isa = PBXBuildFile; fileRef = AD39B6EE1973B9290007F4E6 /* alert-black-button.png */; };
+		AD39B6F11973B9290007F4E6 /* alert-black-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD39B6EF1973B9290007F4E6 /* alert-black-button@2x.png */; };
+		AD39B6F31973BA170007F4E6 /* alert-gray-button.png in Resources */ = {isa = PBXBuildFile; fileRef = AD39B6F21973BA170007F4E6 /* alert-gray-button.png */; };
+		AD39B6F51973BA1B0007F4E6 /* alert-gray-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD39B6F41973BA1B0007F4E6 /* alert-gray-button@2x.png */; };
+		AD39B6FC1974070C0007F4E6 /* RTCheckUp.m in Sources */ = {isa = PBXBuildFile; fileRef = AD39B6FA1974070C0007F4E6 /* RTCheckUp.m */; };
+		AD39B6FD1974070C0007F4E6 /* RTCheckUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD39B6FB1974070C0007F4E6 /* RTCheckUp.xib */; };
 		AD3C8D3E1947F44D00357DA0 /* RTSportPlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3C8D3C1947F44D00357DA0 /* RTSportPlanViewController.m */; };
 		AD3C8D3F1947F44D00357DA0 /* RTSportPlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD3C8D3D1947F44D00357DA0 /* RTSportPlanViewController.xib */; };
 		AD3FDC4E1961B06500EECFA0 /* tick1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD3FDC4C1961B06500EECFA0 /* tick1.jpg */; };
@@ -219,10 +255,6 @@
 		AD464FF919715190000E9323 /* RTChecksUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD464FF719715190000E9323 /* RTChecksUpViewController.xib */; };
 		AD464FFD19715A5D000E9323 /* RTTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD464FFB19715A5D000E9323 /* RTTypeCell.m */; };
 		AD464FFE19715A5D000E9323 /* RTTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD464FFC19715A5D000E9323 /* RTTypeCell.xib */; };
-		AD46500219715A98000E9323 /* RTIndexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD46500019715A98000E9323 /* RTIndexCell.m */; };
-		AD46500319715A98000E9323 /* RTIndexCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD46500119715A98000E9323 /* RTIndexCell.xib */; };
-		AD46500A19716065000E9323 /* RTAddCheckUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AD46500819716065000E9323 /* RTAddCheckUpVC.m */; };
-		AD46500B19716065000E9323 /* RTAddCheckUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD46500919716065000E9323 /* RTAddCheckUpVC.xib */; };
 		AD46500F1971808C000E9323 /* CheckUpDictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD46500E1971808C000E9323 /* CheckUpDictionary.plist */; };
 		AD470D78195A9FF1004ECB75 /* RTSportRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = AD470D77195A9FF1004ECB75 /* RTSportRecord.m */; };
 		AD480F62192497CC0081DAFA /* Window Background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD480F61192497CC0081DAFA /* Window Background@2x.png */; };
@@ -286,7 +318,6 @@
 		ADA6C2EE1951D8D30037A013 /* timeLineMidBig.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADA6C2E41951D8D30037A013 /* timeLineMidBig.jpg */; };
 		ADA6C2EF1951D8D30037A013 /* timelIneEnd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADA6C2E51951D8D30037A013 /* timelIneEnd.jpg */; };
 		ADA6C2F01951D8D30037A013 /* timeLineBegin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADA6C2E61951D8D30037A013 /* timeLineBegin.jpg */; };
-		ADA6C2F11951D8D30037A013 /* timeLine2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADA6C2E71951D8D30037A013 /* timeLine2.jpg */; };
 		ADA6C2F21951D8D30037A013 /* timelineTable.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADA6C2E81951D8D30037A013 /* timelineTable.jpg */; };
 		ADA6C2F31951D8D30037A013 /* timeline.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADA6C2E91951D8D30037A013 /* timeline.jpg */; };
 		ADA6C2F71951D9070037A013 /* GYBTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA6C2F51951D9070037A013 /* GYBTableViewCell.m */; };
@@ -495,6 +526,19 @@
 		04FB29D71941ACC100B96AA7 /* 2(1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2(1).png"; sourceTree = "<group>"; };
 		04FB29D81941ACC100B96AA7 /* 3(1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3(1).png"; sourceTree = "<group>"; };
 		04FB29D91941ACC100B96AA7 /* 1(1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1(1).png"; sourceTree = "<group>"; };
+		AD02A9E9197648F9009A239B /* RTTimeLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTTimeLineCell.h; sourceTree = "<group>"; };
+		AD02A9EA197648F9009A239B /* RTTimeLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTTimeLineCell.m; sourceTree = "<group>"; };
+		AD02A9EB197648F9009A239B /* RTTimeLineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTTimeLineCell.xib; sourceTree = "<group>"; };
+		AD02A9F0197651FE009A239B /* timeLine2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timeLine2.jpg; sourceTree = "<group>"; };
+		AD02A9F219765FFF009A239B /* verticleLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = verticleLine.png; sourceTree = "<group>"; };
+		AD02A9F41976643B009A239B /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
+		AD02A9F619766651009A239B /* 547FCF04-E11B-43D1-8A95-DD6D95B752EC.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "547FCF04-E11B-43D1-8A95-DD6D95B752EC.jpg"; sourceTree = "<group>"; };
+		AD02A9F819766F8E009A239B /* downarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downarrow.png; sourceTree = "<group>"; };
+		AD02A9F919766F8E009A239B /* photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo.png; sourceTree = "<group>"; };
+		AD02A9FA19766F8E009A239B /* timeLine-master.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timeLine-master.png"; sourceTree = "<group>"; };
+		AD02A9FB19766F8E009A239B /* timeLineBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timeLineBox.png; sourceTree = "<group>"; };
+		AD02A9FC19766F8E009A239B /* typeIn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = typeIn.png; sourceTree = "<group>"; };
+		AD02A9FD19766F8E009A239B /* uparrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uparrow.png; sourceTree = "<group>"; };
 		AD088131195084EC00124A0B /* RTDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTDetailViewController.h; sourceTree = "<group>"; };
 		AD088132195084EC00124A0B /* RTDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTDetailViewController.m; sourceTree = "<group>"; };
 		AD088133195084EC00124A0B /* RTDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTDetailViewController.xib; sourceTree = "<group>"; };
@@ -629,8 +673,23 @@
 		AD168753196CE982003ABF3C /* RTMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTMainViewController.h; sourceTree = "<group>"; };
 		AD168754196CE982003ABF3C /* RTMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTMainViewController.m; sourceTree = "<group>"; };
 		AD168755196CE982003ABF3C /* RTMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTMainViewController.xib; sourceTree = "<group>"; };
+		AD189904197769720026AC30 /* addImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addImage.png; sourceTree = "<group>"; };
+		AD18991D1977CEBE0026AC30 /* UIPopoverListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPopoverListView.h; sourceTree = "<group>"; };
+		AD18991E1977CEBE0026AC30 /* UIPopoverListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPopoverListView.m; sourceTree = "<group>"; };
 		AD1E4842195D6A360033784B /* DS-DIGI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DS-DIGI.ttf"; sourceTree = "<group>"; };
 		AD2293C41934CD5100796CA2 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		AD2AB60B1974F801002D1E16 /* RTCheckUpRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCheckUpRecord.h; sourceTree = "<group>"; };
+		AD2AB60C1974F801002D1E16 /* RTCheckUpRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTCheckUpRecord.m; sourceTree = "<group>"; };
+		AD2AB60E19751290002D1E16 /* BDKNotifyHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDKNotifyHUD.h; sourceTree = "<group>"; };
+		AD2AB60F19751290002D1E16 /* BDKNotifyHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDKNotifyHUD.m; sourceTree = "<group>"; };
+		AD2AB6111975129C002D1E16 /* Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Checkmark.png; path = ../Checkmark.png; sourceTree = "<group>"; };
+		AD2AB6121975129C002D1E16 /* Checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Checkmark@2x.png"; path = "../Checkmark@2x.png"; sourceTree = "<group>"; };
+		AD2AB61519751637002D1E16 /* indexCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = indexCell.h; sourceTree = "<group>"; };
+		AD2AB61619751637002D1E16 /* indexCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = indexCell.m; sourceTree = "<group>"; };
+		AD2AB61719751637002D1E16 /* indexCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = indexCell.xib; sourceTree = "<group>"; };
+		AD2AB65B19757E88002D1E16 /* ZYQAssetPicker.Bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZYQAssetPicker.Bundle; sourceTree = "<group>"; };
+		AD2AB65C19757E88002D1E16 /* ZYQAssetPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYQAssetPickerController.h; sourceTree = "<group>"; };
+		AD2AB65D19757E88002D1E16 /* ZYQAssetPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYQAssetPickerController.m; sourceTree = "<group>"; };
 		AD327F3D197034C000D8FEAB /* DDList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDList.h; sourceTree = "<group>"; };
 		AD327F3E197034C000D8FEAB /* DDList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDList.m; sourceTree = "<group>"; };
 		AD327F3F197034C000D8FEAB /* RTPillsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTPillsViewController.h; sourceTree = "<group>"; };
@@ -661,6 +720,27 @@
 		AD3493E21962832A001A46FC /* RTMsgNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTMsgNavViewController.h; sourceTree = "<group>"; };
 		AD3493E31962832A001A46FC /* RTMsgNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTMsgNavViewController.m; sourceTree = "<group>"; };
 		AD3493E51962F712001A46FC /* jfsx.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jfsx.jpg; sourceTree = "<group>"; };
+		AD39B5F6197373040007F4E6 /* SWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWTableViewCell.h; sourceTree = "<group>"; };
+		AD39B5F7197373040007F4E6 /* SWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWTableViewCell.m; sourceTree = "<group>"; };
+		AD39B69C197390900007F4E6 /* RTAddCheckUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTAddCheckUpVC.h; sourceTree = "<group>"; };
+		AD39B69D197390900007F4E6 /* RTAddCheckUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTAddCheckUpVC.m; sourceTree = "<group>"; };
+		AD39B69E197390900007F4E6 /* RTAddCheckUpVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTAddCheckUpVC.xib; sourceTree = "<group>"; };
+		AD39B6A11973AE990007F4E6 /* BlockTextPromptAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockTextPromptAlertView.h; sourceTree = "<group>"; };
+		AD39B6A21973AE990007F4E6 /* BlockTextPromptAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockTextPromptAlertView.m; sourceTree = "<group>"; };
+		AD39B6A41973AEA90007F4E6 /* BlockAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockAlertView.h; sourceTree = "<group>"; };
+		AD39B6A51973AEA90007F4E6 /* BlockAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockAlertView.m; sourceTree = "<group>"; };
+		AD39B6A71973AEE40007F4E6 /* BlockBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockBackground.h; sourceTree = "<group>"; };
+		AD39B6A81973AEE40007F4E6 /* BlockBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockBackground.m; sourceTree = "<group>"; };
+		AD39B6AA1973AEF20007F4E6 /* BlockUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockUI.h; sourceTree = "<group>"; };
+		AD39B6EA1973B5AE0007F4E6 /* alert-window.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "alert-window.png"; path = "AlertView/alert-window.png"; sourceTree = "<group>"; };
+		AD39B6EC1973B5B20007F4E6 /* alert-window@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "alert-window@2x.png"; path = "AlertView/alert-window@2x.png"; sourceTree = "<group>"; };
+		AD39B6EE1973B9290007F4E6 /* alert-black-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "alert-black-button.png"; path = "AlertView/alert-black-button.png"; sourceTree = "<group>"; };
+		AD39B6EF1973B9290007F4E6 /* alert-black-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "alert-black-button@2x.png"; path = "AlertView/alert-black-button@2x.png"; sourceTree = "<group>"; };
+		AD39B6F21973BA170007F4E6 /* alert-gray-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "alert-gray-button.png"; path = "AlertView/alert-gray-button.png"; sourceTree = "<group>"; };
+		AD39B6F41973BA1B0007F4E6 /* alert-gray-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "alert-gray-button@2x.png"; path = "AlertView/alert-gray-button@2x.png"; sourceTree = "<group>"; };
+		AD39B6F91974070C0007F4E6 /* RTCheckUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCheckUp.h; sourceTree = "<group>"; };
+		AD39B6FA1974070C0007F4E6 /* RTCheckUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTCheckUp.m; sourceTree = "<group>"; };
+		AD39B6FB1974070C0007F4E6 /* RTCheckUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTCheckUp.xib; sourceTree = "<group>"; };
 		AD3C8D3B1947F44D00357DA0 /* RTSportPlanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTSportPlanViewController.h; sourceTree = "<group>"; };
 		AD3C8D3C1947F44D00357DA0 /* RTSportPlanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTSportPlanViewController.m; sourceTree = "<group>"; };
 		AD3C8D3D1947F44D00357DA0 /* RTSportPlanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTSportPlanViewController.xib; sourceTree = "<group>"; };
@@ -672,12 +752,6 @@
 		AD464FFA19715A5D000E9323 /* RTTypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTTypeCell.h; sourceTree = "<group>"; };
 		AD464FFB19715A5D000E9323 /* RTTypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTTypeCell.m; sourceTree = "<group>"; };
 		AD464FFC19715A5D000E9323 /* RTTypeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTTypeCell.xib; sourceTree = "<group>"; };
-		AD464FFF19715A98000E9323 /* RTIndexCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTIndexCell.h; sourceTree = "<group>"; };
-		AD46500019715A98000E9323 /* RTIndexCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTIndexCell.m; sourceTree = "<group>"; };
-		AD46500119715A98000E9323 /* RTIndexCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTIndexCell.xib; sourceTree = "<group>"; };
-		AD46500719716065000E9323 /* RTAddCheckUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTAddCheckUpVC.h; sourceTree = "<group>"; };
-		AD46500819716065000E9323 /* RTAddCheckUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTAddCheckUpVC.m; sourceTree = "<group>"; };
-		AD46500919716065000E9323 /* RTAddCheckUpVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTAddCheckUpVC.xib; sourceTree = "<group>"; };
 		AD46500E1971808C000E9323 /* CheckUpDictionary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CheckUpDictionary.plist; sourceTree = "<group>"; };
 		AD470D76195A9FF1004ECB75 /* RTSportRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTSportRecord.h; sourceTree = "<group>"; };
 		AD470D77195A9FF1004ECB75 /* RTSportRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTSportRecord.m; sourceTree = "<group>"; };
@@ -786,7 +860,6 @@
 		ADA6C2E41951D8D30037A013 /* timeLineMidBig.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timeLineMidBig.jpg; sourceTree = "<group>"; };
 		ADA6C2E51951D8D30037A013 /* timelIneEnd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timelIneEnd.jpg; sourceTree = "<group>"; };
 		ADA6C2E61951D8D30037A013 /* timeLineBegin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timeLineBegin.jpg; sourceTree = "<group>"; };
-		ADA6C2E71951D8D30037A013 /* timeLine2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timeLine2.jpg; sourceTree = "<group>"; };
 		ADA6C2E81951D8D30037A013 /* timelineTable.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timelineTable.jpg; sourceTree = "<group>"; };
 		ADA6C2E91951D8D30037A013 /* timeline.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timeline.jpg; sourceTree = "<group>"; };
 		ADA6C2F41951D9070037A013 /* GYBTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYBTableViewCell.h; sourceTree = "<group>"; };
@@ -1096,6 +1169,18 @@
 		0469EB72192886FF00388022 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				AD189904197769720026AC30 /* addImage.png */,
+				AD02A9F819766F8E009A239B /* downarrow.png */,
+				AD02A9F919766F8E009A239B /* photo.png */,
+				AD02A9FA19766F8E009A239B /* timeLine-master.png */,
+				AD02A9FB19766F8E009A239B /* timeLineBox.png */,
+				AD02A9FC19766F8E009A239B /* typeIn.png */,
+				AD02A9FD19766F8E009A239B /* uparrow.png */,
+				AD02A9F619766651009A239B /* 547FCF04-E11B-43D1-8A95-DD6D95B752EC.jpg */,
+				AD02A9F41976643B009A239B /* clock.png */,
+				AD02A9F219765FFF009A239B /* verticleLine.png */,
+				AD2AB6111975129C002D1E16 /* Checkmark.png */,
+				AD2AB6121975129C002D1E16 /* Checkmark@2x.png */,
 				AD327F4A197034F000D8FEAB /* Icon_58x58.png */,
 				AD327F4B197034F000D8FEAB /* Icon_80x80.png */,
 				AD327F4C197034F000D8FEAB /* Icon_120x120.png */,
@@ -1106,8 +1191,8 @@
 				ADA6C2E41951D8D30037A013 /* timeLineMidBig.jpg */,
 				ADA6C2E51951D8D30037A013 /* timelIneEnd.jpg */,
 				ADA6C2E61951D8D30037A013 /* timeLineBegin.jpg */,
-				ADA6C2E71951D8D30037A013 /* timeLine2.jpg */,
 				ADA6C2E81951D8D30037A013 /* timelineTable.jpg */,
+				AD02A9F0197651FE009A239B /* timeLine2.jpg */,
 				ADA6C2E91951D8D30037A013 /* timeline.jpg */,
 				ADA6C2DC19518FD70037A013 /* locate2.png */,
 				ADA6C2DD19518FD70037A013 /* locate1.png */,
@@ -1390,6 +1475,25 @@
 			name = ProgressView;
 			sourceTree = "<group>";
 		};
+		AD1899061977BD750026AC30 /* pullDown */ = {
+			isa = PBXGroup;
+			children = (
+				AD18991D1977CEBE0026AC30 /* UIPopoverListView.h */,
+				AD18991E1977CEBE0026AC30 /* UIPopoverListView.m */,
+			);
+			name = pullDown;
+			sourceTree = "<group>";
+		};
+		AD2AB66019757E93002D1E16 /* ZYQAssetPickerController */ = {
+			isa = PBXGroup;
+			children = (
+				AD2AB65B19757E88002D1E16 /* ZYQAssetPicker.Bundle */,
+				AD2AB65C19757E88002D1E16 /* ZYQAssetPickerController.h */,
+				AD2AB65D19757E88002D1E16 /* ZYQAssetPickerController.m */,
+			);
+			name = ZYQAssetPickerController;
+			sourceTree = "<group>";
+		};
 		AD3493C9196270DD001A46FC /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -1413,22 +1517,81 @@
 			path = MJRefresh;
 			sourceTree = "<group>";
 		};
+		AD39B6AB1973B0E30007F4E6 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				AD39B6EE1973B9290007F4E6 /* alert-black-button.png */,
+				AD39B6EF1973B9290007F4E6 /* alert-black-button@2x.png */,
+				AD39B6F21973BA170007F4E6 /* alert-gray-button.png */,
+				AD39B6F41973BA1B0007F4E6 /* alert-gray-button@2x.png */,
+				AD39B6EC1973B5B20007F4E6 /* alert-window@2x.png */,
+				AD39B6EA1973B5AE0007F4E6 /* alert-window.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		AD39B6F61973BA750007F4E6 /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				AD39B6A41973AEA90007F4E6 /* BlockAlertView.h */,
+				AD39B6A51973AEA90007F4E6 /* BlockAlertView.m */,
+				AD39B6A11973AE990007F4E6 /* BlockTextPromptAlertView.h */,
+				AD39B6A21973AE990007F4E6 /* BlockTextPromptAlertView.m */,
+				AD39B6A71973AEE40007F4E6 /* BlockBackground.h */,
+				AD39B6A81973AEE40007F4E6 /* BlockBackground.m */,
+				AD39B6AA1973AEF20007F4E6 /* BlockUI.h */,
+				AD39B6AB1973B0E30007F4E6 /* images */,
+			);
+			name = AlertView;
+			sourceTree = "<group>";
+		};
+		AD39B6F7197406570007F4E6 /* InputCheckUps */ = {
+			isa = PBXGroup;
+			children = (
+				AD2AB60E19751290002D1E16 /* BDKNotifyHUD.h */,
+				AD2AB60F19751290002D1E16 /* BDKNotifyHUD.m */,
+				AD39B69C197390900007F4E6 /* RTAddCheckUpVC.h */,
+				AD39B69D197390900007F4E6 /* RTAddCheckUpVC.m */,
+				AD39B69E197390900007F4E6 /* RTAddCheckUpVC.xib */,
+				AD39B5F6197373040007F4E6 /* SWTableViewCell.h */,
+				AD39B5F7197373040007F4E6 /* SWTableViewCell.m */,
+				AD464FFA19715A5D000E9323 /* RTTypeCell.h */,
+				AD464FFB19715A5D000E9323 /* RTTypeCell.m */,
+				AD464FFC19715A5D000E9323 /* RTTypeCell.xib */,
+				AD39B6F61973BA750007F4E6 /* AlertView */,
+			);
+			name = InputCheckUps;
+			sourceTree = "<group>";
+		};
+		AD39B6F8197406A00007F4E6 /* AddCheckUps */ = {
+			isa = PBXGroup;
+			children = (
+				AD2AB66019757E93002D1E16 /* ZYQAssetPickerController */,
+				AD39B6F91974070C0007F4E6 /* RTCheckUp.h */,
+				AD39B6FA1974070C0007F4E6 /* RTCheckUp.m */,
+				AD39B6FB1974070C0007F4E6 /* RTCheckUp.xib */,
+				AD2AB60B1974F801002D1E16 /* RTCheckUpRecord.h */,
+				AD2AB60C1974F801002D1E16 /* RTCheckUpRecord.m */,
+				AD2AB61519751637002D1E16 /* indexCell.h */,
+				AD2AB61619751637002D1E16 /* indexCell.m */,
+				AD2AB61719751637002D1E16 /* indexCell.xib */,
+			);
+			name = AddCheckUps;
+			sourceTree = "<group>";
+		};
 		AD464FF419715113000E9323 /* ChecksUp */ = {
 			isa = PBXGroup;
 			children = (
+				AD1899061977BD750026AC30 /* pullDown */,
+				AD39B6F8197406A00007F4E6 /* AddCheckUps */,
+				AD39B6F7197406570007F4E6 /* InputCheckUps */,
 				AD46500E1971808C000E9323 /* CheckUpDictionary.plist */,
 				AD464FF519715190000E9323 /* RTChecksUpViewController.h */,
 				AD464FF619715190000E9323 /* RTChecksUpViewController.m */,
 				AD464FF719715190000E9323 /* RTChecksUpViewController.xib */,
-				AD46500719716065000E9323 /* RTAddCheckUpVC.h */,
-				AD46500819716065000E9323 /* RTAddCheckUpVC.m */,
-				AD46500919716065000E9323 /* RTAddCheckUpVC.xib */,
-				AD464FFA19715A5D000E9323 /* RTTypeCell.h */,
-				AD464FFB19715A5D000E9323 /* RTTypeCell.m */,
-				AD464FFC19715A5D000E9323 /* RTTypeCell.xib */,
-				AD464FFF19715A98000E9323 /* RTIndexCell.h */,
-				AD46500019715A98000E9323 /* RTIndexCell.m */,
-				AD46500119715A98000E9323 /* RTIndexCell.xib */,
+				AD02A9E9197648F9009A239B /* RTTimeLineCell.h */,
+				AD02A9EA197648F9009A239B /* RTTimeLineCell.m */,
+				AD02A9EB197648F9009A239B /* RTTimeLineCell.xib */,
 			);
 			name = ChecksUp;
 			path = ..;
@@ -1729,7 +1892,7 @@
 				AD46FB12193431E500F19BC4 /* PillsView */,
 				AD46FB13193431FD00F19BC4 /* FoodView */,
 				AD0DA0351935C03100A9846E /* MessageView */,
-				ADAA5E2A192355BE0040ED10 /* FirstViewController */,
+				ADAA5E2A192355BE0040ED10 /* SportViewController */,
 				ADAA5E2C192356050040ED10 /* SecondViewController */,
 				0469EB5F192885AE00388022 /* ThirdTableView */,
 				ADAA5E2E192356370040ED10 /* ForthViewController */,
@@ -1787,7 +1950,7 @@
 			name = MainViewController;
 			sourceTree = "<group>";
 		};
-		ADAA5E2A192355BE0040ED10 /* FirstViewController */ = {
+		ADAA5E2A192355BE0040ED10 /* SportViewController */ = {
 			isa = PBXGroup;
 			children = (
 				AD16873E196CE7E2003ABF3C /* FirstViewController.h */,
@@ -1804,7 +1967,7 @@
 				ADF6F5C419597A7F00E45C05 /* ButtonType */,
 				AD70E500195BF530007D99C1 /* SportRecord */,
 			);
-			name = FirstViewController;
+			name = SportViewController;
 			sourceTree = "<group>";
 		};
 		ADAA5E2C192356050040ED10 /* SecondViewController */ = {
@@ -2044,12 +2207,14 @@
 				04E88A2D196E81FC00B1BE83 /* error.png in Resources */,
 				AD12F671192634B400921894 /* navigation_shadow.png in Resources */,
 				AD12F6CA192634B400921894 /* toolbar_retweet_highlighted.png in Resources */,
+				AD2AB6141975129C002D1E16 /* Checkmark@2x.png in Resources */,
 				AD9A389719362A5600A8EFFB /* login.png in Resources */,
 				AD70D1991946DE0800F6D118 /* tabbar_5@2x.png in Resources */,
 				ADCC7A4E1929AF64005B00B4 /* login_textfield_more_flip@2x.png in Resources */,
 				AD12F6C3192634B400921894 /* toolbar_favorite.png in Resources */,
 				AD2293C51934CD5100796CA2 /* background.jpg in Resources */,
 				AD12F6C5192634B400921894 /* toolbar_more.png in Resources */,
+				AD39B6ED1973B5B20007F4E6 /* alert-window@2x.png in Resources */,
 				AD12F682192634B400921894 /* navigationbar_mentions.png in Resources */,
 				AD54260B193715E4005F10F4 /* xljk.jpg in Resources */,
 				AD327F49197034C000D8FEAB /* RTPillsTableViewCell.xib in Resources */,
@@ -2067,6 +2232,8 @@
 				ADAB1928194A8ED20081C8FA /* tabbar_4@2x.png in Resources */,
 				AD4A30E1194D9CE80078ABFB /* ok.png in Resources */,
 				AD12F6A2192634B400921894 /* tabbar_background.png in Resources */,
+				AD02A9F319766000009A239B /* verticleLine.png in Resources */,
+				AD02A9FF19766F8E009A239B /* photo.png in Resources */,
 				AD3FDC4F1961B06500EECFA0 /* tick.jpg in Resources */,
 				AD12F68B192634B400921894 /* popover_button@2x.png in Resources */,
 				042716EF19375CE100FD3EF3 /* SecondViewController.xib in Resources */,
@@ -2077,6 +2244,7 @@
 				AD12F69C192634B400921894 /* settings_rate_icon.png in Resources */,
 				AD12F68D192634B400921894 /* popover_button_highlighted@2x.png in Resources */,
 				ADCC7A461929AF64005B00B4 /* login_dropdown_avatar_border.png in Resources */,
+				AD189905197769720026AC30 /* addImage.png in Resources */,
 				AD12F5991926314F00921894 /* settings_accounts_icon.png in Resources */,
 				ADA9874419337F6D00B98092 /* ld.jpg in Resources */,
 				AD168752196CE953003ABF3C /* micro_messenger.png in Resources */,
@@ -2084,10 +2252,13 @@
 				AD12F69F192634B400921894 /* settings_signout_icon.png in Resources */,
 				AD0DA0631935C57700A9846E /* sport-master.png in Resources */,
 				AD12F6B0192634B400921894 /* timeline_card_small.png in Resources */,
+				AD39B6F31973BA170007F4E6 /* alert-gray-button.png in Resources */,
 				ADA987461933813600B98092 /* dadou.jpg in Resources */,
 				AD12F692192634B400921894 /* profile_pop_button_background_top_hl.png in Resources */,
+				AD39B6A0197390900007F4E6 /* RTAddCheckUpVC.xib in Resources */,
 				AD12F684192634B400921894 /* navigationbar_notice.png in Resources */,
 				AD12F6A4192634B400921894 /* tabbar_discover_selected.png in Resources */,
+				AD2AB61919751637002D1E16 /* indexCell.xib in Resources */,
 				AD12F699192634B400921894 /* settings_official_icon.png in Resources */,
 				AD0DA0531935C35700A9846E /* tabbar_mainbtn_bg@2x.png in Resources */,
 				AD5425E3193703CF005F10F4 /* RTMsgDetailTableViewCell.xib in Resources */,
@@ -2104,6 +2275,7 @@
 				AD12F674192634B400921894 /* navigationbar_back_highlighted.png in Resources */,
 				AD12F675192634B400921894 /* navigationbar_background@2x.png in Resources */,
 				ADAB1923194A8ED20081C8FA /* tabbar_2.png in Resources */,
+				AD02A9F51976643B009A239B /* clock.png in Resources */,
 				AD12F6A3192634B400921894 /* tabbar_discover.png in Resources */,
 				042716FE19375D0200FD3EF3 /* RTSndMedicationViewController.xib in Resources */,
 				ADCC7A191929ACDC005B00B4 /* RTLoginViewController.xib in Resources */,
@@ -2111,12 +2283,14 @@
 				04FB29DB1941ACC100B96AA7 /* 3(1).png in Resources */,
 				AD12F655192634B400921894 /* compose_toolbar_background.png in Resources */,
 				AD464FFE19715A5D000E9323 /* RTTypeCell.xib in Resources */,
+				AD39B6EB1973B5AE0007F4E6 /* alert-window.png in Resources */,
 				AD12F6BC192634B400921894 /* timeline_retweet_count_icon@2x.png in Resources */,
 				AD12F6B7192634B400921894 /* timeline_membership_icon@2x.png in Resources */,
 				AD0DA05C1935C57700A9846E /* add-master.png in Resources */,
 				AD12F6A7192634B400921894 /* tabbar_message_center.png in Resources */,
 				AD12F6C4192634B400921894 /* toolbar_favorite_highlighted.png in Resources */,
 				AD12F657192634B400921894 /* compose_trendbutton_background_highlighted.png in Resources */,
+				AD02A9FE19766F8E009A239B /* downarrow.png in Resources */,
 				0427170519375D1E00FD3EF3 /* white.jpg in Resources */,
 				ADA6C2F21951D8D30037A013 /* timelineTable.jpg in Resources */,
 				AD12F6A8192634B400921894 /* tabbar_message_center_selected.png in Resources */,
@@ -2146,6 +2320,7 @@
 				0469EB761928876100388022 /* compose_privatebutton_background.png in Resources */,
 				AD12F690192634B400921894 /* profile_pop_button_background_bottom_hl.png in Resources */,
 				AD69B9511963E9FF0046AECC /* RTMsgShowViewController.xib in Resources */,
+				AD02AA0319766F8E009A239B /* uparrow.png in Resources */,
 				AD0DA03A1935C06800A9846E /* RTMsgViewController.xib in Resources */,
 				ADCC7A411929AF64005B00B4 /* login_bg@2x.jpg in Resources */,
 				AD12F6B6192634B400921894 /* timeline_membership_expired_icon@2x.png in Resources */,
@@ -2161,7 +2336,6 @@
 				AD12F6C9192634B400921894 /* toolbar_retweet.png in Resources */,
 				AD542606193715E4005F10F4 /* mxb.jpg in Resources */,
 				AD12F6A6192634B400921894 /* tabbar_home_highlighted.png in Resources */,
-				AD46500319715A98000E9323 /* RTIndexCell.xib in Resources */,
 				AD327F4F197034F000D8FEAB /* Icon_120x120.png in Resources */,
 				AD12F67D192634B400921894 /* navigationbar_interest.png in Resources */,
 				AD12F6B8192634B400921894 /* timeline_meyou_button_background@2x.png in Resources */,
@@ -2208,6 +2382,7 @@
 				AD12F6AB192634B400921894 /* tabbar_profile.png in Resources */,
 				AD16874D196CE931003ABF3C /* ForthViewController.xib in Resources */,
 				04FB29DC1941ACC100B96AA7 /* 1(1).png in Resources */,
+				AD39B6F51973BA1B0007F4E6 /* alert-gray-button@2x.png in Resources */,
 				AD12F678192634B400921894 /* navigationbar_compose.png in Resources */,
 				ADAB1925194A8ED20081C8FA /* tabbar_3.png in Resources */,
 				ADCC7A3B1929AF64005B00B4 /* login_avatar_default.png in Resources */,
@@ -2217,8 +2392,6 @@
 				AD12F88F1926516D00921894 /* Images.xcassets in Resources */,
 				AD12F686192634B400921894 /* navigationbar_time_group.png in Resources */,
 				AD12F6AA192634B400921894 /* tabbar_more_selected.png in Resources */,
-				AD46500B19716065000E9323 /* RTAddCheckUpVC.xib in Resources */,
-				ADA6C2F11951D8D30037A013 /* timeLine2.jpg in Resources */,
 				0427170819375D1E00FD3EF3 /* renti.jpg in Resources */,
 				ADA6C2EC1951D8D30037A013 /* 78-stopwatch.png in Resources */,
 				AD0DA0521935C35700A9846E /* tabbar_mainbtn_bg.png in Resources */,
@@ -2244,6 +2417,7 @@
 				04E88A28196E793E00B1BE83 /* xin2.png in Resources */,
 				ADE39B891923A78600E4278B /* cube.png in Resources */,
 				AD12F67E192634B400921894 /* navigationbar_interest_highlighted.png in Resources */,
+				AD02AA0219766F8E009A239B /* typeIn.png in Resources */,
 				AD54260A193715E4005F10F4 /* wuyi.jpg in Resources */,
 				ADA6C3001951D9220037A013 /* RTGYBNaviViewController.xib in Resources */,
 				AD5425BE1936C3F0005F10F4 /* RTCollectionViewCell.xib in Resources */,
@@ -2253,21 +2427,26 @@
 				AD327F4E197034F000D8FEAB /* Icon_80x80.png in Resources */,
 				AD4810331924BF430081DAFA /* TencentMapAPI.bundle in Resources */,
 				ADA6C2F01951D8D30037A013 /* timeLineBegin.jpg in Resources */,
+				AD02AA0119766F8E009A239B /* timeLineBox.png in Resources */,
 				AD12F69D192634B400921894 /* settings_recommend_icon.png in Resources */,
 				AD168742196CE7E2003ABF3C /* FirstViewController.xib in Resources */,
 				ADE39B8A1923A78600E4278B /* download.png in Resources */,
+				AD02AA0019766F8E009A239B /* timeLine-master.png in Resources */,
 				AD54260D193715E4005F10F4 /* yfjk.jpg in Resources */,
 				ADE39B8C1923A78600E4278B /* file.png in Resources */,
 				AD0DA05D1935C57700A9846E /* back-master.png in Resources */,
 				AD12F679192634B400921894 /* navigationbar_compose_highlighted@2x.png in Resources */,
+				AD2AB6131975129C002D1E16 /* Checkmark.png in Resources */,
 				ADCC7A521929AF64005B00B4 /* login_textfield_top@2x.png in Resources */,
 				AD1E4843195D6A360033784B /* DS-DIGI.ttf in Resources */,
+				AD02A9F1197651FE009A239B /* timeLine2.jpg in Resources */,
 				ADA6C2EA1951D8D30037A013 /* 08-chat.png in Resources */,
 				AD12F687192634B400921894 /* navigationbar_title_highlighted@2x.png in Resources */,
 				AD542603193715E4005F10F4 /* jhc.jpg in Resources */,
 				ADA6C2F31951D8D30037A013 /* timeline.jpg in Resources */,
 				04B58A831945678200A4905C /* RTCenterViewController.xib in Resources */,
 				AD12F6C8192634B400921894 /* toolbar_refresh_highlighted.png in Resources */,
+				AD2AB65E19757E88002D1E16 /* ZYQAssetPicker.Bundle in Resources */,
 				AD12F694192634B400921894 /* settingButtonNormal.png in Resources */,
 				AD088135195084EC00124A0B /* RTDetailViewController.xib in Resources */,
 				AD12F681192634B400921894 /* navigationbar_language_highlighted.png in Resources */,
@@ -2275,6 +2454,7 @@
 				AD12F6BD192634B400921894 /* timeline_trend_icon_like@2x.png in Resources */,
 				AD12F680192634B400921894 /* navigationbar_language.png in Resources */,
 				ADA6C2EB1951D8D30037A013 /* 75-phone.png in Resources */,
+				AD02A9F719766651009A239B /* 547FCF04-E11B-43D1-8A95-DD6D95B752EC.jpg in Resources */,
 				04E88A22196E706700B1BE83 /* RTAddFamilyMemberViewController.xib in Resources */,
 				AD12F683192634B400921894 /* navigationbar_messages.png in Resources */,
 				AD480F62192497CC0081DAFA /* Window Background@2x.png in Resources */,
@@ -2287,12 +2467,16 @@
 				AD12F6AC192634B400921894 /* tabbar_profile_selected.png in Resources */,
 				AD12F653192634B400921894 /* compose_publicbutton_background_highligted.png in Resources */,
 				AD5425DE193700F7005F10F4 /* RTMsgDetailViewController.xib in Resources */,
+				AD02A9ED197648F9009A239B /* RTTimeLineCell.xib in Resources */,
 				AD4AC139192CCF9D006E6898 /* RTTableViewCell.xib in Resources */,
 				AD12F68C192634B400921894 /* popover_button_highlighted.png in Resources */,
 				ADA6C3021951D9220037A013 /* GYBTableViewController.xib in Resources */,
 				042053B61940793500D0C9EE /* RTUserProfileViewController.xib in Resources */,
 				AD12F68F192634B400921894 /* profile_pop_button_background_bottom.png in Resources */,
+				AD39B6F01973B9290007F4E6 /* alert-black-button.png in Resources */,
+				AD39B6FD1974070C0007F4E6 /* RTCheckUp.xib in Resources */,
 				ADAB1926194A8ED20081C8FA /* tabbar_3@2x.png in Resources */,
+				AD39B6F11973B9290007F4E6 /* alert-black-button@2x.png in Resources */,
 				AD12F669192634B400921894 /* login_background.png in Resources */,
 				ADCC7A531929AF64005B00B4 /* login_textfield.png in Resources */,
 				04E88A2A196E7B2D00B1BE83 /* ren.png in Resources */,
@@ -2327,9 +2511,9 @@
 			files = (
 				ADA6C3231951D9CE0037A013 /* PNLineChart.m in Sources */,
 				AD4AC138192CCF9D006E6898 /* RTTableViewCell.m in Sources */,
-				AD46500A19716065000E9323 /* RTAddCheckUpVC.m in Sources */,
 				AD3493DE196270DD001A46FC /* MJRefreshHeaderView.m in Sources */,
-				AD46500219715A98000E9323 /* RTIndexCell.m in Sources */,
+				AD2AB60D1974F801002D1E16 /* RTCheckUpRecord.m in Sources */,
+				AD2AB61019751290002D1E16 /* BDKNotifyHUD.m in Sources */,
 				ADA6C3221951D9CE0037A013 /* PNChart.m in Sources */,
 				ADA6C2FF1951D9220037A013 /* RTGYBNaviViewController.m in Sources */,
 				AD3493DD196270DD001A46FC /* MJRefreshFooterView.m in Sources */,
@@ -2340,6 +2524,7 @@
 				04E88A34196E91B300B1BE83 /* RTAddMemResultView.m in Sources */,
 				ADA9873F1933794400B98092 /* RTfoodViewController.m in Sources */,
 				AD3493E41962832A001A46FC /* RTMsgNavViewController.m in Sources */,
+				AD39B6A31973AE990007F4E6 /* BlockTextPromptAlertView.m in Sources */,
 				AD5425E2193703CF005F10F4 /* RTMsgDetailTableViewCell.m in Sources */,
 				044734DC196C2FDC00240490 /* RTCustomView.m in Sources */,
 				042716E019375C9D00FD3EF3 /* RTDoctor.m in Sources */,
@@ -2352,10 +2537,13 @@
 				0457270D196D904B0023F00E /* RTCustomBlueVIew.m in Sources */,
 				042716E719375C9D00FD3EF3 /* RTNeckDisease.m in Sources */,
 				AD16874E196CE931003ABF3C /* RTForthNavVC.m in Sources */,
+				AD39B6A91973AEE40007F4E6 /* BlockBackground.m in Sources */,
+				AD2AB61819751637002D1E16 /* indexCell.m in Sources */,
 				042716EE19375CE100FD3EF3 /* SecondViewController.m in Sources */,
 				ADA6C30F1951D9B30037A013 /* RTFamilyDetailViewController.m in Sources */,
 				AD69107E195D61D000ACB68B /* RTDoingViewController.m in Sources */,
 				AD16874C196CE931003ABF3C /* ForthViewController.m in Sources */,
+				AD39B5F8197373040007F4E6 /* SWTableViewCell.m in Sources */,
 				04644B89196FEB2B0068A4D4 /* RTDataInitBeforeLoad.m in Sources */,
 				04B58A7A1945666B00A4905C /* Reachability.m in Sources */,
 				ADCC7A181929ACDC005B00B4 /* RTLoginViewController.m in Sources */,
@@ -2371,6 +2559,7 @@
 				AD168741196CE7E2003ABF3C /* FirstViewController.mm in Sources */,
 				04B58A761945659000A4905C /* RTUserInfo.m in Sources */,
 				ADA6C3111951D9B30037A013 /* RTTimeLineTableViewCell.m in Sources */,
+				AD39B6FC1974070C0007F4E6 /* RTCheckUp.m in Sources */,
 				0469EB70192886F600388022 /* DPMeterView.m in Sources */,
 				042716E119375C9D00FD3EF3 /* RTHeadDisease.m in Sources */,
 				ADEF87D9192DF8F20057DCB0 /* BEMCircle.m in Sources */,
@@ -2379,6 +2568,8 @@
 				AD70D1951946A88D00F6D118 /* RTStepCounter.m in Sources */,
 				042053AF193F25B800D0C9EE /* RTLoginBusiness.m in Sources */,
 				04B58A821945678200A4905C /* RTCenterViewController.m in Sources */,
+				AD39B69F197390900007F4E6 /* RTAddCheckUpVC.m in Sources */,
+				AD18991F1977CEBE0026AC30 /* UIPopoverListView.m in Sources */,
 				ADCC7A751929F875005B00B4 /* RTShareMsg.m in Sources */,
 				AD327F46197034C000D8FEAB /* RTPillsViewController.m in Sources */,
 				04FB29D21940BA7700B96AA7 /* RTUserProfileBussiness.m in Sources */,
@@ -2393,18 +2584,21 @@
 				ADA6C3201951D9CE0037A013 /* PNChartLabel.m in Sources */,
 				AD464FF819715190000E9323 /* RTChecksUpViewController.m in Sources */,
 				AD088134195084EC00124A0B /* RTDetailViewController.m in Sources */,
+				AD39B6A61973AEA90007F4E6 /* BlockAlertView.m in Sources */,
 				AD48102A1924BDFC0081DAFA /* RNGridMenu.m in Sources */,
 				ADEF87DA192DF8F20057DCB0 /* BEMLine.m in Sources */,
 				0420539A193EC00700D0C9EE /* AVIllness.m in Sources */,
 				042716E519375C9D00FD3EF3 /* RTAbdomenDisease.m in Sources */,
 				0469EB71192886F600388022 /* UIBezierPath+BasicShapes.m in Sources */,
 				042053B51940793500D0C9EE /* RTUserProfileViewController.m in Sources */,
+				AD02A9EC197648F9009A239B /* RTTimeLineCell.m in Sources */,
 				042716E419375C9D00FD3EF3 /* RTBreastDisease.m in Sources */,
 				AD3493E0196270DD001A46FC /* UIScrollView+MJRefresh.m in Sources */,
 				AD3493DB196270DD001A46FC /* MJRefreshBaseView.m in Sources */,
 				AD69B9501963E9FF0046AECC /* RTMsgShowViewController.m in Sources */,
 				042716E819375C9D00FD3EF3 /* RTMedication.m in Sources */,
 				ADAA5DDC192341090040ED10 /* main.m in Sources */,
+				AD2AB65F19757E88002D1E16 /* ZYQAssetPickerController.m in Sources */,
 				AD69691F195D1D0C00104FDF /* SOMotionDetector.m in Sources */,
 				AD327F48197034C000D8FEAB /* RTPillsTableViewCell.m in Sources */,
 				ADA6C3251951D9CE0037A013 /* PNBar.m in Sources */,

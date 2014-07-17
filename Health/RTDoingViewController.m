@@ -35,7 +35,6 @@
         self.speedLabel.text = [NSString stringWithFormat:@"%.1f",0.0];
         self.distLabel.text = [NSString stringWithFormat:@"%.0f",0.0];
         self.calLabel.text = [NSString stringWithFormat:@"%.0f",0.0];
-
     }else{
         [self freeTimer];
         started=NO;
@@ -50,9 +49,9 @@
     self.navBar.translucent=YES;
     
     if (DEVICE_IS_IPHONE5) {
-        self.controlView.frame=CGRectMake(0, 327, 320, 191);
+        self.controlView.frame=CGRectMake(0, 377, 320, 191);
     }else{
-        self.controlView.frame=CGRectMake(0, 239, 320, 191);
+        self.controlView.frame=CGRectMake(0, 289, 320, 191);
     }
     
     [self.startButton setStyleType:ACPButtonOK];
@@ -73,9 +72,9 @@
     
     if (!_mapView) {
         if (DEVICE_IS_IPHONE5) {
-            _mapView= [[RTMapView alloc] initWithFrame:CGRectMake(0, 64, 320, 264)];
+            _mapView= [[RTMapView alloc] initWithFrame:CGRectMake(0, 64, 320, 314)];
         }else{
-            _mapView= [[RTMapView alloc] initWithFrame:CGRectMake(0, 64, 320, 176)];
+            _mapView= [[RTMapView alloc] initWithFrame:CGRectMake(0, 64, 320, 226)];
         }
         
         [self.view addSubview:_mapView];
@@ -163,7 +162,6 @@
 }
 
 - (IBAction)touchBack:(UIBarButtonItem *)sender {
-    self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

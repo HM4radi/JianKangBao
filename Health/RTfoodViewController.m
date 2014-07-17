@@ -39,20 +39,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 
-
-
 }
 
 
 - (IBAction)touchBack:(id)sender {
-    [UIView beginAnimations:@"view flip" context:nil];
-    [UIView setAnimationDuration:0.5];
-    [UIView transitionWithView:self.view.superview
-                      duration:0.2
-                       options:UIViewAnimationOptionTransitionFlipFromLeft
-                    animations:^{ [self.view removeFromSuperview];  }
-                    completion:NULL];
-    [UIView commitAnimations];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

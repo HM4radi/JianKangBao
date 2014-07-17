@@ -82,9 +82,9 @@
     
     if (!_mapView) {
         if (DEVICE_IS_IPHONE5) {
-            _mapView= [[RTMapView alloc] initWithFrame:CGRectMake(0, 220, 320, 308)];
+            _mapView= [[RTMapView alloc] initWithFrame:CGRectMake(0, 220, 320, 348)];
         }else{
-            _mapView= [[RTMapView alloc] initWithFrame:CGRectMake(0, 220, 320, 220)];
+            _mapView= [[RTMapView alloc] initWithFrame:CGRectMake(0, 220, 320, 260)];
         }
         
         [self.view addSubview:_mapView];
@@ -232,7 +232,6 @@
 
 
 - (IBAction)touchCancel:(id)sender {
-    self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -246,7 +245,6 @@
         [self dismissViewControllerAnimated:YES completion:nil];
         [self saveDataToAVOS];
     }
-
 }
 
 - (NSString*)returnStrength:(NSString*)type{

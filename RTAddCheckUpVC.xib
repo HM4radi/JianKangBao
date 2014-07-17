@@ -6,9 +6,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RTAddCheckUpVC">
             <connections>
-                <outlet property="navBar" destination="41U-tu-nDE" id="MSh-87-Ir0"/>
-                <outlet property="tableView1" destination="9oE-61-HzP" id="EKD-O8-44C"/>
-                <outlet property="tableView2" destination="qTH-gj-Ey2" id="1yF-Ot-grD"/>
+                <outlet property="navBar" destination="G8s-Rj-ftl" id="bD5-sD-III"/>
+                <outlet property="search" destination="yvj-HB-agb" id="wvF-xG-VWB"/>
+                <outlet property="searchDisplayController" destination="m5a-uV-Clx" id="5yG-ob-JrP"/>
+                <outlet property="tableView1" destination="vsy-Ku-9Qt" id="pal-f9-lOO"/>
+                <outlet property="tableView2" destination="MOl-8k-ddY" id="oJO-d3-9bc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,47 +19,64 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <navigationBar contentMode="scaleToFill" id="41U-tu-nDE">
+                <navigationBar contentMode="scaleToFill" id="G8s-Rj-ftl">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <items>
-                        <navigationItem id="slp-BB-V09">
-                            <barButtonItem key="leftBarButtonItem" title="返回" id="Dhj-Cy-acG">
+                        <navigationItem id="oC3-kd-SoO">
+                            <barButtonItem key="leftBarButtonItem" title="返回" id="rl7-Bb-hTQ">
                                 <color key="tintColor" red="0.96470588239999999" green="0.96862745100000003" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <action selector="touchBack:" destination="-1" id="B6w-2M-cJb"/>
+                                    <action selector="touchBack:" destination="-1" id="Lmf-Cz-cJG"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem key="rightBarButtonItem" title="确定" id="Tfj-MS-oiz">
+                            <barButtonItem key="rightBarButtonItem" title="确定" id="rkK-kr-5uL">
                                 <color key="tintColor" red="0.96470588239999999" green="0.96862745100000003" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <action selector="touchOK:" destination="-1" id="c9j-Jj-ztM"/>
+                                    <action selector="touchOK:" destination="-1" id="zfy-vS-6h9"/>
                                 </connections>
                             </barButtonItem>
                         </navigationItem>
                     </items>
                 </navigationBar>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加体检项目" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EVu-uc-53c">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="MOl-8k-ddY">
+                    <rect key="frame" x="80" y="108" width="240" height="460"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vsy-Ku-9Qt">
+                    <rect key="frame" x="0.0" y="108" width="80" height="460"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="录入体检项目" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Z3G-kw-84O">
                     <rect key="frame" x="100" y="30" width="132" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9oE-61-HzP">
-                    <rect key="frame" x="0.0" y="64" width="100" height="464"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </tableView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qTH-gj-Ey2">
-                    <rect key="frame" x="100" y="64" width="220" height="464"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </tableView>
+                <searchBar contentMode="redraw" id="yvj-HB-agb">
+                    <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="CFV-PP-khc"/>
+                    </connections>
+                </searchBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
+        <searchDisplayController id="m5a-uV-Clx">
+            <connections>
+                <outlet property="delegate" destination="-1" id="uXk-gK-6QF"/>
+                <outlet property="searchBar" destination="yvj-HB-agb" id="fyF-cu-Qbr"/>
+                <outlet property="searchContentsController" destination="-1" id="eln-00-VWT"/>
+                <outlet property="searchResultsDataSource" destination="-1" id="5Hp-RQ-dS6"/>
+                <outlet property="searchResultsDelegate" destination="-1" id="tvt-ZA-HCl"/>
+            </connections>
+        </searchDisplayController>
     </objects>
 </document>

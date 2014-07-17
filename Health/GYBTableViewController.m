@@ -53,7 +53,6 @@
 
 -(void)queryFamilyShipFromAVOS
 {
-    
     AVUser *current=[AVUser currentUser];
     AVQuery *query = [AVQuery queryWithClassName:@"JKFriendShip"];
     [query whereKey:@"frienda_objectid" equalTo:current.objectId];

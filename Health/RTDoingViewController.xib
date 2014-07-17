@@ -43,7 +43,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" id="RqA-90-UXY">
-                    <rect key="frame" x="0.0" y="327" width="320" height="191"/>
+                    <rect key="frame" x="0.0" y="377" width="320" height="191"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenline.png" id="4Yq-xN-6lL">
