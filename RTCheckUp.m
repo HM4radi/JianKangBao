@@ -24,10 +24,9 @@
 }
 
 -(void)saveDataToAVOS:(NSMutableDictionary *)dic{
-    NSUserDefaults *mySettingData = [NSUserDefaults standardUserDefaults];
     
     AVObject *checkUp=[AVObject objectWithClassName:@"JKCheckUpRecord"];
-    [checkUp setObject:[mySettingData objectForKey:@"CurrentUserName"] forKey:@"userObjectId"];
+    [checkUp setObject:[AVUser currentUser].objectId forKey:@"userObjectId"];
     [checkUp setObject:selectedType forKey:@"checkType"];
     [checkUp setObject:selectedDate forKey:@"checkTime"];
     [checkUp setObject:checkUpRecord.indexArray forKey:@"indexArray"];
@@ -51,7 +50,6 @@
 //            } progressBlock:^(NSInteger percentDone) {
 //                NSLog(@"percent=%d",percentDone);
 //            }];
-            
             
         }
     }];
@@ -356,7 +354,6 @@
 
     UIImageView *imgView=[[UIImageView alloc] initWithFrame:CGRectMake(100*imageNum, 10, 90, 90)];
     [imgView setImage:image];
-    
     
     imgView.userInteractionEnabled=YES;
     UITapGestureRecognizer *Gesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(fullScreen:)];

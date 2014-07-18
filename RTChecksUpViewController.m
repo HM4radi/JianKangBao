@@ -37,15 +37,27 @@
     [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
     refreshTimes=0;
     footer=NO;
-    NSUserDefaults *mySettingData = [NSUserDefaults standardUserDefaults];
-    currentMemberName=[mySettingData objectForKey:@"CurrentUserName"];
-
+    AVUser *_user=[AVUser currentUser];
+    currentMemberObjectId=_user.objectId;
+    
     [self readDataFromAVOS];
     checkUpRecord=[RTCheckUpRecord shareInstance];
     
     self.titleLabel.userInteractionEnabled=YES;
     UITapGestureRecognizer *Gesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showPullDown)];
     [self.titleLabel addGestureRecognizer:Gesture];
+    
+    familyMemberAdded=NO;
+    
+    act=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [act setCenter:CGPointMake(250,42)];
+    [self.view addSubview:act];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    if (!familyMemberAdded) {
+        [self addFamilyMember];
+    }
 }
 
 - (void)headerRereshing{
@@ -56,6 +68,51 @@
 - (void)footerRereshing{
     footer=YES;
     [self readDataFromAVOS];
+}
+
+-(void)addFamilyMember{
+    
+    [act startAnimating];
+    
+    if (!familyMemberID) {
+        familyMemberID=[[NSMutableArray alloc]init];
+    }
+    if (!familyMemberInfo) {
+        familyMemberInfo=[[NSMutableArray alloc]init];
+    }
+    
+    AVUser *_user=[AVUser currentUser];
+    AVQuery *query=[AVQuery queryWithClassName:@"JKFriendShip"];
+    [query selectKeys:@[@"friendb_objectid"]];
+    [query whereKey:@"frienda_objectid" equalTo:_user.objectId];
+    NSLog(@"%@",_user.objectId);
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            familyMemberID=[[objects objectAtIndex:0] objectForKey:@"friendb_objectid"];
+            [familyMemberID addObject:[AVUser currentUser].objectId];
+            AVQuery *query1=[AVQuery queryWithClassName:@"_User"];
+            [query1 selectKeys:@[@"username",@"userImage"]];
+            
+            for (NSString *s in familyMemberID ) {
+            [query1 whereKey:@"objectId" equalTo:s];
+            AVObject *member=[query1 getObjectWithId:s];
+                
+            AVFile *imageFile=[member objectForKey:@"userImage"];
+            NSData *imageData=[imageFile getData];
+            UIImage *img=[UIImage imageWithData:imageData];
+                
+            [familyMemberInfo addObject:[NSDictionary dictionaryWithObjectsAndKeys:[member objectForKey:@"username"],@"userName",img,@"userImage" ,nil]];
+            }
+            [act stopAnimating];
+            familyMemberAdded=YES;
+            query1=nil;
+        }
+        else{
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"信息加载失败" message:@"网络有点不给力哦，请稍后再试~" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+            [alert show];
+        }
+    }];
+    query=nil;
 }
 
 - (void)viewWillLayoutSubviews{
@@ -88,7 +145,7 @@
     query.skip=10*refreshTimes;
     [query selectKeys:@[@"checkTime", @"checkType",@"indexArray"]];
     [query addDescendingOrder:@"checkTime"];
-    [query whereKey:@"userObjectId" equalTo:currentMemberName];
+    [query whereKey:@"userObjectId" equalTo:currentMemberObjectId];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
@@ -116,7 +173,6 @@
         }
     }];
     query=nil;
-
 }
 
 //*********************tableView********************//
@@ -218,31 +274,24 @@
     
     int row = indexPath.row;
     
-    if(row == 0){
-        cell.textLabel.text = @"AngelaBaby";
-        cell.imageView.image = [UIImage imageNamed:@"1.jpg"];
-    }else if (row == 1){
-        cell.textLabel.text = @"Lucas";
-        cell.imageView.image = [UIImage imageNamed:@"2.jpg"];
-    }else if (row == 2){
-        cell.textLabel.text = @"Ray";
-        cell.imageView.image = [UIImage imageNamed:@"3.jpg"];
-    }
+    cell.textLabel.text = [[familyMemberInfo objectAtIndex:row] objectForKey:@"userName"];
+    cell.imageView.image = [[familyMemberInfo objectAtIndex:row] objectForKey:@"userImage"];
+    
     return cell;
 }
 
 - (NSInteger)popoverListView:(UIPopoverListView *)popoverListView
        numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return [familyMemberInfo count];
 }
 
 #pragma mark - UIPopoverListViewDelegate
 - (void)popoverListView:(UIPopoverListView *)popoverListView
      didSelectIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"%s : %d", __func__, indexPath.row);
-    // your code here
+    currentMemberObjectId=[familyMemberID objectAtIndex:indexPath.row];
+    [self headerRereshing];
 }
 
 - (CGFloat)popoverListView:(UIPopoverListView *)popoverListView
@@ -252,6 +301,7 @@
 }
 
 -(void)showPullDown{
+    
     CGFloat xWidth = self.view.bounds.size.width - 20.0f;
     CGFloat yHeight = 272.0f;
     CGFloat yOffset = (self.view.bounds.size.height - yHeight)/2.0f;

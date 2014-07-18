@@ -385,6 +385,12 @@
             [alert show];
         }
     }];
+//    if (!timingVC) {
+//        timingVC=[[RTSportTimingVC alloc]init];
+//    }
+//
+//    [self presentViewController:timingVC animated:YES completion:nil];
+//    timingVC=nil;
 }
 
 

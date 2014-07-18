@@ -16,6 +16,7 @@
 #import "RTDetailViewController.h"
 #import "RTDoingViewController.h"
 #import "MJRefresh.h"
+#import "RTSportTimingVC.h"
 
 @interface FirstViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,refreshData>
 {
@@ -43,6 +44,7 @@
     NSDateFormatter *dateFormatter4;
     
     RTDoingViewController *doingVC;
+    RTSportTimingVC *timingVC;
     
     int selectingRow;
     

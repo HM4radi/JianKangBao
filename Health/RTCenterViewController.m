@@ -203,6 +203,7 @@
         ChecksUpViewController=[[RTChecksUpViewController alloc]init];
     }
     [self presentViewController:ChecksUpViewController animated:YES completion:nil];
+    ChecksUpViewController=nil;
 }
 
 - (void)viewClick4:(UITapGestureRecognizer *)gesture

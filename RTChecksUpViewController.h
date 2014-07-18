@@ -20,7 +20,11 @@
     int refreshTimes;
     BOOL footer;
 
-    NSString *currentMemberName;
+    NSString *currentMemberObjectId;
+    NSMutableArray *familyMemberID;
+    NSMutableArray *familyMemberInfo;
+    BOOL familyMemberAdded;
+    UIActivityIndicatorView *act;
 }
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

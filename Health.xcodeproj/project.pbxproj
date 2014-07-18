@@ -344,6 +344,12 @@
 		AD70D1951946A88D00F6D118 /* RTStepCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = AD70D1941946A88D00F6D118 /* RTStepCounter.m */; };
 		AD70D1981946DE0800F6D118 /* tabbar_5.png in Resources */ = {isa = PBXBuildFile; fileRef = AD70D1961946DE0800F6D118 /* tabbar_5.png */; };
 		AD70D1991946DE0800F6D118 /* tabbar_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD70D1971946DE0800F6D118 /* tabbar_5@2x.png */; };
+		AD87AA7E1978D7BA00AC2DD5 /* RTSportTimingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AD87AA7C1978D7BA00AC2DD5 /* RTSportTimingVC.m */; };
+		AD87AA7F1978D7BA00AC2DD5 /* RTSportTimingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD87AA7D1978D7BA00AC2DD5 /* RTSportTimingVC.xib */; };
+		AD87AA831978E04600AC2DD5 /* running.gif in Resources */ = {isa = PBXBuildFile; fileRef = AD87AA821978E04600AC2DD5 /* running.gif */; };
+		AD87AA881978E05A00AC2DD5 /* YLGIFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AD87AA851978E05A00AC2DD5 /* YLGIFImage.m */; };
+		AD87AA891978E05A00AC2DD5 /* YLImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD87AA871978E05A00AC2DD5 /* YLImageView.m */; };
+		AD87AA8D1978E25E00AC2DD5 /* DKCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AD87AA8C1978E25E00AC2DD5 /* DKCircleButton.m */; };
 		AD9A389719362A5600A8EFFB /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9A389619362A5600A8EFFB /* login.png */; };
 		ADA6C2DE19518FD70037A013 /* locate2.png in Resources */ = {isa = PBXBuildFile; fileRef = ADA6C2DC19518FD70037A013 /* locate2.png */; };
 		ADA6C2DF19518FD70037A013 /* locate1.png in Resources */ = {isa = PBXBuildFile; fileRef = ADA6C2DD19518FD70037A013 /* locate1.png */; };
@@ -918,6 +924,16 @@
 		AD70D1941946A88D00F6D118 /* RTStepCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTStepCounter.m; sourceTree = "<group>"; };
 		AD70D1961946DE0800F6D118 /* tabbar_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_5.png; sourceTree = "<group>"; };
 		AD70D1971946DE0800F6D118 /* tabbar_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_5@2x.png"; sourceTree = "<group>"; };
+		AD87AA7B1978D7BA00AC2DD5 /* RTSportTimingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTSportTimingVC.h; sourceTree = "<group>"; };
+		AD87AA7C1978D7BA00AC2DD5 /* RTSportTimingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTSportTimingVC.m; sourceTree = "<group>"; };
+		AD87AA7D1978D7BA00AC2DD5 /* RTSportTimingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTSportTimingVC.xib; sourceTree = "<group>"; };
+		AD87AA821978E04600AC2DD5 /* running.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = running.gif; sourceTree = "<group>"; };
+		AD87AA841978E05A00AC2DD5 /* YLGIFImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLGIFImage.h; sourceTree = "<group>"; };
+		AD87AA851978E05A00AC2DD5 /* YLGIFImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLGIFImage.m; sourceTree = "<group>"; };
+		AD87AA861978E05A00AC2DD5 /* YLImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLImageView.h; sourceTree = "<group>"; };
+		AD87AA871978E05A00AC2DD5 /* YLImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLImageView.m; sourceTree = "<group>"; };
+		AD87AA8B1978E25E00AC2DD5 /* DKCircleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCircleButton.h; sourceTree = "<group>"; };
+		AD87AA8C1978E25E00AC2DD5 /* DKCircleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCircleButton.m; sourceTree = "<group>"; };
 		AD9A389619362A5600A8EFFB /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
 		ADA6C2DC19518FD70037A013 /* locate2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locate2.png; sourceTree = "<group>"; };
 		ADA6C2DD19518FD70037A013 /* locate1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locate1.png; sourceTree = "<group>"; };
@@ -1835,6 +1851,39 @@
 			name = SportRecord;
 			sourceTree = "<group>";
 		};
+		AD87AA7A1978D77E00AC2DD5 /* SportTimingVC */ = {
+			isa = PBXGroup;
+			children = (
+				AD87AA8A1978E25000AC2DD5 /* circleButton */,
+				AD87AA811978DFD500AC2DD5 /* gif */,
+				AD87AA7B1978D7BA00AC2DD5 /* RTSportTimingVC.h */,
+				AD87AA7C1978D7BA00AC2DD5 /* RTSportTimingVC.m */,
+				AD87AA7D1978D7BA00AC2DD5 /* RTSportTimingVC.xib */,
+				AD87AA841978E05A00AC2DD5 /* YLGIFImage.h */,
+				AD87AA851978E05A00AC2DD5 /* YLGIFImage.m */,
+				AD87AA861978E05A00AC2DD5 /* YLImageView.h */,
+				AD87AA871978E05A00AC2DD5 /* YLImageView.m */,
+			);
+			name = SportTimingVC;
+			sourceTree = "<group>";
+		};
+		AD87AA811978DFD500AC2DD5 /* gif */ = {
+			isa = PBXGroup;
+			children = (
+				AD87AA821978E04600AC2DD5 /* running.gif */,
+			);
+			name = gif;
+			sourceTree = "<group>";
+		};
+		AD87AA8A1978E25000AC2DD5 /* circleButton */ = {
+			isa = PBXGroup;
+			children = (
+				AD87AA8B1978E25E00AC2DD5 /* DKCircleButton.h */,
+				AD87AA8C1978E25E00AC2DD5 /* DKCircleButton.m */,
+			);
+			name = circleButton;
+			sourceTree = "<group>";
+		};
 		ADA9872F1933102400B98092 /* CenterViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1917,8 +1966,6 @@
 		ADAA5DD5192341090040ED10 /* Health */ = {
 			isa = PBXGroup;
 			children = (
-				04299C5D1978199000709362 /* ThirdViewControllor */,
-				04299C5C1978198000709362 /* SecondViewControllor */,
 				ADAA5DDE192341090040ED10 /* RTAppDelegate.h */,
 				ADAA5DDF192341090040ED10 /* RTAppDelegate.m */,
 				04B58A771945665B00A4905C /* Reachability */,
@@ -1934,6 +1981,8 @@
 				AD46FB13193431FD00F19BC4 /* FoodView */,
 				AD0DA0351935C03100A9846E /* MessageView */,
 				ADAA5E2A192355BE0040ED10 /* SportViewController */,
+				04299C5D1978199000709362 /* ThirdViewControllor */,
+				04299C5C1978198000709362 /* SecondViewControllor */,
 				ADAA5E2E192356370040ED10 /* ForthViewController */,
 				AD696917195D1CB000104FDF /* MotionDetection */,
 			);
@@ -1992,6 +2041,7 @@
 		ADAA5E2A192355BE0040ED10 /* SportViewController */ = {
 			isa = PBXGroup;
 			children = (
+				AD87AA7A1978D77E00AC2DD5 /* SportTimingVC */,
 				AD16873E196CE7E2003ABF3C /* FirstViewController.h */,
 				AD16873F196CE7E2003ABF3C /* FirstViewController.mm */,
 				AD168740196CE7E2003ABF3C /* FirstViewController.xib */,
@@ -2431,11 +2481,13 @@
 				AD12F6AA192634B400921894 /* tabbar_more_selected.png in Resources */,
 				0427170819375D1E00FD3EF3 /* renti.jpg in Resources */,
 				ADA6C2EC1951D8D30037A013 /* 78-stopwatch.png in Resources */,
+				AD87AA831978E04600AC2DD5 /* running.gif in Resources */,
 				AD0DA0521935C35700A9846E /* tabbar_mainbtn_bg.png in Resources */,
 				AD70D1981946DE0800F6D118 /* tabbar_5.png in Resources */,
 				ADCC7A541929AF64005B00B4 /* login_textfield@2x.png in Resources */,
 				ADCC7A501929AF64005B00B4 /* login_textfield_more@2x.png in Resources */,
 				ADCC7A7F192A03C1005B00B4 /* 1.jpg in Resources */,
+				AD87AA7F1978D7BA00AC2DD5 /* RTSportTimingVC.xib in Resources */,
 				AD542610193715E4005F10F4 /* zy.jpg in Resources */,
 				AD12F69E192634B400921894 /* settings_security_icon.png in Resources */,
 				AD3FDC4E1961B06500EECFA0 /* tick1.jpg in Resources */,
@@ -2577,6 +2629,7 @@
 				AD16874E196CE931003ABF3C /* RTForthNavVC.m in Sources */,
 				AD39B6A91973AEE40007F4E6 /* BlockBackground.m in Sources */,
 				AD2AB61819751637002D1E16 /* indexCell.m in Sources */,
+				AD87AA891978E05A00AC2DD5 /* YLImageView.m in Sources */,
 				AD69107E195D61D000ACB68B /* RTDoingViewController.m in Sources */,
 				AD16874C196CE931003ABF3C /* ForthViewController.m in Sources */,
 				AD39B5F8197373040007F4E6 /* SWTableViewCell.m in Sources */,
@@ -2629,6 +2682,7 @@
 				AD02A9EC197648F9009A239B /* RTTimeLineCell.m in Sources */,
 				042716E419375C9D00FD3EF3 /* RTBreastDisease.m in Sources */,
 				AD3493E0196270DD001A46FC /* UIScrollView+MJRefresh.m in Sources */,
+				AD87AA881978E05A00AC2DD5 /* YLGIFImage.m in Sources */,
 				04299C9F19781A1800709362 /* RTCustomView.m in Sources */,
 				04299CD319781AA300709362 /* LightMenuBarView.m in Sources */,
 				AD3493DB196270DD001A46FC /* MJRefreshBaseView.m in Sources */,
@@ -2641,8 +2695,10 @@
 				042716E819375C9D00FD3EF3 /* RTMedication.m in Sources */,
 				ADAA5DDC192341090040ED10 /* main.m in Sources */,
 				AD2AB65F19757E88002D1E16 /* ZYQAssetPickerController.m in Sources */,
+				AD87AA7E1978D7BA00AC2DD5 /* RTSportTimingVC.m in Sources */,
 				04299CD919781AA300709362 /* PNBar.m in Sources */,
 				AD69691F195D1D0C00104FDF /* SOMotionDetector.m in Sources */,
+				AD87AA8D1978E25E00AC2DD5 /* DKCircleButton.m in Sources */,
 				AD327F48197034C000D8FEAB /* RTPillsTableViewCell.m in Sources */,
 				04299CD519781AA300709362 /* PNColor.m in Sources */,
 				AD0DA0391935C06800A9846E /* RTMsgViewController.m in Sources */,

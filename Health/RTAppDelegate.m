@@ -16,8 +16,6 @@
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:130.0/255.0 green:190.0/255.0 blue:20.0/255.0 alpha:1.0]
 
-
-
 @implementation RTAppDelegate
 
 static UIWindow *thiswindow=nil;
@@ -43,9 +41,6 @@ static UIWindow *thiswindow=nil;
     
 //    RTAddFamilyMemberViewController *testVC=[[RTAddFamilyMemberViewController alloc]initWithNibName:nil bundle:nil];
 //判断是否存在当前用户
-   
- 
-    
     
     if (loginBusiness.checkIfAuto_login) {
         UIViewController *Main=[RTMainViewController shareMainViewControllor];
